@@ -1,6 +1,3 @@
-import * as firebase from "firebase/app";
-import firestore from "firebase/firestore";
-import Event from "./Event.js";
 import eventConverter from "./Event.js";
 
 const firebaseConfig = {
@@ -17,22 +14,22 @@ firebase.initializeApp(firebaseConfig);
 let database = firebase.firestore();
 
 function fetchEvents() {
+    let events = [];
     database.collection("Events")
         .withConverter(eventConverter)
         .get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
                 let currEvent = doc.data();
-                console.log(currEvent.toString());
-
+                events.push(currEvent);
             });
         });
+    return events;
 }
 
 class EventLoader {
 
     getEvents() {
         let data = fetchEvents();
-        console.log("Fetch");
         return data;
     }
 }
