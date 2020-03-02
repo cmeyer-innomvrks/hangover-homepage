@@ -27,9 +27,6 @@
 .navbar-toggler{
     background-color: white !important;
 }
-.navbar-toggler-icon{
-    
-}
 
 .hangover-schrift{
     color: white;
@@ -44,4 +41,8 @@
 .eventcard:hover{
  cursor: pointer;
  background-color: rgb(204, 204, 204) !important;
+}
+
+.contentRow{
+    
 }
