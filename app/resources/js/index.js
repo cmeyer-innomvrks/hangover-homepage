@@ -1,8 +1,11 @@
 /* eslint-env browser */
 
+import EventLoader from "./FirebaseDownloader/EventLoader.js"
+
+
 function init() {
-	let outputElement = document.querySelector("div");
-	outputElement.innerHTML = "It works!";
+	console.log("INIT");
+	EventLoader.getEvents();
 }
 
 init();
