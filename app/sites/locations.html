@@ -7,78 +7,75 @@
     <link rel="stylesheet" href="../resources/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
     <title>Locations v1</title>
   </head>
+  
   <body>
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+      <a class="navbar-brand" href="index.html">
+      <img src="/img/Hangover_Logo_ohne_Schrift.png" width="30" height="40" class="d-inline-block align-top" alt="">
+      <span class="hangover-schrift">Hangover</span>
+      </a>
+      <nav class="navbar navbar-expand-lg ">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <!-- <a class="nav-link" href="#"><img src="img/event.svg" alt="" srcset="" height="40px"><span class="sr-only">(current)</span></a> -->
+                <a class="nav-link" href="../index.html">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="locations.html">Locations<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Map</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </nav>
+    <!-- NAVBAR END -->
 
-        <!-- NAVBAR START -->
-        <nav class="navbar">
-          <a class="navbar-brand" href="index.html">
-          <img src="/img/Hangover_Logo_ohne_Schrift.png" width="30" height="40" class="d-inline-block align-top" alt="">
-          <span class="hangover-schrift">Hangover</span>
-          </a>
-          <nav class="navbar navbar-expand-lg ">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item active">
-                    <!-- <a class="nav-link" href="#"><img src="img/event.svg" alt="" srcset="" height="40px"><span class="sr-only">(current)</span></a> -->
-                    <a class="nav-link" href="../index.html">Events</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="locations.html">Locations<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Map</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-      </nav>
-      <!-- NAVBAR END -->
+    <!-- Übergeordnete Tabelle-->
+    <div class="row">
+      <!-- COL 1-->
+      <div class="col"></div>
 
-
-      <!-- AB HIER CONTENT -->
-<!-- COL 1-->
-<div class="row">
-  <div class="col">
-  </div>
-
-    <!-- COL 2-->
-  <div class="col-9">
-
-    <!-- EVENTCARD START-->
-    <div class="eventcard row no-gutters bg-light position-relative">
-      <div class="col-md-4 mb-md-0 p-md-4">
-        <img src="../img/party1.jpg" class="locationImg w-100" alt="Location Image">
-      </div>
-      <div class="col-md-8 position-static p-4 pl-md-0">
-        <h5 class="locationName mt-0">Beats Club</h5>
-        <!--<a href="#" class="stretched-link">..zum Event</a>-->
-        <div class="row w-50">
-          <p>
-            <span class="locationStreet">Str. Petersweg</span>
-            <span class="locationHousenumber">5</span>,
-            <span class="locationZip">93053</span>
-            <span class="locationCity">Regensburg</span>
-          </p>
+      <!-- COL 2-->
+      <div class="col-9">
+        <!-- EVENTCARD START-->
+        <div class="eventcard row no-gutters bg-light position-relative">
+          <div class="col-md-4 mb-md-0 p-md-4">
+            <img src="../resources/img/party1.jpg" class="locationImg w-100" alt="Location Image">
+          </div>
+          <div class="col-md-8 position-static p-4 pl-md-0">
+            <h5 class="locationName mt-0">Beats Club</h5>
+            <!--<a href="#" class="stretched-link">..zum Event</a>-->
+            <div class="row w-50">
+              <p>
+                <span class="locationStreet">Str. Petersweg</span>
+                <span class="locationHousenumber">5</span>,
+                <span class="locationZip">93053</span>
+                <span class="locationCity">Regensburg</span>
+              </p>
+            </div>
+          </div>
         </div>
+        <!-- EVENTCARD END-->
       </div>
-    </div>
-    <!-- EVENTCARD START-->
 
-  </div>
-
-  <!-- COL 3-->
-    <div class="col">
+      <!-- COL 3-->
+      <div class="col"></div>
     </div>
-</div>
 
 
 

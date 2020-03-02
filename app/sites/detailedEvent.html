@@ -4,20 +4,20 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <title>Hangover v1</title>
+    <title>Detailansicht</title>
   </head>
 
   <body>
     <!-- NAVBAR START -->
     <nav class="navbar">
         <a class="navbar-brand" href="index.html">
-        <img src="resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="40" class="d-inline-block align-top" alt="">
+        <img src="../resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="40" class="d-inline-block align-top" alt="">
         <span class="hangover-schrift">Hangover</span>
         </a>
         <nav class="navbar navbar-expand-lg ">
@@ -26,12 +26,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <!-- <a class="nav-link" href="#"><img src="img/event.svg" alt="" srcset="" height="40px"><span class="sr-only">(current)</span></a> -->
-                  <a class="nav-link" href="#">Events<span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Events</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="sites/locations.html">Locations</a>
+                  <a class="nav-link" href="../sites/locations.html">Locations</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Map</a>
@@ -39,49 +38,31 @@
                 <li class="nav-item">
                   <a class="nav-link" href="#">Profile</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sites/detailedEvent.html">Detailansicht</a>
-                  </li>
               </ul>
             </div>
           </nav>
     </nav>
     <!-- NAVBAR END -->
-    
-    
+
+    <div class="card bg-dark text-white">
+        <img src="../resources/img/party1.jpg" class="card-img" alt="...">
+        <div class="card-img-overlay">
+          <h5 class="card-title">Ballermann DeLuxE</h5>
+        </div>
+      </div>
+    </div>
+
     <!-- Übergeordnete Tabelle -->
     <div class="row">
         <!-- COL 1-->
         <div class="col"></div>
-
         <!-- COL 2-->
-        <div class="col-9">
-            <!-- EVENTCARD START-->
-            <div class="eventcard row no-gutters bg-light position-relative">
-            <div class="col-md-4 mb-md-0 p-md-4">
-                <img src="resources/img/party1.jpg" class="w-100" alt="PartyPeople">
-            </div>
-            <div class="col-md-8 position-static p-4 pl-md-0">
-                <h5 class="headline mt-0">90er Party @ Beats </h5>
-                <p class="shortDescription">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, 
-                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                <!--<a href="#" class="stretched-link">..zum Event</a>-->
-                <div class="row w-50">
-                <div class=" eventteamcol col">
-                    @BeatsClub
-                </div>
-                <div class="eventdate col">
-                    14.03.2020
-                </div>
-                </div>
-            </div>
-            </div>
-            <!-- EVENTCARD START-->
-        </div>
+        <div class="contentRow col-9"></div>
 
         <!-- COL 3-->
         <div class="col"></div>
     </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
