@@ -1,25 +1,47 @@
-html {
-    margin: 0;
+.page-item {
+    background: #4c61aa; 
+    background-color: #4c61aa;
+    color: #4c61aa; 
 }
 
-body {
-    margin: 0;
-    background: #FAFAFA;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    color: #000;
+.navbar {
+    background-color: #4c61aa; 
 }
 
-body div {
-    padding: 1vw;
+.nav-link{
+    color: white;
+}
+.nav-link:hover {
+    text-decoration: underline !important;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;
+    -ms-transition: all 2s ease;
+    transition: all 2s ease;
 }
 
-h1 {
-    width: 98vw;
-    margin: 0;
-    padding: 1vw;
-    background-color: #333;
-    border-style: solid;
-    border-width: 0 0 0.25vh 0;
-    border-color: #FFF;
-    color: #FAFAFA;
+.nav-link:hover{
+    color: #5d92cd;
+}
+
+.navbar-toggler{
+    background-color: white !important;
+}
+.navbar-toggler-icon{
+    
+}
+
+.hangover-schrift{
+    color: white;
+    font-weight: bold;
+}
+
+.trennstrich{
+    height: 1px;
+    background-color: gray;
+}
+
+.eventcard:hover{
+ cursor: pointer;
+ background-color: rgb(204, 204, 204) !important;
 }
