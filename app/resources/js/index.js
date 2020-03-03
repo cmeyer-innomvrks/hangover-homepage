@@ -1,19 +1,20 @@
 /* eslint-env browser */
 import EventLoader from "./FirebaseDownloader/EventLoader.js";
 import EventList from "./UI/EventList.js";
+import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
 
 let eventListView;
 
 function init() {
-  EventLoader.addEventListener("eventDL", onEventDownloadFinished);
   eventListView = new EventList();
   eventListView.setElement(document.querySelector(".event-list"));
-  EventLoader.getEvents();
+  getEvents();
 }
 
-function onEventDownloadFinished(event) {
-  let eventlist = event.data.events;
-  eventListView.displayEvents(eventlist);
+async function getEvents() {
+  let events = await EventLoader.getEvents();
+  let locations = await LocationLoader.getLocations();
+  eventListView.displayEvents(events, locations);
 }
 
 init();

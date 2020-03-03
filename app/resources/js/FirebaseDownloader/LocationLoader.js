@@ -30,6 +30,7 @@ class LocationLoader extends Observable {
             });
         let downloadEvent = new Event("locationDL", { locations: locations });
         this.notifyAll(downloadEvent);
+        return locations;
     }
 }
 

@@ -29,6 +29,7 @@ class EventLoader extends Observable {
             });
         let downloadEvent = new Event("eventDL", { events: events });
         this.notifyAll(downloadEvent);
+        return events;
     }
 }
 
