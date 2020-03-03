@@ -14,18 +14,18 @@ firebase.initializeApp(firebaseConfig);
 
 let database = firebase.firestore();
 
-// function fetchEvents() {
-//     let events = [];
-//     database.collection("Events")
-//         .withConverter(eventConverter)
-//         .get().then(function (querySnapshot) {
-//             querySnapshot.forEach(function (doc) {
-//                 let currEvent = doc.data();
-//                 events.push(currEvent);
-//             });
-//         });
-//     return events;
-// }
+function fetchEvents() {
+    let events = [];
+    database.collection("Events")
+        .withConverter(eventConverter)
+        .get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                let currEvent = doc.data();
+                events.push(currEvent);
+            });
+        });
+    return events;
+}
 
 class EventLoader extends Observable {
 
