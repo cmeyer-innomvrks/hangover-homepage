@@ -27,4 +27,44 @@ class Location {
         this.sunday_from = sunday_from;
         this.sunday_till = sunday_till;
     }
+
 }
+
+const locationConverter = {
+    toFirestore: function (event) {
+        return {
+            art = art,
+            city = city,
+            housenumber = housenumber,
+            ima = image,
+            info = info,
+            isPremiumLocation = isPremiumLocation,
+            isPremiumMapIcon = isPremiumMapIcon,
+            name = name,
+            street = street,
+            zip = zip,
+            monday_from = monday_from,
+            monday_till = monday_till,
+            tuesday_from = tuesday_from,
+            tuesday_till = tuesday_till,
+            wednesday_from = wednesday_from,
+            wednesday_till = wednesday_till,
+            thursday_from = thursday_from,
+            thursday_till = thursday_till,
+            friday_from = friday_from,
+            friday_till = friday_till,
+            saturday_from = saturday_from,
+            saturday_till = saturday_till,
+            sunday_from = sunday_from,
+            sunday_till = sunday_till,
+        }
+    },
+    fromFirestore: function (snapshot, options) {
+        const data = snapshot.data(options);
+        return new Location(data.art, data.city, data.housenumber, data.ima, data.info, data.isPremiumLocation, data.isPremiumMapIcon, data.name, data.street, data.zip,
+            data.monday_from, data.monday_till, data.tuesday_from, data.tuesday_till, data.wednesday_from, data.wednesday_till, data.thursday_from,
+            data.thursday_till, data.friday_from, data.friday_till, data.saturday_from, data.saturday_till, data.sunday_from, data.sunday_till)
+    }
+}
+
+export default (Location, locationConverter);
