@@ -25,11 +25,11 @@ class EventList extends View {
             let template = document.querySelector(".event-template").innerHTML.trim(),
                 item = document.createElement("div");
             item.innerHTML = template;
-            item.querySelector(".w-100").src = eventItems[i].image;
-            item.querySelector("headline").textContent = eventItems[i].headline;
-            item.querySelector("shortDescription").textContent = eventItems[i].info;
-            item.querySelector("event-location").textContent = "@" + eventItems[i].locationid;
-            item.querySelector("event-date").textContent = eventItems[i].date;
+            item.querySelector(".card-img-top").src = eventItems[i].image;
+            item.querySelector(".headline").textContent = eventItems[i].headline;
+            item.querySelector(".shortDescription").textContent = eventItems[i].info;
+            item.querySelector(".event-location").textContent = "@" + eventItems[i].locationid;
+            item.querySelector(".event-time").textContent = eventItems[i].time;
             this.element.appendChild(item);
         }
     }

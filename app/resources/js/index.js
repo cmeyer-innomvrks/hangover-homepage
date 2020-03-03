@@ -5,13 +5,11 @@ import EventList from "./UI/EventList.js";
 let eventListView;
 
 function init() {
-	let data = EventLoader.getEvents();
-	// EventLoader.addEventListener("eventDL", onEventDownloadFinished);
+	EventLoader.addEventListener("eventDL", onEventDownloadFinished);
 	eventListView = new EventList();
-	eventListView.setElement(document.querySelector(".eventlist"));
+	eventListView.setElement(document.querySelector(".event-list"));
 
-	// EventLoader.getEvents();
-	eventListView.displayEvents(data);
+	EventLoader.getEvents();
 }
 
 function onEventDownloadFinished(event) {

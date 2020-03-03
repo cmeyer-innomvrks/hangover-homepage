@@ -14,9 +14,9 @@ firebase.initializeApp(firebaseConfig);
 
 let database = firebase.firestore();
 
-function fetchEvents() {
+async function fetchEvents() {
     let events = [];
-    database.collection("Events")
+    await database.collection("Events")
         .withConverter(eventConverter)
         .get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
@@ -29,10 +29,9 @@ function fetchEvents() {
 
 class EventLoader extends Observable {
 
-    getEvents() {
-        let events = [],
-            self = this;
-        database.collection("Events")
+    async getEvents() {
+        let events = [];
+        await database.collection("Events")
             .withConverter(eventConverter)
             .get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
@@ -41,7 +40,7 @@ class EventLoader extends Observable {
                 });
             });
         let downloadEvent = new Event("eventDL", { events: events });
-        self.notifyAll(downloadEvent);
+        this.notifyAll(downloadEvent);
     }
 }
 
