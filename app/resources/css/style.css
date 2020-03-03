@@ -4,6 +4,11 @@
 .body{
     background-color:#4c60aa28 !important;
 }
+.navbar{
+    -webkit-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
+-moz-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
+box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
+}
 .navbar-brand{
     color: white;
 }
@@ -27,7 +32,7 @@
     transition: all 2s ease;
 }
 .active-element{
-    color: black !important;
+    color: #8093d8 !important;
     font-weight: bold;
 }
 
@@ -54,6 +59,12 @@
   max-width: 680px;
   padding: 0 15px;
   color: white;
+}
+
+.eventlist, .locationlist{
+    -webkit-box-shadow: 0px 14px 63px 85px rgba(0,0,0,0.08);
+-moz-box-shadow: 0px 14px 63px 85px rgba(0,0,0,0.08);
+box-shadow: 0px 14px 63px 85px rgba(0,0,0,0.08);
 }
 
 .footer{
