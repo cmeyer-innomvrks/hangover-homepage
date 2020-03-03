@@ -112,4 +112,4 @@ const locationConverter = {
   }
 };
 
-export default Location, locationConverter;
+export default (Location, locationConverter);
