@@ -4,19 +4,17 @@
 .body{
     background-color:#4c60aa28 !important;
 }
+
+.navbar{
+    background-color: #4c61aa !important; 
+    color: white;
+}
 .navbar-brand{
     color: white;
-}
-.navbar-brand:hover{
-    color: white;
+    text-transform: bold;
 }
 .nav-link{
-    color: white !important;
-    background-color:#4c60aa !important;
-}
-.navbar-expand-lg{
-    color: white !important;
-    background-color:#4c60aa !important;
+    color: white;
 }
 .nav-link:hover {
     text-decoration: underline !important;
@@ -26,11 +24,16 @@
     -ms-transition: all 2s ease;
     transition: all 2s ease;
 }
-.active-element{
-    color: black !important;
+.nav-link:hover{
+    color: #5d92cd;
+}
+.navbar > navbar-toggler{
+    background-image: url("Hangover_Logo_mit_Schrift.png");
+}
+.hangover-schrift{
+    color: white;
     font-weight: bold;
 }
-
 .footer {
     position: absolute;
     bottom: 0;
