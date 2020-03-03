@@ -1,7 +1,18 @@
 <!doctype html>
 <html lang="en">
-
-  <body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <title>Locations v1</title>
+  </head>
+  <body class="body">
     <!-- NAVBAR START -->
     <nav class="navbar">
         <a class="navbar-brand" href="index.html">
@@ -48,11 +59,77 @@
 
     <!-- COL 2-->
     <div class="eventlist col-9">
+      
+      <!-- Date Registerkarte Start-->
+      <ul class="list-group">
+        <li class="list-group-item my-2"><span class="week-day">Dienstag</span> | <span class="event-date"><b>02.03.2020</b></span></li>
+      </ul>
+      <!-- Date Registerkarte End-->
+      
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card h-100 my-2">
+            <img src="resources/img/party1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title headline">Card title</h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><span class="event-location">@BeatsClub</span> <span class="event-time">23:00 Uhr</span></small>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card h-100 my-2">
+            <img src="resources/img/party2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title headline">Card title</h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><span class="event-location">@HelgaStudentenClub</span> <span class="event-time">23:00 Uhr</span></small>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card h-100 my-2">
+            <img src="resources/img/party3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title headline">Card title</h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><span class="event-location">@ClubSchimmerlos</span> <span class="event-time">23:00 Uhr</span></small>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card h-100 my-2">
+            <img src="resources/img/Hangover_Logo_mit_Schrift.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title headline">Card title</h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><span class="event-location">@ChrisWohnzimmer</span> <span class="event-time">23:00 Uhr</span></small>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- COL 3-->
     <div class="col"></div>
   </div>
+
+  <!-- FOOTER START -->
+  <footer class="footer">
+    <div class="container">
+      <span class="footer-text text-muted">© 2020 Hangover Application</span>
+    </div>
+  </footer>
+  <!-- FOOTER END-->
 
   <!-- EVENTCARD START-->
   <template class="event-template">
@@ -94,12 +171,6 @@
     crossorigin="anonymous"></script>
   <script src="resources/js/index.js" type="module"></script>
 </body>
-
-    <footer class="footer mt-auto py-3">
-      <div class="container">
-        <span class="text-muted">Footer</span>
-      </div>
-    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

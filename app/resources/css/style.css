@@ -1,13 +1,10 @@
-.page-item {
-    background: #4c61aa; 
-    background-color: #4c61aa;
-    color: #4c61aa; 
+.body{
+    background-color:#4c60aa28 !important;
 }
 
 .navbar {
     background-color: #4c61aa; 
 }
-
 .nav-link{
     color: white;
 }
@@ -19,30 +16,44 @@
     -ms-transition: all 2s ease;
     transition: all 2s ease;
 }
-
 .nav-link:hover{
     color: #5d92cd;
 }
-
-.navbar-toggler{
-    background-color: white !important;
+.navbar > navbar-toggler{
+    background-image: url("Hangover_Logo_mit_Schrift.png");
 }
-
 .hangover-schrift{
     color: white;
     font-weight: bold;
 }
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+  }
 
-.trennstrich{
-    height: 1px;
-    background-color: gray;
+.list-group li{
+    background-color:#4c60aab1;
+    color: white;
 }
-
-.eventcard:hover{
+.card:hover{
  cursor: pointer;
- background-color: rgb(204, 204, 204) !important;
+ background-color: rgb(240, 240, 240) !important;
+ /*font-size: 105%;*/
+}
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+  color: white;
 }
 
-.contentRow{
-    
+.footer{
+  background-color: #4c60aab1;
+}
+.footer span{
+    color: white;
 }
