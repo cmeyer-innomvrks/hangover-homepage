@@ -25,6 +25,7 @@ class EventList extends View {
             item.querySelector(".shortDescription").textContent = eventItems[i].info.substring(0, 150) + "...";
             item.querySelector(".event-location").textContent = "@" + eventItems[i].locationid;
             item.querySelector(".event-time").textContent = eventItems[i].time + "Uhr";
+            item = item.firstElementChild;
             item.addEventListener("click", this.onClick.bind(this));
             this.element.appendChild(item);
         }
