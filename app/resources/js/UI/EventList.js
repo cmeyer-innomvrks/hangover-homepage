@@ -20,7 +20,11 @@ class EventList extends View {
             let template = document.querySelector(".event-template").innerHTML.trim(),
                 item = document.createElement("div");
             item.innerHTML = template;
-            item.querySelector(".card-img-top").src = eventItems[i].image;
+            if (eventItems[i].image !== "") {
+                item.querySelector(".card-img-top").src = eventItems[i].image;
+            } else {
+                item.querySelector(".card-img-top").src = "./resources/img/Hangover_Logo_mit_Schrift.png";
+            }
             item.querySelector(".headline").textContent = eventItems[i].headline;
             item.querySelector(".shortDescription").textContent = eventItems[i].info.substring(0, 150) + "...";
             item.querySelector(".event-location").textContent = "@" + eventItems[i].locationid;

@@ -1,5 +1,6 @@
 class Location {
   constructor(
+    id,
     art,
     city,
     housenumber,
@@ -25,6 +26,7 @@ class Location {
     sunday_from,
     sunday_till
   ) {
+    this.id = id;
     this.art = art;
     this.city = city;
     this.housenumber = housenumber;
@@ -50,10 +52,14 @@ class Location {
     this.sunday_from = sunday_from;
     this.sunday_till = sunday_till;
   }
+
+  addId(id) {
+    this.id = id;
+  }
 }
 
 const locationConverter = {
-  toFirestore: function(event) {
+  toFirestore: function (event) {
     return {
       art: art,
       city: city,
@@ -81,9 +87,10 @@ const locationConverter = {
       sunday_till: sunday_till
     };
   },
-  fromFirestore: function(snapshot, options) {
+  fromFirestore: function (snapshot, options) {
     const data = snapshot.data(options);
     return new Location(
+      data.id,
       data.art,
       data.city,
       data.housenumber,
@@ -112,4 +119,4 @@ const locationConverter = {
   }
 };
 
-export default Location, locationConverter;
+export default (Location, locationConverter);

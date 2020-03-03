@@ -16,13 +16,20 @@ class LocationList extends View {
   }
 
   displayLocations(locationItems) {
+    console.log(locationItems);
+
     for (let i = 0; i < locationItems.length; i++) {
       let template = document
-          .querySelector(".location-template")
-          .innerHTML.trim(),
+        .querySelector(".location-template")
+        .innerHTML.trim(),
         item = document.createElement("div");
       item.innerHTML = template;
-      item.querySelector(".card-img-top").src = locationItems[i].image;
+      if (locationItems[i].image !== "") {
+        item.querySelector(".card-img-top").src = locationItems[i].image;
+      } else {
+        item.querySelector(".card-img-top").src = "../resources/img/Hangover_Logo_mit_Schrift.png";
+      }
+
       item.querySelector(".location-name").textContent = locationItems[i].name;
       item.querySelector(".location-street").textContent =
         locationItems[i].street;
