@@ -38,7 +38,7 @@ class EventList extends View {
       for (let j = 0; j < locationItems.length; j++) {
         if (eventItems[i].locationid === locationItems[j].id) {
           item.querySelector(".event-location").textContent =
-            "@" + locationItems[i].name;
+            "@" + locationItems[j].name;
           break;
         }
       }
