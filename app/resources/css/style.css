@@ -1,5 +1,13 @@
+/* TODO's:
+            - Footer an Bottom fixieren
+*/
+
 *{
     font-family: 'Open Sans', sans-serif;
+}
+.footer{
+   position:absolute;
+   box-shadow: none !important;
 }
 .navbar{
     -webkit-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
@@ -27,15 +35,6 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
     color: #8093d8 !important;
     font-weight: bold;
 }
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px; /* Set the fixed height of the footer here */
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
-  }
-
 .list-group li{
     background-color:#4c60aab1;
     color: white;
@@ -53,13 +52,8 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 }
 
 .eventlist, .locationlist{
-    background: #4c60aa28 !important;
-    -webkit-box-shadow: 0px 129px 158px 63px rgba(0,0,0,0.33);
--moz-box-shadow: 0px 129px 158px 63px rgba(0,0,0,0.33);
-box-shadow: 0px 129px 158px 63px rgba(0,0,0,0.33);
-}
-
-.footer{
-  background-color: #4c60aa !important;
-  color: white;
+  background: #4c60aa28 !important;
+  -webkit-box-shadow: -4px 20px 31px 23px rgba(0,0,0,0.15);
+  -moz-box-shadow: -4px 20px 31px 23px rgba(0,0,0,0.15);
+  box-shadow: -4px 20px 31px 23px rgba(0,0,0,0.15);
 }
