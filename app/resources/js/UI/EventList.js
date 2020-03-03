@@ -27,8 +27,13 @@ class EventList extends View {
           "./resources/img/Hangover_Logo_mit_Schrift.png";
       }
       item.querySelector(".headline").textContent = eventItems[i].headline;
-      item.querySelector(".shortDescription").textContent =
-        eventItems[i].info.substring(0, 150) + "...";
+      if (eventItems[i].info.length > 150) {
+        item.querySelector(".shortDescription").textContent =
+          eventItems[i].info.substring(0, 150) + "...";
+      } else {
+        item.querySelector(".shortDescription").textContent =
+          eventItems[i].info;
+      }
 
       for (let j = 0; j < locationItems.length; j++) {
         if (eventItems[i].locationid === locationItems[j].id) {
