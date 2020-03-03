@@ -1,17 +1,5 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="resources/css/style.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <title>Hangover v1</title>
-  </head>
 
   <body>
     <!-- NAVBAR START -->
@@ -49,42 +37,63 @@
             </div>
           </nav>
     </nav>
-    <!-- NAVBAR END -->
-    
-    
-    <!-- Übergeordnete Tabelle -->
-    <div class="row">
-        <!-- COL 1-->
-        <div class="col"></div>
+  </nav>
+  <!-- NAVBAR END -->
 
-        <!-- COL 2-->
-        <div class="col-9">
-            <!-- EVENTCARD START-->
-            <div class="eventcard row no-gutters bg-light position-relative">
-            <div class="col-md-4 mb-md-0 p-md-4">
-                <img src="resources/img/party1.jpg" class="w-100" alt="PartyPeople">
-            </div>
-            <div class="col-md-8 position-static p-4 pl-md-0">
-                <h5 class="headline mt-0">90er Party @ Beats </h5>
-                <p class="shortDescription">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, 
-                vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                <!--<a href="#" class="stretched-link">..zum Event</a>-->
-                <div class="row w-50">
-                <div class=" eventteamcol col">
-                    @BeatsClub
-                </div>
-                <div class="eventdate col">
-                    14.03.2020
-                </div>
-                </div>
-            </div>
-            </div>
-            <!-- EVENTCARD START-->
-        </div>
 
-        <!-- COL 3-->
-        <div class="col"></div>
+  <!-- Übergeordnete Tabelle -->
+  <div class="row">
+    <!-- COL 1-->
+    <div class="col"></div>
+
+    <!-- COL 2-->
+    <div class="eventlist col-9">
     </div>
+
+    <!-- COL 3-->
+    <div class="col"></div>
+  </div>
+
+  <!-- EVENTCARD START-->
+  <template class="event-template">
+    <div class="eventcard row no-gutters bg-light position-relative" id="0">
+      <div class="col-md-4 mb-md-0 p-md-4">
+        <img src="resources/img/party1.jpg" class="w-100" alt="PartyPeople">
+      </div>
+      <div class="col-md-8 position-static p-4 pl-md-0">
+        <h5 class="headline mt-0">90er Party @ Beats </h5>
+        <p class="shortDescription">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+          sollicitudin. Cras purus odio,
+          vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+          Donec
+          lacinia congue felis in faucibus.</p>
+        <!--<a href="#" class="stretched-link">..zum Event</a>-->
+        <div class="row w-50">
+          <div class=" event-location col">
+            @BeatsClub
+          </div>
+          <div class="event-date col">
+            14.03.2020
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- EVENTCARD END-->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="resources/js/index.js" type="module"></script>
+</body>
 
     <footer class="footer mt-auto py-3">
       <div class="container">

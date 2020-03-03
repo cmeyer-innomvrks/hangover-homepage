@@ -1,7 +1,7 @@
 class Event {
     constructor(date, headline, image, info, isPremiumEvent, locationid, music, price, time) {
         this.date = date;
-        this, headline = headline;
+        this.headline = headline;
         this.image = image;
         this.info = info;
         this.isPremiumEvent = isPremiumEvent;
@@ -33,7 +33,7 @@ const eventConverter = {
     fromFirestore: function (snapshot, options) {
         const data = snapshot.data(options);
         return new Event(data.date, data.headline, data.ima, data.info, data.isPremiumEvent, data.locationid, data.music, data.price, data.time);
-    }
-}
+    },
+};
 
 export default (Event, eventConverter);
