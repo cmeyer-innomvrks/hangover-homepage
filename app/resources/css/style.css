@@ -1,9 +1,6 @@
 *{
     font-family: 'Open Sans', sans-serif;
 }
-.body{
-    background-color:#4c60aa28 !important;
-}
 .navbar{
     -webkit-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 -moz-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
@@ -25,17 +22,11 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 }
 .nav-link:hover {
     text-decoration: underline !important;
-    -webkit-transition: all 2s ease;
-    -moz-transition: all 2s ease;
-    -o-transition: all 2s ease;
-    -ms-transition: all 2s ease;
-    transition: all 2s ease;
 }
 .active-element{
     color: #8093d8 !important;
     font-weight: bold;
 }
-
 .footer {
     position: absolute;
     bottom: 0;
@@ -62,9 +53,10 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 }
 
 .eventlist, .locationlist{
-    -webkit-box-shadow: 0px 14px 63px 85px rgba(0,0,0,0.08);
--moz-box-shadow: 0px 14px 63px 85px rgba(0,0,0,0.08);
-box-shadow: 0px 14px 63px 85px rgba(0,0,0,0.08);
+    background: #4c60aa28 !important;
+    -webkit-box-shadow: 0px 129px 158px 63px rgba(0,0,0,0.33);
+-moz-box-shadow: 0px 129px 158px 63px rgba(0,0,0,0.33);
+box-shadow: 0px 129px 158px 63px rgba(0,0,0,0.33);
 }
 
 .footer{
