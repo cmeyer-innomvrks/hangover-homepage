@@ -1,56 +1,54 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="resources/css/style.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-  <title>Locations v1</title>
-</head>
-
-<body class="body">
-  <!-- NAVBAR START -->
-  <nav class="navbar">
-    <a class="navbar-brand" href="index.html">
-      <img src="resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="40" class="d-inline-block align-top"
-        alt="">
-      <span class="hangover-schrift">Hangover</span>
-    </a>
-    <nav class="navbar navbar-expand-lg ">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <!-- <a class="nav-link" href="#"><img src="img/event.svg" alt="" srcset="" height="40px"><span class="sr-only">(current)</span></a> -->
-            <a class="nav-link" href="#">Events<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sites/locations.html">Locations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Map</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sites/detailedEvent.html">Detail Eve</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sites/detailedLocation.html">Detail Loc</a>
-          </li>
-        </ul>
-      </div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <title>Locations v1</title>
+  </head>
+  <body class="body">
+    <!-- NAVBAR START -->
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">
+        <img src="resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="40" class="d-inline-block align-top" alt="">
+        <span class="hangover-schrift">Hangover</span>
+        </a>
+        <nav class="navbar navbar-expand-lg ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <!-- <a class="nav-link" href="#"><img src="img/event.svg" alt="" srcset="" height="40px"><span class="sr-only">(current)</span></a> -->
+                  <a class="nav-link" href="#">Events<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sites/locations.html">Locations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Map</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sites/detailedEvent.html">Detail Eve</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sites/detailedLocation.html">Detail Loc</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
     </nav>
   </nav>
   </nav>
@@ -77,9 +75,8 @@
           <div class="card h-100 my-2">
             <img src="resources/img/party1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title headline">Card title</h5>
-              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title headline"><b>Black All Night</b></h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
             <div class="card-footer">
               <small class="text-muted"><span class="event-location">@BeatsClub</span> <span class="event-time">23:00
@@ -91,9 +88,8 @@
           <div class="card h-100 my-2">
             <img src="resources/img/party2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title headline">Card title</h5>
-              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title headline"><b>80, 90 & Hits von Heute!</b></h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
             <div class="card-footer">
               <small class="text-muted"><span class="event-location">@HelgaStudentenClub</span> <span
@@ -105,9 +101,8 @@
           <div class="card h-100 my-2">
             <img src="resources/img/party3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title headline">Card title</h5>
-              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title headline"><b>Ballermann DELUXE</b></h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
             <div class="card-footer">
               <small class="text-muted"><span class="event-location">@ClubSchimmerlos</span> <span
@@ -119,9 +114,8 @@
           <div class="card h-100 my-2">
             <img src="resources/img/Hangover_Logo_mit_Schrift.png" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title headline">Card title</h5>
-              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit longer.</p>
+              <h5 class="card-title headline"><b>Shisha Time</b></h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
             <div class="card-footer">
               <small class="text-muted"><span class="event-location">@ChrisWohnzimmer</span> <span
@@ -137,13 +131,17 @@
     <div class="col"></div>
   </div>
 
-  <!-- FOOTER START -->
+  <!-- FOOTER START 
   <footer class="footer">
     <div class="container">
       <span class="footer-text text-muted">© 2020 Hangover Application</span>
     </div>
   </footer>
-  <!-- FOOTER END-->
+  FOOTER END-->
+
+  <nav class="navbar sticky-bottom navbar-light bg-light">
+    <a class="navbar-brand" href="#">© 2020 Hangover Application</a>
+  </nav>
 
   <!-- EVENTCARD START-->
   <template class="event-template">

@@ -1,3 +1,6 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
 .body{
     background-color:#4c60aa28 !important;
 }
@@ -52,8 +55,8 @@
 }
 
 .footer{
-  background-color: #4c60aab1;
+  background-color: #4c60aa;
 }
 .footer span{
-    color: white;
+    color: white !important;
 }
