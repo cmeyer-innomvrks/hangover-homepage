@@ -6,15 +6,18 @@ import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
 let eventListView;
 
 function init() {
-  eventListView = new EventList();
-  eventListView.setElement(document.querySelector(".eventlist"));
   getEvents();
 }
 
 async function getEvents() {
   let events = await EventLoader.getEvents();
   let locations = await LocationLoader.getLocations();
-  eventListView.displayEvents(events, locations);
+  events.sort(function (a, b) {
+    return a.jsDate - b.jsDate;
+  });
+  eventListView = new EventList(events);
+  eventListView.setElement(document.querySelector(".eventlist"));
+  eventListView.appendEventsToDateCards(events, locations)
 }
 
 init();

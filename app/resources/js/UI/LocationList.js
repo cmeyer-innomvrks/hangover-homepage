@@ -60,6 +60,8 @@ class LocationList extends View {
       let firstChar = locations[j].name.charAt(0);
       if (firstChar.charCodeAt(0) >= "A".charCodeAt(0) && firstChar.charCodeAt(0) <= "Z".charCodeAt(0)) {
         this.letterCards[firstChar.charCodeAt(0) - "A".charCodeAt(0)].querySelector(".location-list").appendChild(this.getLocationElement(locations[j]));
+      } else {
+        this.letterCards[this.letterCards.length - 1].appendChild(this.getLocationElement(locations[j]));
       }
     }
 
