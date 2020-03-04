@@ -273,3 +273,10 @@ body{margin:40px;}
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .btn-link{
+      color: black !important;
+  }
+  .btn-link:hover{
+      color: #4c60aa !important;;
+  }
