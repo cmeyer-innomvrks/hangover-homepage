@@ -274,6 +274,10 @@ body{
       color: #4c60aa !important;;
   }
 
+  li .event-date {
+    font-weight: bold;
+  }
+
   /* HOVER EFFEKT */
   /*********************** Demo - 2 *******************/
 .box2{position:relative}
