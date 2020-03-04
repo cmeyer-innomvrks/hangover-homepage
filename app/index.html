@@ -1,3 +1,4 @@
+<!-- https://bootsnipp.com/snippets/kMRrW -->
 <!doctype html>
 <html lang="en">
 
@@ -84,22 +85,57 @@
         <div class="card">
           <div class="card-header" id="headingOne">
             <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Art der Location
               </button>
             </h2>
           </div>
-
-          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
-              <a href="#" class="list-group-item"><input type="checkbox">  Club</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  Bar</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  Shisha-Bar</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  Irish-Pub</a>
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">ALLE
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Club
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Bar
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Shisha-Bar
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Irish-Pub
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Sports-Bar
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="card">
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
@@ -111,37 +147,62 @@
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-              <a href="#" class="list-group-item"><input type="checkbox">  Deutschrap</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  Rap</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  Hip-Hop</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  80er</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  90er</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  Clubmix</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  Black</a>
-              <a href="#" class="list-group-item"><input type="checkbox">  House</a>
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">ALLE
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Deutschrap
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Rap
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Hip-Hop
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">House
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Rock
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">R & B
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
         <div class="card">
-          <div class="card-header" id="headingThree">
+          <div class="card-header" id="headingOne">
             <h2 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                aria-expanded="false" aria-controls="collapseThree">
-                Eintrittspreis
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                Filter Zurücksetzen
               </button>
             </h2>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-              <div class="slidecontainer">
-                <p>Preis:</p>
-                <input type="range" min="0" max="20" value="20" class="slider" id="myRange">
-              </div>
-
-            </div>
-
-
-
           </div>
         </div>
       </div>
