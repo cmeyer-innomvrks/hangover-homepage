@@ -12,9 +12,11 @@ function init() {
 async function getEvents() {
   let events = await EventLoader.getEvents();
   let locations = await LocationLoader.getLocations();
+  events.sort(function (a, b) {
+    return a.jsDate - b.jsDate;
+  });
   eventListView = new EventList(events);
   eventListView.setElement(document.querySelector(".eventlist"));
-  // eventListView.displayEvents(events, locations);
   eventListView.appendEventsToDateCards(events, locations)
 }
 
