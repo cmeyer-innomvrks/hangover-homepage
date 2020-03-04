@@ -11,7 +11,9 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Events v1</title>
 </head>
 
@@ -79,23 +81,63 @@
     <div class="col col3"></div>
   </div>
 
-  <!-- FOOTER START -->
-  <nav class="navbar footer navbar-expand-lg">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">© 2020 Hangover Application</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link active-element" href="index.html">Impressum</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active-element" href="./sites/locations.html">Datenschutz</a>
-        </li>
-      </ul>
+
+  <!-- NEW FOOTER START -->
+  <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+    <div class="container">
+      <div class="row row-30">
+        <div class="col-md-4 col-xl-5">
+          <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37"
+                srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+            <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
+            <!-- Rights-->
+            <p class="rights"><span>©  </span><span
+                class="copyright-year">2020</span><span> </span><span>HANGOVER</span><span>. </span><span>All Rights
+                Reserved.</span></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5>Contacts</h5>
+          <dl class="contact-list">
+            <dt>Address:</dt>
+            <dd>Bahnhofsstraße 5, 93053 Regensburg</dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>email:</dt>
+            <dd><a href="mailto:#">hangover-regensburg@yahoo.com</a></dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>phones:</dt>
+            <dd><a href="tel:#">s.lippl</a> <span>or</span> <a href="tel:#">c.meyer</a>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-4 col-xl-3">
+          <h5>Links</h5>
+          <ul class="nav-list">
+            <li><a href="index.html">Events</a></li>
+            <li><a href="./sites/locations.html">Locations</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Impressum</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </nav>
-  <!-- NAVBAR END -->
+    <div class="row no-gutters social-container">
+      <div class="col"><a class="social-inner" href="https://www.facebook.com/"><span
+            class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+      <div class="col"><a class="social-inner" href="https://www.instagram.com/"><span
+            class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+      <div class="col"><a class="social-inner" href="https://twitter.com/home"><span
+            class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+      <div class="col"><a class="social-inner" href="https://www.google.de/"><span
+            class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+    </div>
+  </footer>
+
+
 
   <!-- EVENTCARD START-->
   <template class="event-template">
