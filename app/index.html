@@ -11,13 +11,17 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Events v1</title>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
+<!-- BODY START -->
+
 <body class="body">
+
 
   <!-- NAVBAR START -->
   <nav class="navbar navbar-expand-lg">
@@ -30,7 +34,6 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -51,13 +54,8 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
-        <!--
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-          -->
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0 float-right">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
@@ -66,29 +64,110 @@
   <!-- NAVBAR END -->
 
 
+
+
+  <!-- FILTER BUTTON START-->
+  <button type="button" class="btn btn-success btn-circle btn-lg"><i class="glyphicon glyphicon-link"></i></button>
+  <!-- FILTER BUTTON END-->
+
+
+
+
+
+
   <!-- Übergeordnete Tabelle -->
   <div class="row">
     <!-- COL 1-->
-    <div class="col col1"></div>
+    <div class="col col1">
+      <!-- FILTER BAR START-->
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Art der Location
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <a href="#" class="list-group-item"><input type="checkbox">  Club</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  Bar</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  Shisha-Bar</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  Irish-Pub</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Musikrichtung
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <a href="#" class="list-group-item"><input type="checkbox">  Deutschrap</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  Rap</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  Hip-Hop</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  80er</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  90er</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  Clubmix</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  Black</a>
+              <a href="#" class="list-group-item"><input type="checkbox">  House</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                Eintrittspreis
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="slidecontainer">
+                <p>Preis:</p>
+                <input type="range" min="0" max="20" value="20" class="slider" id="myRange">
+              </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <!-- FILTER BAR END-->
+    </div>
 
     <!-- COL 2-->
-    <div class="eventlist col-7 col2">
-      <!-- Date Registerkarte Start-->
-      <!-- Date Registerkarte End-->
-    </div>
+    <div class="eventlist col-7 col2"></div>
 
     <!-- COL 3-->
     <div class="col col3"></div>
   </div>
 
 
-  <!-- NEW FOOTER START -->
+
+
+
+
+  <!-- FOOTER START -->
   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
     <div class="container">
       <div class="row row-30">
         <div class="col-md-4 col-xl-5">
           <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
-                src="./resources/img/Hangover_Logo_mit_Schrift.png" alt="" width="140" height="37"></a>
+                src="./resources/img/Hangover_Logo_mit_Schrift.png" alt="" width="140" height="37"
+                srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
             <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
             <!-- Rights-->
             <p class="rights"><span>©  </span><span
@@ -135,6 +214,9 @@
             class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
     </div>
   </footer>
+  <!-- FOOTER END -->
+
+
 
 
 
@@ -183,5 +265,6 @@
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
 </body>
+<!-- BODY END -->
 
 </html>
