@@ -1,64 +1,69 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../resources/css/style.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <title>Locations v1</title>
-  </head>
 
-  <body class="body">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../resources/css/style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <title>Locations v1</title>
+</head>
 
-    <!-- NAVBAR START -->
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="../index.html">
-        <img src="../resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        HANGOVER
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<body class="body">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="../index.html">Events</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active-element" href="locations.html">Locations<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <!--
+  <!-- NAVBAR START -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="../index.html">
+      <img src="../resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="30" class="d-inline-block align-top"
+        alt="">
+      HANGOVER
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../index.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active-element" href="locations.html">Locations<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <!--
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
           -->
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-    <!-- NAVBAR END -->
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
 
 
   <!-- Übergeordnete Tabelle -->
@@ -69,34 +74,30 @@
     <!-- COL 2-->
     <div class="locationlist col-7">
       <!-- Date Registerkarte Start-->
-      <ul class="list-group">
-        <li class="list-group-item my-2"><span class="week-day"><b>A</b></span></li>
-      </ul>
       <!-- Date Registerkarte End-->
-      <div class="location-list row row-cols-1 row-cols-md-3"></div>
     </div>
 
     <!-- COL 3-->
     <div class="col"></div>
   </div>
 
-<!-- FOOTER START -->
-<nav class="navbar footer navbar-expand-lg">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">© 2020 Hangover Application</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link active-element" href="index.html">Impressum</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active-element" href="./sites/locations.html">Datenschutz</a>
-      </li>        
-    </ul>
-  </div>
-</nav>
-<!-- NAVBAR END -->
+  <!-- FOOTER START -->
+  <nav class="navbar footer navbar-expand-lg">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">© 2020 Hangover Application</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link active-element" href="index.html">Impressum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active-element" href="./sites/locations.html">Datenschutz</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- NAVBAR END -->
 
   <!-- EVENTCARD START-->
   <template class="location-template">
@@ -105,7 +106,8 @@
         <img src="resources/img/party1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title location-name"><b>Helga</b></h5>
-          <p class="card-text location-adress"><span class="location-street">Domplatz</span><span class="location-housenumber">3</span>, 
+          <p class="card-text location-adress"><span class="location-street">Domplatz</span><span
+              class="location-housenumber">3</span>,
             <span class="location-zip">93047</span> <span class="location-city">Regensburg</span></p>
         </div>
         <div class="card-footer">
@@ -116,15 +118,25 @@
   </template>
   <!-- EVENTCARD END-->
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="../resources/js/locations.js" type="module"></script>
+  <template class="letter-card">
+    <ul class="letter-list list-group">
+      <li class="list-group-item my-2"><span class="letter week-day"><b>A</b></span></li>
+    </ul>
+    <div class="location-list row row-cols-1 row-cols-md-3"></div>
+  </template>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="../resources/js/locations.js" type="module"></script>
 </body>
 
 </html>
