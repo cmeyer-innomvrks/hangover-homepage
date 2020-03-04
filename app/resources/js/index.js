@@ -7,7 +7,7 @@ let eventListView;
 
 function init() {
   eventListView = new EventList();
-  eventListView.setElement(document.querySelector(".event-list"));
+  eventListView.setElement(document.querySelector(".eventlist"));
   getEvents();
 }
 
