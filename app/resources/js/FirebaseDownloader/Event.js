@@ -23,10 +23,12 @@ class Event {
   }
 
   addDate() {
-
-    this.jsDate = moment(this.date, "DD.MM.YYYY");
-    console.log(this.jsDate);
-
+    let day = parseInt(this.date.substring(0, 2)),
+      month = parseInt(this.date.substring(3, 5)),
+      year = parseInt(this.date.substring(6)),
+      hours = parseInt(this.time.substring(0, 2)),
+      minutes = parseInt(this.time.substring(3));
+    this.jsDate = new Date(year, month, day, hours, minutes, 0, 0);
   }
 
   toString() {
