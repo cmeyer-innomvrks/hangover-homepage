@@ -109,10 +109,11 @@ class EventList extends View {
     }
 
     for (let i = 0; i < events.length; i++) {
-      let date = events[i].jsDate;
+      let date = events[i].jsDate,
+        index = -1;
       date.setHours(0);
       date.setMinutes(0);
-      let index = this.dates.map(Number).indexOf(+date);;
+      index = this.dates.map(Number).indexOf(+date);
       if (index !== -1) {
         this.dateCards[index].querySelector(".event-list").appendChild(this.getEventElement(events[i], locations));
       }
