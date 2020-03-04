@@ -5,6 +5,12 @@ import View from "./View.js";
 class LocationList extends View {
   constructor() {
     super();
+    this.letterCards = new Array(26);
+    for (let i = 0; i < this.letterCards.length; i++) {
+      this.letterCards[i] = this.getLetterCard(String.fromCharCode(i + 65));
+    }
+    this.letterCards.push(this.getLetterCard("#"));
+
   }
 
   setElement(element) {
@@ -15,33 +21,56 @@ class LocationList extends View {
     console.log("Klick!");
   }
 
-  displayLocations(locationItems) {
-    console.log(locationItems);
+  getLocationElement(location) {
+    let template = document.querySelector(".location-template").innerHTML.trim(),
+      item = document.createElement("div");
+    item.innerHTML = template;
+    if (location.image !== "") {
+      item.querySelector(".card-img-top").src = location.image;
+    } else {
+      item.querySelector(".card-img-top").src = "../resources/img/Hangover_Logo_mit_Schrift.png";
+    }
+    item.querySelector(".location-name").textContent = location.name;
+    item.querySelector(".location-street").textContent = location.street;
+    item.querySelector(".location-housenumber").textContent = location.housenumber;
+    item.querySelector(".location-zip").textContent = location.zip;
+    item.querySelector(".location-city").textContent = location.city;
+    item.querySelector(".location-art").textContent = location.art;
+    item = item.firstElementChild;
+    item.addEventListener("click", this.onClick.bind(this));
+    return item;
+  }
 
-    for (let i = 0; i < locationItems.length; i++) {
-      let template = document
-        .querySelector(".location-template")
-        .innerHTML.trim(),
-        item = document.createElement("div");
-      item.innerHTML = template;
-      if (locationItems[i].image !== "") {
-        item.querySelector(".card-img-top").src = locationItems[i].image;
-      } else {
-        item.querySelector(".card-img-top").src = "../resources/img/Hangover_Logo_mit_Schrift.png";
+  getLetterCard(letter) {
+    let template = document.querySelector(".letter-card").innerHTML.trim(),
+      item = document.createElement("div");
+    item.innerHTML = template;
+    item.querySelector(".letter").textContent = letter;
+    item = item.innerHTML.trim();
+    return item;
+  }
+
+  appendLocationsToLetterCards(locations) {
+    for (let i = 0; i < this.letterCards.length; i++) {
+      let element = new DOMParser().parseFromString(this.letterCards[i], "text/html");
+      this.letterCards[i] = element.body;
+    }
+
+    for (let j = 0; j < locations.length; j++) {
+      let firstChar = locations[j].name.charAt(0);
+      if (firstChar.charCodeAt(0) >= "A".charCodeAt(0) && firstChar.charCodeAt(0) <= "Z".charCodeAt(0)) {
+        this.letterCards[firstChar.charCodeAt(0) - "A".charCodeAt(0)].querySelector(".location-list").appendChild(this.getLocationElement(locations[j]));
       }
+    }
 
-      item.querySelector(".location-name").textContent = locationItems[i].name;
-      item.querySelector(".location-street").textContent =
-        locationItems[i].street;
-      item.querySelector(".location-housenumber").textContent =
-        locationItems[i].housenumber;
-      item.querySelector(".location-zip").textContent = locationItems[i].zip;
-      item.querySelector(".location-city").textContent = locationItems[i].city;
-      item.querySelector(".location-art").textContent =
-        "@" + locationItems[i].art;
-      item = item.firstElementChild;
-      item.addEventListener("click", this.onClick.bind(this));
-      this.element.appendChild(item);
+    for (let i = 0; i < this.letterCards.length; i++) {
+      let firstChild = this.letterCards[i].firstElementChild,
+        secondChild = firstChild.nextElementSibling;
+
+      if (secondChild.innerHTML !== "") {
+        this.element.appendChild(firstChild);
+        this.element.appendChild(secondChild);
+      }
     }
   }
 }
