@@ -43,6 +43,10 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
     background-color:#4c60aab1;
     color: black;
 }
+.list-group-item-datecard{
+  background-color:#4c60aab1;
+  color: white !important;
+}
 .card:hover{
  cursor: pointer;
  background-color: rgb(240, 240, 240) !important;
