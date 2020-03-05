@@ -132,7 +132,7 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 .nav-list li a:before {
     content: "\f14f";
     font: 400 21px/1 "Material Design Icons";
-    color: #4d6de6;
+    color: black !;
     display: inline-block;
     vertical-align: baseline;
     margin-left: -28px;
@@ -182,7 +182,7 @@ body{
   border-radius: 35px;
 }
 
-  /* CHECKBOX */
+  /* CHECKBOX */ /* FILTER V3 https://codepen.io/ahmadbassamemran/pen/zXwZKo */
 .card-header{
   background: #4c60aa !important;
 }
