@@ -18,7 +18,7 @@ class Event {
     this.isPremiumEvent = isPremiumEvent;
     this.locationid = locationid;
     this.music = music;
-    this.price = price;
+    this.price = parseFloat(price);
     this.time = time;
     this.addDate();
   }
