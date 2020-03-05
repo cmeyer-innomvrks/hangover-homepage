@@ -20,14 +20,13 @@
 </head>
 
 <!-- BODY START -->
-
 <body class="body">
 
-
+<!-- NEW NAV END -->
   <!-- NAVBAR START -->
   <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand" href="index.html">
-      <img src="./resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="30" class="d-inline-block align-top"
+      <img src="./resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="30" class="d-inline-block align-top brand-logo"
         alt="">
       HANGOVER
     </a>
@@ -57,24 +56,20 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0 float-right">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2 search-box" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
       </form>
     </div>
   </nav>
   <!-- NAVBAR END -->
-
-
-
+  
+  <!-- Ad START -->
+  <img src="resources/img/party2.jpg" class="img-fluid" alt="Responsive image">
+  <!-- Ad END -->
 
   <!-- FILTER BUTTON START-->
-  <button type="button" class="btn btn-success btn-circle btn-lg"><i class="glyphicon glyphicon-link"></i></button>
+  <button type="button" class="filter-btn btn btn-success btn-circle btn-lg"><i class="glyphicon glyphicon-link"></i></button>
   <!-- FILTER BUTTON END-->
-
-
-
-
-
 
   <!-- Übergeordnete Tabelle -->
   <div class="row">
@@ -92,8 +87,8 @@
             </h2>
           </div>
           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-              <div class="card">
+            <div class="card-body filter-body">
+              <div class="card filter-card">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">ALLE
                     <label class="switch ">
@@ -136,7 +131,6 @@
             </div>
           </div>
         </div>
-
         <div class="card">
           <div class="card-header" id="headingTwo">
             <h2 class="mb-0">
@@ -147,8 +141,8 @@
             </h2>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-              <div class="card">
+            <div class="card-body filter-body">
+              <div class="card filter-card">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">ALLE
                     <label class="switch ">
@@ -207,8 +201,8 @@
             </h2>
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-              <div class="card">
+            <div class="card-body filter-body">
+              <div class="card filter-card">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
                     <div class="d-flex justify-content-center my-4">
@@ -227,18 +221,11 @@
       </div>
       <!-- FILTER BAR END-->
     </div>
-
     <!-- COL 2 - MainCol Events -->
     <div class="eventlist col-7 col2"></div>
-
     <!-- COL 3-->
     <div class="col col3"></div>
   </div>
-
-
-
-
-
 
   <!-- FOOTER START -->
   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
@@ -295,10 +282,7 @@
   </footer>
   <!-- FOOTER END -->
 
-
-
-
-
+<!-- TAMPLATES START -->
   <!-- EVENTCARD START-->
   <template class="event-template">
     <div class="col mb-4">
@@ -318,13 +302,16 @@
   </template>
   <!-- EVENTCARD END-->
 
+   <!-- DATE CARD START -->
   <template class="date-card">
     <ul class="list-group my-1">
-      <li class="list-group-item my-2"><span class="week-day">Dienstag</span> | <span
+      <li class="list-group-item-datecard list-group-item my-2"><span class="week-day">Dienstag</span> | <span
           class="event-date"><b>02.03.2020</b></span></li>
     </ul>
     <div class="event-list row row-cols-1 row-cols-md-3"></div>
   </template>
+  <!-- DATE CARD END -->
+  <!-- TAMPLATES END -->
 
   <template class="event-filter">
     <!-- FILTER BAR START-->
