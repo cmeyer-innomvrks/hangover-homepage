@@ -9,41 +9,7 @@
    position:absolute;
    box-shadow: none !important;
 }
-.navbar{
-    -webkit-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
--moz-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
-}
-.navbar-brand{
-    color: white;
-    margin: 0px !important;
-    padding: 0px !important;
-}
-.navbar-brand:hover{
-    color: white;
-}
-.nav-link{
-    color: white !important;
-    background-color:#4c60aa !important;
-}
-.navbar-expand-lg{
-    color: white !important;
-    background-color:#4c60aa !important;
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-    margin: 0px !important;
-}
-.nav-link:hover {
-    text-decoration: underline !important;
-}
-.brand-logo{
-  margin-left: 2rem !important;
-}
-.search-box, .search-btn{
-  margin: 0px !important;
-  margin-right: 2rem !important;
-  padding: 15px 5px !important;
-}
+
 .active-element{
     color: #8093d8 !important;
     font-weight: bold;
