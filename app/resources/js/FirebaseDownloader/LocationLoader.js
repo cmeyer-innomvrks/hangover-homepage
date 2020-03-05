@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 import locationConverter from "./Location.js";
 import { Event, Observable } from "../utils/Observable.js";
 import database from "./Database.js";

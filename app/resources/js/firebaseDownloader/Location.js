@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 class Location {
   constructor(
     id,

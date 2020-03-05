@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 import eventConverter from "./Event.js";
 import { Event, Observable } from "../utils/Observable.js";
 import database from "./Database.js";

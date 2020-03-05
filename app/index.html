@@ -326,6 +326,99 @@
     <div class="event-list row row-cols-1 row-cols-md-3"></div>
   </template>
 
+  <template class="event-filter">
+    <!-- FILTER BAR START-->
+    <div class="accordion" id="accordionExample">
+
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
+              Art der Location
+            </button>
+          </h2>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <div class="card">
+              <ul class="art-list list-group list-group-flush">
+                <li class="list-group-item">ALLE
+                  <label class="switch ">
+                    <input type="checkbox" class="default" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              Musikrichtung
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <div class="card">
+              <ul class="music-list list-group list-group-flush">
+                <li class="list-group-item">ALLE
+                  <label class="switch ">
+                    <input type="checkbox" class="default" checked>
+                    <span class="slider round"></span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              Eintrittspreis
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="d-flex justify-content-center my-4">
+                    <span class="font-weight-bold blue-text mr-2 mt-1">0 €</span>
+                    <form class="range-field w-50">
+                      <input class="price border-0" type="range" min="0" max="25" />
+                    </form>
+                    <span class="font-weight-bold blue-text ml-2 mt-1">25 €</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template class="slider-template">
+    <li class="list-group-item">ALLE
+      <label class="switch ">
+        <input type="checkbox" class="default" checked>
+        <span class="slider round"></span>
+      </label>
+    </li>
+  </template>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

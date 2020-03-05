@@ -1,3 +1,4 @@
+/* eslint-env browser */
 const firebaseConfig = {
     apiKey: "AIzaSyBTkMmhZ7Z4luQB8cQQlrVFtYzDwqO0fcs",
     authDomain: "hangover-243509.firebaseapp.com",
