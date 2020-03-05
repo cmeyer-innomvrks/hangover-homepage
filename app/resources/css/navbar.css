@@ -309,14 +309,14 @@ Primary style
     transition: background 0.2s;
   }
   .no-touch .cd-primary-nav a:hover {
-    background-color: #e36767;
+    background-color: #06446e;
   }
   .cd-primary-nav .cd-label {
     color: #06446e;
+    font-weight: bold;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 14px;
-    font-size: 0.875rem;
+   font-size: 3rem !important;
     margin: 2.4em 0 .8em;
   }
   .cd-primary-nav .cd-social {
@@ -327,7 +327,7 @@ Primary style
     width: 44px;
     height: 44px;
     padding: 0;
-    background-image: url("./resources/img/AdobeStock_215056682.jpeg");
+    background-image: url("./resources/img/.cd-socials.svg");
     background-repeat: no-repeat;
     /* image replacement */
     overflow: hidden;
