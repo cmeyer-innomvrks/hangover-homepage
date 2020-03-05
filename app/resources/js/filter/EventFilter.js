@@ -27,12 +27,18 @@ class EventFilter {
                 locationsIDs.push(this.events[i].locationid);
             }
         }
+
         for (let i = 0; i < locationsIDs.length; i++) {
-            let index = this.locations.indexOf(locationsIDs[i]);
-            if (locationTypes.indexOf(this.locations[index].art) === -1) {
-                locationTypes.push(this.locations[index].art);
+            for (let j = 0; j < this.locations.length; j++) {
+                if (locationsIDs[i] === this.locations[j].id) {
+                    if (locationTypes.indexOf(this.locations[j].art) === -1) {
+                        locationTypes.push(this.locations[j].art);
+                    }
+                    break;
+                }
             }
         }
+
         return locationTypes;
     }
 
@@ -46,11 +52,11 @@ class EventFilter {
         return max;
     }
 
-    getFilteredEventsByMusic(listOfGenres) {
+    getFilteredEventsByMusic(listOfActiveGenres) {
         //TODO
     }
 
-    getFilteredEventsByArt(listOfArts) {
+    getFilteredEventsByArt(listOfActiveArts) {
         //TODO
     }
 

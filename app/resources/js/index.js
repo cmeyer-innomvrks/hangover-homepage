@@ -4,6 +4,7 @@ import EventList from "./UI/EventList.js";
 import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
 import EventFilterBtn from "./UI/EventFilterBtn.js";
 import EventFilter from "./filter/EventFilter.js";
+import FilterView from "./UI/FilterView.js";
 
 let eventListView,
   eventFilter,
@@ -14,6 +15,8 @@ function init() {
   getEvents();
   EventFilterBtn.setElement(document.querySelector(".filter-btn"));
   EventFilterBtn.addEventListener("displayFilters", onFilterRequested);
+  EventFilterBtn.addEventListener("hideFilters", hideFilters);
+  FilterView.setElement(document.querySelector(".col1"));
 }
 
 async function getEvents() {
@@ -29,9 +32,11 @@ async function getEvents() {
 
 function onFilterRequested() {
   eventFilter = new EventFilter(events, locations);
-  console.log(eventFilter.getListOfAvailableMusicGenres);
-  console.log(eventFilter.getListOfAvailableLocationsTypes);
-  console.log(eventFilter.getMaxPriceOfAllEvents);
+  FilterView.setupFilterView(eventFilter.getListOfAvailableMusicGenres(), eventFilter.getListOfAvailableLocationsTypes(), eventFilter.getMaxPriceOfAllEvents());
+}
+
+function hideFilters() {
+  FilterView.hideFilters();
 }
 
 init();
