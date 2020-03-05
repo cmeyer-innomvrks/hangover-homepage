@@ -12,7 +12,7 @@ let eventListView,
 
 function init() {
   getEvents();
-  EventFilterBtn.setElement(document.querySelector(".btn-success"));
+  EventFilterBtn.setElement(document.querySelector(".filter-btn"));
   EventFilterBtn.addEventListener("displayFilters", onFilterRequested);
 }
 

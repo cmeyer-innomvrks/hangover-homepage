@@ -15,9 +15,9 @@ class EventFilterBtn extends View {
     }
 
     onClick() {
-        console.log("Klick");
         if (!this.filterDisplayed) {
-            let filterRequestedEvent = new Event("displayFilters");
+            console.log("Klick");
+            let filterRequestedEvent = new Event("displayFilters", {});
             this.notifyAll(filterRequestedEvent);
             this.filterDisplayed = true;
         } else {
