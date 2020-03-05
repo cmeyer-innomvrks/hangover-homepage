@@ -31,9 +31,18 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
     background-color:#4c60aa !important;
     border-top-left-radius: 0px !important;
     border-top-right-radius: 0px !important;
+    margin: 0px !important;
 }
 .nav-link:hover {
     text-decoration: underline !important;
+}
+.brand-logo{
+  margin-left: 2rem !important;
+}
+.search-box, .search-btn{
+  margin: 0px !important;
+  margin-right: 2rem !important;
+  padding: 15px 5px !important;
 }
 .active-element{
     color: #8093d8 !important;
@@ -77,6 +86,13 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 .breadcrumb{
     background: #21252900 !important;
     margin-top: 1rem;
+}
+/* Ad */
+.carousel{
+  margin-top: 0px !important;
+}
+.ad-banner{
+  height: 20rem !important;
 }
 
 /* NEW FOOTER */
@@ -127,10 +143,15 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 }
 
 /* FILTER BUTTON */
-.btn-success{
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
+.filter-btn{
+  padding: 0px !important;
+  margin: 0px !important;
+  position: fixed !important;
+  bottom: 1.5rem !important;
+  right: 1.5rem !important;
+}
+.filter-btn:hover{
+  cursor: pointer !important;
 }
 body{
     margin:40px;
