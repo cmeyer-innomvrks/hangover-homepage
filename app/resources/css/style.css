@@ -9,41 +9,7 @@
    position:absolute;
    box-shadow: none !important;
 }
-.navbar{
-    -webkit-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
--moz-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
-box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
-}
-.navbar-brand{
-    color: white;
-    margin: 0px !important;
-    padding: 0px !important;
-}
-.navbar-brand:hover{
-    color: white;
-}
-.nav-link{
-    color: white !important;
-    background-color:#4c60aa !important;
-}
-.navbar-expand-lg{
-    color: white !important;
-    background-color:#4c60aa !important;
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-    margin: 0px !important;
-}
-.nav-link:hover {
-    text-decoration: underline !important;
-}
-.brand-logo{
-  margin-left: 2rem !important;
-}
-.search-box, .search-btn{
-  margin: 0px !important;
-  margin-right: 2rem !important;
-  padding: 15px 5px !important;
-}
+
 .active-element{
     color: #8093d8 !important;
     font-weight: bold;
@@ -53,7 +19,7 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
     color: black;
 }
 .list-group-item-datecard{
-  background-color:#4c60aab1;
+  background:rgba(2, 23, 37, 0.96) !important;
   color: white !important;
 }
 .card:hover{
@@ -100,7 +66,7 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
     color: rgba(255, 255, 255, 0.8);
 }
 .footer-classic{
-    background-color:#4c60aa !important;
+    background-color:rgba(2, 23, 37, 0.96) !important;
     margin-top: 3rem;
     padding-top: 2rem;
 }
@@ -132,7 +98,7 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
 .nav-list li a:before {
     content: "\f14f";
     font: 400 21px/1 "Material Design Icons";
-    color: #4d6de6;
+    color: black !;
     display: inline-block;
     vertical-align: baseline;
     margin-left: -28px;
@@ -149,6 +115,7 @@ box-shadow: -3px 2px 21px -1px rgba(0,0,0,0.88);
   position: fixed !important;
   bottom: 1.5rem !important;
   right: 1.5rem !important;
+  background: rgba(2, 23, 37, 0.96) !important;
 }
 .filter-btn:hover{
   cursor: pointer !important;
@@ -182,9 +149,9 @@ body{
   border-radius: 35px;
 }
 
-  /* CHECKBOX */
+  /* CHECKBOX */ /* FILTER V3 https://codepen.io/ahmadbassamemran/pen/zXwZKo */
 .card-header{
-  background: #4c60aa !important;
+  background: rgba(2, 23, 37, 0.96) !important;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -258,11 +225,12 @@ body{
       color: white !important;
   }
   .filter-body{
-    background: #4c60aa !important;
+    background: rgba(2, 23, 37, 0.96) !important;
     padding: 0px !important;
   }
   .filter-card{
     margin: 0px !important;
+    background: white !important;
   }
   .mb-0{
     padding: 0.5rem !important;

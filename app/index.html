@@ -7,16 +7,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/navbar.css">
+  <link rel="stylesheet" href="resources/css/reset.css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Events v1</title>
+  <title>HANGOVER</title>
 
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="resources/js/modernizr.js"></script> <!-- Modernizr -->
+  <script src="./resources/js/jquery-2.1.1.js"></script>
+<script src="resources/js/index.js" type="module"></script> <!-- Resource jQuery -->
 </head>
 
 <!-- BODY START -->
@@ -25,48 +31,46 @@
 
   <!-- NEW NAV END -->
   <!-- NAVBAR START -->
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="index.html">
-      <img src="./resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="30"
-        class="d-inline-block align-top brand-logo" alt="">
-      HANGOVER
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link active-element" href="index.html">Events<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./sites/locations.html">Locations</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="./sites/detailedEvent.html">detailedEvent</a>
-            <a class="test dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0 float-right">
-        <input class="form-control mr-sm-2 search-box" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <!-- NAVBAR END -->
+  <header class="cd-header">
+		<div class="cd-logo"><a href="#0"><img src="./resources/img/Hangover_Logo_ohne_Schrift.png" width="50px" alt="Logo"></a></div>
 
-  <!-- Ad START -->
-  <img src="resources/img/party2.jpg" class="img-fluid" alt="Responsive image">
-  <!-- Ad END -->
+		<nav>
+			<ul class="cd-secondary-nav">
+				<li><a href="#0">Log In</a></li>
+				<li><a href="#0">Register</a></li>
+			</ul>
+		</nav> <!-- cd-nav -->
+
+		<a class="cd-primary-nav-trigger" href="#0">
+			<span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+		</a> <!-- cd-primary-nav-trigger -->
+	</header>
+
+	<nav>
+		<ul class="cd-primary-nav">
+			<li class="cd-label">Find</li>
+      <li><a href="index.html">Events</a></li>
+			<li><a href="./sites/locations.html">Locations</a></li>
+			<li><a href="#0">Our projects</a></li>
+
+			<li class="cd-label">Work with us</li>
+			<li><a href="#0">Start a project</a></li>
+			<li><a href="#0">Join In</a></li>
+			<li><a href="#0">Create an account</a></li>
+
+			<li class="cd-label">Follow us</li>
+
+			<li class="cd-social cd-facebook"><a href="https://www.facebook.com">Facebook</a></li>
+			<li class="cd-social cd-instagram"><a href="#0">Instagram</a></li>
+			<li class="cd-social cd-dribbble"><a href="#0">Dribbble</a></li>
+			<li class="cd-social cd-twitter"><a href="#0">Twitter</a></li>
+		</ul>
+	</nav>
+
+	<section class="cd-intro">
+		<h1><a href="#0"><img src="./resources/img/Hangover_Logo_mit_Schrift.png" width="1000px" alt="Logo"></a></h1>
+	</section>
+  <!-- NAVBAR END -->
 
   <!-- Übergeordnete Tabelle -->
   <div class="row">
