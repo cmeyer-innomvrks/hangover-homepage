@@ -61,7 +61,7 @@ class EventFilter {
     }
 
     getFilteredEventsByPrice(maxPrice) {
-        //TODO
+        //TODO :)
     }
 }
 
