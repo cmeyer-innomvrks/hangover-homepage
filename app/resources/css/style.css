@@ -19,7 +19,7 @@
     color: black;
 }
 .list-group-item-datecard{
-  background-color:#4c60aab1;
+  background:rgba(2, 23, 37, 0.96) !important;
   color: white !important;
 }
 .card:hover{
@@ -66,7 +66,7 @@
     color: rgba(255, 255, 255, 0.8);
 }
 .footer-classic{
-    background-color:#4c60aa !important;
+    background-color:rgba(2, 23, 37, 0.96) !important;
     margin-top: 3rem;
     padding-top: 2rem;
 }
@@ -115,6 +115,7 @@
   position: fixed !important;
   bottom: 1.5rem !important;
   right: 1.5rem !important;
+  background: rgba(2, 23, 37, 0.96) !important;
 }
 .filter-btn:hover{
   cursor: pointer !important;
@@ -150,7 +151,7 @@ body{
 
   /* CHECKBOX */ /* FILTER V3 https://codepen.io/ahmadbassamemran/pen/zXwZKo */
 .card-header{
-  background: #4c60aa !important;
+  background: rgba(2, 23, 37, 0.96) !important;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -224,11 +225,12 @@ body{
       color: white !important;
   }
   .filter-body{
-    background: #4c60aa !important;
+    background: rgba(2, 23, 37, 0.96) !important;
     padding: 0px !important;
   }
   .filter-card{
     margin: 0px !important;
+    background: white !important;
   }
   .mb-0{
     padding: 0.5rem !important;
