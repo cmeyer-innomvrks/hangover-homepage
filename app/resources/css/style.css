@@ -237,7 +237,7 @@ body{
       margin: 0px !important;
   }
   .btn-link:hover{
-      color: black !important;;
+      margin-left: 1.5rem;
   }
   li .event-date {
     font-weight: bold;
