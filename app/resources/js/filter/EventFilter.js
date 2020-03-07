@@ -52,16 +52,45 @@ class EventFilter {
         return max;
     }
 
-    getFilteredEventsByMusic(listOfActiveGenres) {
-        //TODO
+    getFilteredEventsByMusic(listOfActiveGenres, events) {
+        let result = [];
+        for (let i = 0; i < events.length; i++) {
+            let music = events[i].music.split(", ");
+            for (let j = 0; j < music.length; j++) {
+                if (listOfActiveGenres.indexOf(music[j]) !== -1) {
+                    result.push(events[i]);
+                    break;
+                }
+            }
+        }
+        return result;
     }
 
-    getFilteredEventsByArt(listOfActiveArts) {
-        //TODO
+    getFilteredEventsByArt(listOfActiveArts, events) {
+        let result = [];
+        for (let i = 0; i < listOfActiveArts.length; i++) {
+            for (let j = 0; j < events.length; j++) {
+                for (let k = 0; k < this.locations.length; k++) {
+                    if (events[j].locationid === this.locations[k].id) {
+                        if (this.locations[k].art === listOfActiveArts[i]) {
+                            result.push(events[j]);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        return result;
     }
 
-    getFilteredEventsByPrice(maxPrice) {
-        //TODO :)
+    getFilteredEventsByPrice(maxPrice, events) {
+        let result = [];
+        for (let i = 0; i < events.length; i++) {
+            if (events[i].price <= maxPrice) {
+                result.push(events[i]);
+            }
+        }
+        return result;
     }
 }
 
