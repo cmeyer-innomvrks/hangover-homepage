@@ -42,8 +42,17 @@
   font-weight: bold;
   font-size: 120%;
 }
-.col3, .detailed-event, .detailed-event-img, .detailed-event-card-header, .detailed-event-card-body{
+.col3, .detailed-event, .detailed-event-img, .detailed-event-card-header, .detailed-event-card-body, .card-body{
     cursor: default !important;
+}
+..detailed-event-img:hover{
+  background: rgba(2, 23, 37, 0.96) !important;
+}
+.detailed-event-card-footer{
+  color: rgba(2, 23, 37, 0.96) !important;
+}
+.detailed-event-card-footer:hover {
+  text-decoration: underline !important;
 }
 .card{
     margin-top: 1rem;
@@ -52,6 +61,9 @@
 .breadcrumb{
     background: #21252900 !important;
     margin-top: 1rem;
+}
+.breadcrumb a{
+  color: black !important;
 }
 /* Ad */
 .carousel{
