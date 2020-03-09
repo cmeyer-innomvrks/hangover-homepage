@@ -26,7 +26,6 @@
 </head>
 
 <!-- BODY START -->
-
 <body class="body">
 
   <!-- NAVBAR START -->
@@ -68,7 +67,10 @@
     <!-- COL 1 - Aside FilterBar -->
     <div class="col col1"></div>
     <!-- COL 2 - MainCol Events -->
-    <div class="eventlist col-10 col2"></div>
+    <div class="col-10 col2">
+      <div class="col-filter"></div>
+      <div class="eventlist"></div>
+    </div>
     <!-- COL 3-->
     <div class="col col3">
       <!-- FILTER BUTTON START-->
@@ -219,7 +221,7 @@
                   <div class="d-flex justify-content-center my-4">
                     <span class="font-weight-bold blue-text mr-2 mt-1">0 €</span>
                     <form class="range-field w-50">
-                      <input class="price border-0" type="range" min="0" max="25" />
+                      <input class="price border-0" step="5" type="range" min="0" max="25" />
                     </form>
                     <span class="price-max font-weight-bold blue-text ml-2 mt-1">25 €</span>
                   </div>

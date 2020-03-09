@@ -122,6 +122,7 @@ class FilterView extends View {
         }
 
         selectedMaxPrice = this.element.querySelector(".price").value;
+        this.element.querySelector(".price-max").textContent = selectedMaxPrice + " €";
 
         let onFilterChangedEvent = new Event("onFilterChanged", { selectedTypes: checkedTypes, selectedGenres: checkedGenres, selectedPrice: selectedMaxPrice });
         this.notifyAll(onFilterChangedEvent);

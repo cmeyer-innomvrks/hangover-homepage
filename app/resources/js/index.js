@@ -16,7 +16,7 @@ function init() {
 	EventFilterBtn.setElement(document.querySelector(".filter-btn"));
 	EventFilterBtn.addEventListener("displayFilters", onFilterRequested);
 	EventFilterBtn.addEventListener("hideFilters", hideFilters);
-	FilterView.setElement(document.querySelector(".col1"));
+	FilterView.setElement(document.querySelector(".col-filter"));
 	FilterView.addEventListener("onFilterChanged", onFilterChanged);
 }
 

@@ -43,7 +43,6 @@ class LocationFilterView extends View {
             listItem.querySelector(".slider").addEventListener("change", this.onSliderClicked.bind(this));
             item.querySelector(".art-list").appendChild(listItem);
         }
-        console.log(this);
         this.element.appendChild(item.firstElementChild);
         this.onSliderClicked();
     }
@@ -70,6 +69,8 @@ class LocationFilterView extends View {
         if (typeFlag) {
             types[0].checked = true;
         }
+
+
 
         let onFilterChangedEvent = new Event("onFilterChanged", { selectedTypes: checkedTypes });
         this.notifyAll(onFilterChangedEvent);

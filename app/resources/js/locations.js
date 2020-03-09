@@ -14,7 +14,7 @@ function init() {
   LocationFilterBtn.setElement(document.querySelector(".filter-btn"));
   LocationFilterBtn.addEventListener("displayFilters", onFilterRequested);
   LocationFilterBtn.addEventListener("hideFilters", hideFilters);
-  LocationFilterView.setElement(document.querySelector(".col"));
+  LocationFilterView.setElement(document.querySelector(".col-filter"));
   LocationFilterView.addEventListener("onFilterChanged", onFilterChanged);
 }
 
