@@ -8,6 +8,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="../resources/css/style.css">
+  <link rel="stylesheet" href="../resources/css/navbar.css">
+  <link rel="stylesheet" href="../resources/css/reset.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -17,61 +19,117 @@
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
   <title>Locations v1</title>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="resources/js/modernizr.js"></script> <!-- Modernizr -->
+  <script src="./resources/js/jquery-2.1.1.js"></script>
+  <script src="../resources/js/index.js" type="module"></script> <!-- Resource jQuery -->
 </head>
 
 <body class="body">
 
-  <!-- NAVBAR START -->
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="../index.html">
-      <img src="../resources/img/Hangover_Logo_ohne_Schrift.png" width="30" height="30" class="d-inline-block align-top"
-        alt="">
-      HANGOVER
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="../index.html">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active-element" href="locations.html">Locations<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <!--
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-          -->
+    <!-- NAVBAR START -->
+    <header class="cd-header">
+      <div class="cd-logo"><a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+            alt="Logo"></a></div>
+  
+      <nav>
+        <ul class="cd-secondary-nav">
+          <li><a href="#0">Log In</a></li>
+          <li><a href="#0">Register</a></li>
+        </ul>
+      </nav> <!-- cd-nav -->
+  
+      <a class="cd-primary-nav-trigger" href="#0">
+        <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+      </a> <!-- cd-primary-nav-trigger -->
+    </header>
+  
+    <nav>
+      <ul class="cd-primary-nav">
+        <li class="cd-label">Find</li>
+        <li><a href="../index.html">Events</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="./sites/detailedEvent.html">Our projects</a></li>
+  
+        <li class="cd-label">Work with us</li>
+        <li><a href="#0">Start a project</a></li>
+        <li><a href="#0">Join In</a></li>
+        <li><a href="#0">Create an account</a></li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <!-- NAVBAR END -->
+    </nav>
+  
+    <section class="cd-intro">
+      <h1>PARTY THE WHOLE NIGHT!</h1>
+    </section>
+    <!-- NAVBAR END -->
 
 
   <!-- Übergeordnete Tabelle -->
   <div class="row">
-    <!-- COL 1-->
-    <div class="col"></div>
+    <!-- COL 1 - Aside FilterBar-->
+    <div class="col">
+      <!-- FILTER BAR START-->
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Art der Location
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body filter-body">
+              <div class="card filter-card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">ALLE
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Club
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Bar
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Shisha-Bar
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Irish-Pub
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                  <li class="list-group-item">Sports-Bar
+                    <label class="switch ">
+                      <input type="checkbox" class="default" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <!-- FILTER BAR END-->
+    </div>
 
     <!-- COL 2-->
     <div class="locationlist col-7">
@@ -80,26 +138,65 @@
     </div>
 
     <!-- COL 3-->
-    <div class="col"></div>
+    <div class="col">
+      <!-- FILTER BUTTON START-->
+      <button type="button" class="filter-btn btn btn-success btn-circle btn-lg"><i
+        class="glyphicon glyphicon-link"></i></button>
+    <!-- FILTER BUTTON END-->
+    </div>
   </div>
 
-  <!-- FOOTER START -->
-  <nav class="navbar footer navbar-expand-lg">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">© 2020 Hangover Application</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link active-element" href="index.html">Impressum</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active-element" href="./sites/locations.html">Datenschutz</a>
-        </li>
-      </ul>
+<!-- FOOTER START -->
+  <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+    <div class="container">
+      <div class="row row-30">
+        <div class="col-md-4 col-xl-5">
+          <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                src="../resources/img/Hangover_Logo_mit_Schrift.png" alt="" class="w-100" height="37"></a>
+            <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
+            <!-- Rights-->
+            <p class="rights"><span>©  </span><span
+                class="copyright-year">2020</span><span> </span><span>HANGOVER</span><span>. </span><span>All Rights
+                Reserved.</span></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5><b>Contacts</b></h5>
+          <dl class="contact-list">
+            <dt>Address:</dt>
+            <dd>Bahnhofsstraße 5, 93053 Regensburg</dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>email:</dt>
+            <dd><a href="mailto:#">hangover-regensburg@yahoo.com</a></dd>
+          </dl>
+          <dl class="contact-list">
+            <dt>phones:</dt>
+            <dd><a href="tel:#">s.lippl</a> <span>or</span> <a href="tel:#">c.meyer</a>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-md-4 col-xl-3">
+          <h5><b>Links</b></h5>
+          <ul class="nav-list">
+            <li><a href="index.html">Events</a></li>
+            <li><a href="./sites/locations.html">Locations</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">Impressum</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </nav>
-  <!-- NAVBAR END -->
+    <div class="row no-gutters social-container">
+      <div class="col"><a class="social-inner" href="https://www.facebook.com/"><span
+            class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+      <div class="col"><a class="social-inner" href="https://www.instagram.com/"><span
+            class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+      <div class="col"><a class="social-inner" href="https://twitter.com/home"><span
+            class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+  </footer>
+  <!-- FOOTER END -->
 
   <!-- EVENTCARD START-->
   <template class="location-template">
