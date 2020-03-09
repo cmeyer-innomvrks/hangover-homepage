@@ -4,12 +4,6 @@ https://navnav.co/tagged/fullscreen-overlay
 
 
 TODOs:
-- Event Detailansicht:
-    . Event in persönlichen Bereich speichern
-
-- Locationlisten:
-    . Durchschnittliche Bewertung anzeigen
-
 - Location Detailansicht:
     . Locationbild
     . in persönlichen Bereich speichern
@@ -26,9 +20,18 @@ TODOs:
         #Userbilder Upload
         #Userbilder anzeigen
 
+- Locationlisten:
+    . Durchschnittliche Bewertung anzeigen
+
+- Event Detailansicht:
+    . Event in persönlichen Bereich speichern
+
 - Persönlicher Bereich
+    . Google-Login
     . Reiter Locations
     . Reiter Events
 
 - Mapkomponente
+    . Tutorial: https://www.w3schools.com/graphics/google_maps_intro.asp
     . Wie in App, alle Bars blau, Clubs rot
+    . API Key: AIzaSyCE9REw7S_R1X6PNQZaCUlWw5TQGlxpuc0 
