@@ -77,7 +77,7 @@ class FilterView extends View {
         this.onSliderClicked();
     }
 
-    async onSliderClicked(event) {
+    async onSliderClicked() {
         await sleep(10);
         let checkedTypes = [],
             checkedGenres = [],

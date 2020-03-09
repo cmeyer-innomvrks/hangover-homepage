@@ -4,7 +4,7 @@ import EventList from "./UI/EventList.js";
 import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
 import EventFilterBtn from "./UI/EventFilterBtn.js";
 import EventFilter from "./filter/EventFilter.js";
-import FilterView from "./UI/FilterView.js";
+import FilterView from "./UI/EventFilterView.js";
 
 let eventListView,
 	eventFilter,
@@ -45,11 +45,8 @@ function onFilterChanged(event) {
 		selectedGenres = event.data.selectedGenres,
 		selectedPrice = event.data.selectedPrice,
 		result = eventFilter.getFilteredEventsByArt(selectedTypes, events);
-	console.log(result);
 	result = eventFilter.getFilteredEventsByMusic(selectedGenres, result);
-	console.log(result);
 	result = eventFilter.getFilteredEventsByPrice(selectedPrice, result);
-	console.log(result);
 	eventListView.element.innerHTML = "";
 	eventListView = new EventList(result);
 	eventListView.setElement(document.querySelector(".eventlist"));
