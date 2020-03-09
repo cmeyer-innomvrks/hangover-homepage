@@ -369,7 +369,8 @@ Primary style
     }
   }
   
-  .cd-intro {
+
+  .event-img-adobe {
     position: relative;
     height: 100%;
     background: url("../img/AdobeStock_215056682.jpeg") no-repeat center center;
@@ -378,6 +379,16 @@ Primary style
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  .location-img-adobe{
+    position: relative;
+    height: 100%;
+    background: url("../img/bar.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   .cd-intro h1 {
     position: absolute;
     width: 90%;

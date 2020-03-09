@@ -18,14 +18,14 @@
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-  <title>Locations v1</title>
+  <title>Locations</title>
 
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="resources/js/modernizr.js"></script> <!-- Modernizr -->
   <script src="./resources/js/jquery-2.1.1.js"></script>
-  <script src="../resources/js/index.js" type="module"></script> <!-- Resource jQuery -->
+  <script src="../resources/js/navbar.js"></script>
 </head>
 
 <body class="body">
@@ -61,7 +61,7 @@
       </ul>
     </nav>
   
-    <section class="cd-intro">
+    <section class="cd-intro location-img-adobe">
       <h1>PARTY THE WHOLE NIGHT!</h1>
     </section>
     <!-- NAVBAR END -->
@@ -217,12 +217,14 @@
   </template>
   <!-- EVENTCARD END-->
 
+  <!-- LETTER CARD START -->
   <template class="letter-card">
-    <ul class="letter-list list-group">
-      <li class="list-group-item my-2"><span class="letter week-day"><b>A</b></span></li>
+    <ul class="list-group my-1">
+      <li class="list-group-item-datecard list-group-item my-2"><span class="letter week-day"><b>A</b></span></li>
     </ul>
     <div class="location-list row row-cols-1 row-cols-md-3"></div>
   </template>
+  <!-- LETTER CARD END -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
