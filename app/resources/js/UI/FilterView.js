@@ -77,7 +77,7 @@ class FilterView extends View {
         this.onSliderClicked();
     }
 
-    async onSliderClicked() {
+    async onSliderClicked(event) {
         await sleep(10);
         let checkedTypes = [],
             checkedGenres = [],
@@ -127,19 +127,29 @@ class FilterView extends View {
         this.notifyAll(onFilterChangedEvent);
     }
 
-    allSliderClicked(event) {
-        console.log("All Slider");
+    async allSliderClicked(event) {
+        await sleep(10);
         if (event.target.parentElement.parentElement.getAttribute("id") === "0") {
-            console.log("All Art");
             let types = this.element.querySelector(".art-list").getElementsByClassName("default");
-            for (let i = 1; i < types.length; i++) {
-                types[i].checked = true;
+            if (types[0].checked) {
+                for (let i = 1; i < types.length; i++) {
+                    types[i].checked = true;
+                }
+            } else {
+                for (let i = 1; i < types.length; i++) {
+                    types[i].checked = false;
+                }
             }
         } else {
-            console.log("All Music");
             let genres = this.element.querySelector(".music-list").getElementsByClassName("default");
-            for (let i = 1; i < genres.length; i++) {
-                genres[i].checked = true;
+            if (genres[0].checked) {
+                for (let i = 1; i < genres.length; i++) {
+                    genres[i].checked = true;
+                }
+            } else {
+                for (let i = 1; i < genres.length; i++) {
+                    genres[i].checked = false;
+                }
             }
         }
         this.onSliderClicked()
