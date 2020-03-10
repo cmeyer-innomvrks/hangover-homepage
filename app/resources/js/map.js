@@ -22,7 +22,6 @@ function initMap() {
         behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map)),
         ui = H.ui.UI.createDefault(map, defaultLayers);
     window.addEventListener('resize', () => map.getViewPort().resize());
-    moveMapToBerlin();
     return map;
 }
 
