@@ -22,7 +22,7 @@ Primary style
   
   a {
     color: white !important;
-    font-size: 150 !important;
+    font-size: 1.5rem !important;
     text-decoration: none;
   }
   
@@ -233,6 +233,7 @@ Primary style
     -o-transform: rotate(225deg);
     transform: rotate(225deg);
   }
+  
   @media only screen and (min-width: 768px) {
     .cd-primary-nav-trigger {
       width: 100px;
@@ -300,6 +301,7 @@ Primary style
     margin: .2em 0;
     text-transform: capitalize;
   }
+
   .cd-primary-nav a {
     display: inline-block;
     padding: .4em 1em;
@@ -391,8 +393,7 @@ Primary style
     -o-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     color: white;
-    font-size: 20px;
-    font-size: 1.25rem;
+    font-size: 3rem !important;
     font-weight: 300;
     text-align: center;
   }

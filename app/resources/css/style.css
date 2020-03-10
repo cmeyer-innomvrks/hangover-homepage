@@ -9,6 +9,9 @@
    position:absolute;
    box-shadow: none !important;
 }
+.body-event{
+  background:linear-gradient(90deg, #e8e8e8 50%, rgba(2, 23, 37, 0.96) 50%) !important;
+}
 
 .active-element{
     color: #8093d8 !important;
@@ -33,7 +36,6 @@
   color: white;
 }
 .eventlist, .locationlist{
-  background: #4c60aa28 !important;
   -webkit-box-shadow: -4px 20px 31px 23px rgba(0,0,0,0.15);
   -moz-box-shadow: -4px 20px 31px 23px rgba(0,0,0,0.15);
   box-shadow: -4px 20px 31px 23px rgba(0,0,0,0.15);
@@ -46,6 +48,7 @@
   font-weight: bold !important;
   font-size: 120%;
 }
+
 .col3, .detailed-event, .detailed-event-img, .detailed-event-card-header, .detailed-event-card-body, .card-body{
     cursor: default !important;
 }
@@ -58,6 +61,18 @@
 .detailed-event-card-footer:hover {
   text-decoration: underline !important;
 }
+.party-img{
+  width: 100% !important;
+}
+@media only screen and (min-width: 767px) {
+  .party-img {
+    width: 60% !important;
+  }
+}
+.col2{
+  background:linear-gradient(90deg, #e8e8e8 50%, rgba(2, 23, 37, 0.96) 50%) !important;
+  margin-top: 7rem !important;
+}
 .card{
     margin-top: 1rem;
     border-radius: 0px !important;
@@ -68,6 +83,9 @@
 }
 .breadcrumb a{
   color: black !important;
+}
+.breadcrumb-active-item{
+  font-weight: bold !important;
 }
 /* Ad */
 .carousel{
