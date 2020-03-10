@@ -78,6 +78,9 @@
   background:linear-gradient(90deg, #e8e8e8 50%, rgba(2, 23, 37, 0.96) 50%) !important;
   margin-top: 7rem !important;
 }
+.map-col{
+  margin-top: 0rem !important;
+}
 .card{
     margin: 1rem;
     border-radius: 0px !important;
@@ -405,5 +408,5 @@ body{
 /* MAP */
 #mapContainer{
   width:100%;
-  height:1000px
+  height: 100vh
 }
