@@ -14,7 +14,7 @@ TODOs:
     . Reiter Events
         #Wie Eventliste
     . Reiter Bewertungen
-        #Bewertungen ansehen
+        #Bewertungen ansehen --> https://bootsnipp.com/snippets/KB03
         #Bewertung abgeben
     . Bilder der Location
         #Userbilder Upload
@@ -35,3 +35,14 @@ TODOs:
     . Tutorial: https://www.w3schools.com/graphics/google_maps_intro.asp
     . Wie in App, alle Bars blau, Clubs rot
     . API Key: AIzaSyCE9REw7S_R1X6PNQZaCUlWw5TQGlxpuc0 
+
+- Our Team
+    . https://bootsnipp.com/snippets/X2Db0
+
+
+
+
+
+FEATURED:
+- Profil Dashboard für Kunden:
+    . https://bootsnipp.com/snippets/0131R

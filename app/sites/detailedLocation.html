@@ -1,79 +1,70 @@
 <!-- https://bootsnipp.com/snippets/WaXlr -->
-
 <!doctype html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="../resources/css/style.css">
-  <link rel="stylesheet" href="../resources/css/navbar.css">
-  <link rel="stylesheet" href="../resources/css/reset.css">
-  <link rel="stylesheet" href="../resources/css/profile.css">
-  <link rel="stylesheet" href="../resources/css/style.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/navbar.css">
+    <link rel="stylesheet" href="../resources/css/reset.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a67950b77b.js" crossorigin="anonymous"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <title>Detailed Event</title>
+  
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="resources/js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="./resources/js/jquery-2.1.1.js"></script>
+    <script src="../resources/js/navbar.js"></script>
+    <!-- Profile -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../resources/css/profile.css">
+
   <title>Locations</title>
-
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="../resources/js/modernizr.js"></script>
-  <script src="../resources/js/jquery-2.1.1.js"></script>
-  <script src="../resources/js/navbar.js"></script>
-  <script src="resources/js/index.js" type="module"></script>
-
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 
 <body class="body">
 
   
-    <!-- NAVBAR START -->
-    <header class="cd-header">
-      <div class="cd-logo"><a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
-            alt="Logo"></a></div>
-  
-      <nav>
-        <ul class="cd-secondary-nav">
-          <li><a href="#0">Log In</a></li>
-          <li><a href="#0">Register</a></li>
-        </ul>
-      </nav> <!-- cd-nav -->
-  
-      <a class="cd-primary-nav-trigger" href="#0">
-        <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
-      </a> <!-- cd-primary-nav-trigger -->
-    </header>
+  <!-- NAVBAR START -->
+  <header class="cd-header">
+    <div class="cd-logo"><a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+          alt="Logo"></a></div>
+
     <nav>
-      <ul class="cd-primary-nav">
-        <li class="cd-label">Find</li>
-        <li><a href="../index.html">Events</a></li>
-        <li><a href="locations.html">Locations</a></li>
-        <li><a href="./sites/detailedEvent.html">Our projects</a></li>
-  
-        <li class="cd-label">Work with us</li>
-        <li><a href="#0">Start a project</a></li>
-        <li><a href="#0">Join In</a></li>
-        <li><a href="#0">Create an account</a></li>
+      <ul class="cd-secondary-nav">
+        <li><a href="#0">Log In</a></li>
+        <li><a href="#0">Register</a></li>
       </ul>
-    </nav>
-    <section class="cd-intro location-img-adobe">
-      <h1>PARTY THE WHOLE NIGHT!</h1>
-    </section>
-    <!-- NAVBAR END -->
+    </nav> <!-- cd-nav -->
+
+    <a class="cd-primary-nav-trigger" href="#0">
+      <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+    </a> <!-- cd-primary-nav-trigger -->
+  </header>
+  <nav>
+    <ul class="cd-primary-nav">
+      <li class="cd-label">Find</li>
+      <li><a href="../index.html">Events</a></li>
+      <li><a href="locations.html">Locations</a></li>
+
+      <li class="cd-label">Featured</li>
+      <li><a href="./detailedEvent.html">Detailed Event</a></li>
+      <li><a href="./detailedLocation.html">Detailed Location</a></li>
+    </ul>
+  </nav>
+  <!-- NAVBAR END -->
 
   <!-- Übergeordnete Tabelle -->
   <div class="row">
@@ -82,50 +73,55 @@
     </div>
 
     <!-- COL 2-->
-    <div class="locationlist col-7">
-      <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
-        <div class="row panel">
-          <div class="col-md-4 bg_blur ">
-                <a href="#" class="follow_btn hidden-xs">Follow</a>
-          </div>
-              <div class="col-md-8  col-xs-12">
-                 <img src="../resources/img/bar.jpg" class="img-thumbnail picture hidden-xs" />
-                 <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img-thumbnail visible-xs picture_mob" />
-                 <div class="header">
-                      <h1>BEATS Club</h1>
-                      <h4>Club</h4>
-                      <span>Beschreibung der Location soll hier erfolgen.</span>
-                 </div>
+    <div class="profile-col col-10">
+      <!-- PROFILE START -->
+      <div class="container portfolio">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="heading">	<img src="https://image.ibb.co/cbCMvA/logo.png" />
+            </div>
+          </div>	
+        </div>
+        <div class="bio-info">
+          <div class="row">
+            <div class="col">
+                    <img src="http://raviyafitness.com/wp-content/uploads/2018/05/IMG_20180101_164242_HDR.jpg" class="bio-image W-90" alt="image" />
+            </div>
+            <div class="col">
+              <div class="bio-content">
+                <h1>Bhargav Raviya</h1>
+                <h6>Adresse : 21 Yrs. / 5ft 9In</h6>
+                <h6>Caste : Gujarati</h6>
+                <h6>Mother Tongue : Hindi</h6>
+                <h6>Location : India</h6>
+                <h6>Education : Bachelors in Commerce</h6>
+                <h6>Profession : Web Developer</h6>
+                <h6>Marital Status : Un Married</h6>
+                          <button class="btn btn-primary" type="button"><i class="fas fa-heart"></i> Folgen</button>
+                          <button class="btn btn-danger" type="button"><i class="fa fa-heart"></i> Express Interest</button>
               </div>
-          </div>   
-          
-        <div class="row nav">    
-              <div class="col-md-4"></div>
-              <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
-                  <div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
-                  <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>
-                  <div class="col-md-4 col-xs-4 well"><i class="fa fa-thumbs-o-up fa-lg"></i> 26</div>
-              </div>
-          </div>
+            </div>
+          </div>	
+        </div>
       </div>
-
-      <div class="eventlist col-7 col2"></div>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      </body>
+      
+      </html>
+      <!-- PROFILE END -->
     </div>
 
     <!-- COL 3-->
     <div class="col">
-      <!-- FILTER BUTTON START-->
-      <button type="button" class="filter-btn btn btn-success btn-circle btn-lg"><i
-        class="glyphicon glyphicon-link"></i></button>
-    <!-- FILTER BUTTON END-->
     </div>
   </div>
 
-<!-- FOOTER START -->
+  <!-- FOOTER START -->
   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
     <div class="container">
       <div class="row row-30">
-        <div class="col-md-4 col-xl-5">
+        <div class="col-md-4 col-l-5">
           <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
                 src="../resources/img/Hangover_Logo_mit_Schrift.png" alt="" class="w-100" height="37"></a>
             <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
@@ -135,73 +131,10 @@
                 Reserved.</span></p>
           </div>
         </div>
-        <div class="col-md-4">
-          <h5><b>Contacts</b></h5>
-          <dl class="contact-list">
-            <dt>Address:</dt>
-            <dd>Bahnhofsstraße 5, 93053 Regensburg</dd>
-          </dl>
-          <dl class="contact-list">
-            <dt>email:</dt>
-            <dd><a href="mailto:#">hangover-regensburg@yahoo.com</a></dd>
-          </dl>
-          <dl class="contact-list">
-            <dt>phones:</dt>
-            <dd><a href="tel:#">s.lippl</a> <span>or</span> <a href="tel:#">c.meyer</a>
-            </dd>
-          </dl>
-        </div>
-        <div class="col-md-4 col-xl-3">
-          <h5><b>Links</b></h5>
-          <ul class="nav-list">
-            <li><a href="index.html">Events</a></li>
-            <li><a href="./sites/locations.html">Locations</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Datenschutz</a></li>
-            <li><a href="#">Impressum</a></li>
-          </ul>
-        </div>
       </div>
     </div>
-    <div class="row no-gutters social-container">
-      <div class="col"><a class="social-inner" href="https://www.facebook.com/"><span
-            class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
-      <div class="col"><a class="social-inner" href="https://www.instagram.com/"><span
-            class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
-      <div class="col"><a class="social-inner" href="https://twitter.com/home"><span
-            class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
   </footer>
   <!-- FOOTER END -->
-
-  <!-- TAMPLATES START -->
-  <!-- EVENTCARD START-->
-  <template class="event-template">
-    <div class="col mb-4">
-      <div class="card h-100 my-2">
-        <img src="resources/img/party1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title headline">Card title</h5>
-          <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to
-            additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"><span class="event-location">@BeatsClub</span> <span class="event-time">23:00
-              Uhr</span></small>
-        </div>
-      </div>
-    </div>
-  </template>
-  <!-- EVENTCARD END-->
-
-  <!-- DATE CARD START -->
-  <template class="date-card">
-    <ul class="list-group my-1">
-      <li class="list-group-item-datecard list-group-item my-2"><span class="week-day">Dienstag</span> | <span
-          class="event-date"><b>02.03.2020</b></span></li>
-    </ul>
-    <div class="event-list row row-cols-1 row-cols-md-3"></div>
-  </template>
-  <!-- DATE CARD END -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
