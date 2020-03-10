@@ -26,6 +26,7 @@ class EventLoader extends Observable {
             .get().then(function (querySnapshot) {
                 querySnapshot.forEach(function (doc) {
                     let currEvent = doc.data();
+                    currEvent.addId(doc.id);
                     events.push(currEvent);
                 });
             });

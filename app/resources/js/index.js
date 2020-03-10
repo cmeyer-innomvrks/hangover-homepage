@@ -23,11 +23,14 @@ function init() {
 async function getEvents() {
 	events = await EventLoader.getEvents();
 	locations = await LocationLoader.getLocations();
+	localStorage.setItem("events", JSON.stringify(events));
+	localStorage.setItem("locations", JSON.stringify(locations));
 	events.sort(function (a, b) {
 		return a.jsDate - b.jsDate;
 	});
 	eventListView = new EventList(events);
 	eventListView.setElement(document.querySelector(".eventlist"));
+	eventListView.addEventListener("toEventDetail", onEventDetailRequested);
 	eventListView.appendEventsToDateCards(events, locations)
 }
 
@@ -50,8 +53,20 @@ function onFilterChanged(event) {
 	eventListView.element.innerHTML = "";
 	eventListView = new EventList(result);
 	eventListView.setElement(document.querySelector(".eventlist"));
+	eventListView.addEventListener("toEventDetail", onEventDetailRequested);
 	eventListView.appendEventsToDateCards(result, locations)
 
+}
+
+function onEventDetailRequested(event) {
+	let eventID = event.data.eventId;
+	for (let i = 0; i < events.length; i++) {
+		if (eventID === events[i].id) {
+			localStorage.setItem("eventDetail", JSON.stringify(events[i]));
+			window.location.href = "./sites/detailedEvent.html";
+			break;
+		}
+	}
 }
 
 init();

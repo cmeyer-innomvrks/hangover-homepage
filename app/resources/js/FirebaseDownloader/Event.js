@@ -32,8 +32,8 @@ class Event {
     this.jsDate = new Date(year, month, day, hours, minutes, 0, 0);
   }
 
-  toString() {
-    return this.headline + ", " + this.date;
+  addId(id) {
+    this.id = id;
   }
 }
 

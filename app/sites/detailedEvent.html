@@ -1,30 +1,28 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../resources/css/style.css">
-    <link rel="stylesheet" href="../resources/css/navbar.css">
-    <link rel="stylesheet" href="../resources/css/reset.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <title>Detailed Event</title>
-  
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="resources/js/modernizr.js"></script> <!-- Modernizr -->
-    <script src="./resources/js/jquery-2.1.1.js"></script>
-    <script src="../resources/js/navbar.js"></script>
-  </head>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../resources/css/style.css">
+  <link rel="stylesheet" href="../resources/css/navbar.css">
+  <link rel="stylesheet" href="../resources/css/reset.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <title>Detailed Event</title>
+
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="../resources/js/modernizr.js"></script> <!-- Modernizr -->
+  <script src="../resources/js/jquery-2.1.1.js"></script>
+  <script src="../resources/js/navbar.js"></script>
+  <script src="../resources/js/eventdetail.js" type="module"></script>
+</head>
 
 <body class="body">
 
@@ -73,7 +71,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../index.html">Events</a></li>
-          <li class="breadcrumb-item"><a href="../sites/locations.html">BeatsClub</a></li>
+          <li class="breadcrumb-item"><a href="./detailedLocation.html">BeatsClub</a></li>
           <li class="breadcrumb-item active" aria-current="page">Ballermann Deluxe Party</li>
         </ol>
       </nav>
@@ -85,15 +83,18 @@
             14.03.2020
           </div>
           <h5 class="event-title card-title "><b>BALLERMANN DELUXE PARTY</b></h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
           <br>
           <p><b>Startzeit:</b> <span class="event-time">23:00</span> Uhr</p>
           <p><b>Eintritt:</b> <span class="event-cost">7,00</span> €</p>
           <p><b>Musik:</b> <span class="event-musik">Hip Hop, Rock, Soul</span></p>
         </div>
-        <a href="../index.html"><div class="card-footer detailed-event-card-footer text-right">
-          <b><span class="location-name">@BeatsClubRegensburg</span></b>
-        </div></a>
+        <a href="../index.html">
+          <div class="card-footer detailed-event-card-footer text-right">
+            <b><span class="location-name">@BeatsClubRegensburg</span></b>
+          </div>
+        </a>
       </div>
     </div>
 
@@ -131,7 +132,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-  <script src="resources/js/index.js" type="module"></script>
   <!-- Read Date Format -->
   <script src="https://momentjs.com/downloads/moment.min.js"></script>
   <!-- Firebase -->

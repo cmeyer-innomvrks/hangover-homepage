@@ -1,6 +1,7 @@
 /* eslint-env browser */
 
 import View from "./View.js";
+import { Event } from "../utils/Observable.js";
 
 function getDayString(date) {
   switch (date.getDay()) {
@@ -58,7 +59,12 @@ class EventList extends View {
   }
 
   onClick(event) {
-    console.log("Klick!");
+    let target = event.target;
+    while (target.getAttribute("id") === null) {
+      target = target.parentElement;
+    }
+    let toDetailEvent = new Event("toEventDetail", { eventId: target.getAttribute("id") });
+    this.notifyAll(toDetailEvent);
   }
 
   getEventElement(event, locationItems) {
@@ -87,6 +93,7 @@ class EventList extends View {
     item.querySelector(".event-time").textContent =
       event.time + "Uhr";
     item = item.firstElementChild;
+    item.setAttribute("id", event.id);
     item.addEventListener("click", this.onClick.bind(this));
 
     return item;
