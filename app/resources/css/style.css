@@ -69,6 +69,11 @@
     width: 60% !important;
   }
 }
+@media screen and (max-width: 767px){
+  .col-md-6{
+    width: 95% !important;
+  }
+}
 .col2{
   background:linear-gradient(90deg, #e8e8e8 50%, rgba(2, 23, 37, 0.96) 50%) !important;
   margin-top: 7rem !important;
