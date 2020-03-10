@@ -2,50 +2,39 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="../resources/css/style.css">
   <link rel="stylesheet" href="../resources/css/navbar.css">
   <link rel="stylesheet" href="../resources/css/reset.css">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Map</title>
-  <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="../resources/js/modernizr.js"></script> <!-- Modernizr -->
-  <script src="../resources/js/jquery-2.1.1.js"></script>
-  <script src="../resources/js/navbar.js"></script>
-  <script src="../resources/js/map.js" type="module"></script>
-  <!-- here Map -->
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-  <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
   <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
-  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+  <!-- Tab -->
+  <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png">
+  <title>Map</title>
 </head>
 
 <body class="body body-event">
 
-  <!-- NAVBAR START -->
-  <header class="cd-header">
-    <div class="cd-logo">
-      <a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem" alt="Logo"></a>
-    </div>
+   <!-- NAVBAR START -->
+   <header class="cd-header map-header">
+    <div class="cd-logo"><a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+          alt="Logo"></a></div>
+
     <nav>
       <ul class="cd-secondary-nav">
         <li><a href="#0">Log In</a></li>
         <li><a href="#0">Register</a></li>
       </ul>
-    </nav>
+    </nav> <!-- cd-nav -->
+
     <a class="cd-primary-nav-trigger" href="#0">
       <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
-    </a>
+    </a> <!-- cd-primary-nav-trigger -->
   </header>
   <nav>
     <ul class="cd-primary-nav">
@@ -53,6 +42,7 @@
       <li><a href="../index.html">Events</a></li>
       <li><a href="locations.html">Locations</a></li>
       <li><a href="./map.html">Map</a></li>
+
       <li class="cd-label">Featured</li>
       <li><a href="./detailedEvent.html">Detailed Event</a></li>
       <li><a href="./detailedLocation.html">Detailed Location</a></li>
@@ -60,15 +50,8 @@
   </nav>
   <!-- NAVBAR END -->
 
-  <!-- Übergeordnete Tabelle -->
-  <div class="row">
-    <!-- COL 1-->
-    <div class="col col1"></div>
-    <!-- COL 2-->
-    <div class="map-col col-md-6" id="mapContainer"></div>
-    <!-- COL 3-->
-    <div class="col col3"></div>
-  </div>
+    <!-- Map -->
+    <div class="row" id="mapContainer"></div>
 
   <!-- FOOTER START -->
   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
@@ -84,27 +67,24 @@
                 Reserved.</span></p>
           </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <!-- FOOTER END -->
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  <!-- Read Date Format -->
-  <script src="https://momentjs.com/downloads/moment.min.js"></script>
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-</body>
-
-</html>
+    </footer>
+    
+    <!-- SCRIPT -->
+    <!-- General -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../resources/js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="../resources/js/jquery-2.1.1.js"></script>
+    <script src="../resources/js/navbar.js"></script>
+    <script src="../resources/js/map.js" type="module"></script>
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- here Map -->
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    </body>
+    </html>
