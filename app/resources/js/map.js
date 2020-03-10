@@ -26,7 +26,8 @@ function moveMapToRegensburg(map){
   });
   // add a resize listener to make sure that the map occupies the whole container
   window.addEventListener('resize', () => map.getViewPort().resize());
-  
+  var parisMarker = new H.map.Marker({lat:49.014335, lng:12.094758});
+  map.addObject(parisMarker);
   //Step 3: make the map interactive
   // MapEvents enables the event system
   // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
