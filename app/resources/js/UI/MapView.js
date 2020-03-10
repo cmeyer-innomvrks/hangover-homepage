@@ -19,9 +19,8 @@ class MapView extends View {
         };
     }
 
-    moveMapToRegensburg(map) {
-        map.setCenter({ lat: 49.014335, lng: 12.094758 });
-        map.setZoom(14);
+    addMarker(location) {
+        // TODO
     }
 }
 
