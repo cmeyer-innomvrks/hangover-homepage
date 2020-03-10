@@ -18,12 +18,16 @@ class EventDetailCard extends View {
     displayEvent() {
         let card = this.element.querySelector(".card"),
             locations = JSON.parse(localStorage.getItem("locations"));
-        card.querySelector(".card-img-top").src = this.event.image;
+        if (this.event.image !== "") {
+            card.querySelector(".card-img-top").src = this.event.image;
+        } else {
+            card.querySelector(".card-img-top").src = "../resources/img/Hangover_Logo_mit_Schrift.png";
+        }
         card.querySelector(".event-date").textContent = this.event.date;
         card.querySelector(".event-title").textContent = this.event.headline;
         card.querySelector(".card-text").textContent = this.event.info;
         card.querySelector(".event-time").textContent = this.event.time;
-        card.querySelector(".event-cost").textContent = this.event.price + " €";
+        card.querySelector(".event-cost").textContent = this.event.price;
         card.querySelector(".event-musik").textContent = this.event.music;
         for (let i = 0; i < locations.length; i++) {
             if (locations[i].id === this.event.locationid) {
