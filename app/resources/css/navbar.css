@@ -51,7 +51,7 @@ Primary style
   html, body {
     height: 100%;
   }
-  
+
   .cd-header {
     position: absolute;
     top: 0;
@@ -64,8 +64,16 @@ Primary style
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  .map-navbar{
-    background: rgba(2, 23, 37, 0.95) !important;
+
+  @media only screen and (max-width: 767px) {
+    .map-header {
+      background: rgba(2, 23, 37, 0.95) !important;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .map-header {
+      background: rgba(2, 23, 37, 0.95) !important;
+    }
   }
   @media only screen and (min-width: 768px) {
     .cd-header {
@@ -362,7 +370,6 @@ Primary style
     }
   }
   
-
   .event-img-adobe {
     position: relative;
     height: 100%;

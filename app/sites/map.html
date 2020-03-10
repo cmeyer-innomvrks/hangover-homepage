@@ -20,27 +20,35 @@
 
 <body class="body body-event">
 
-    <!-- NAVBAR START -->
-    <header class="cd-header map-navbar">
-        <div class="cd-logo">
-            <a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem" alt="Logo"></a>
-        </div>
-        <nav>
-            <ul class="cd-secondary-nav">
-                <li><a href="#0">Log In</a></li>
-                <li><a href="#0">Register</a></li>
-            </ul>
-        </nav>
-        <a class="cd-primary-nav-trigger" href="#0">
-            <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
-        </a>
-    </header>
+   <!-- NAVBAR START -->
+   <header class="cd-header map-header">
+    <div class="cd-logo"><a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+          alt="Logo"></a></div>
+
     <nav>
       <ul class="cd-secondary-nav">
         <li><a href="#0">Log In</a></li>
         <li><a href="#0">Register</a></li>
       </ul>
-    </nav>
+    </nav> <!-- cd-nav -->
+
+    <a class="cd-primary-nav-trigger" href="#0">
+      <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+    </a> <!-- cd-primary-nav-trigger -->
+  </header>
+  <nav>
+    <ul class="cd-primary-nav">
+      <li class="cd-label">Find</li>
+      <li><a href="../index.html">Events</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="./map.html">Map</a></li>
+
+      <li class="cd-label">Featured</li>
+      <li><a href="./detailedEvent.html">Detailed Event</a></li>
+      <li><a href="./detailedLocation.html">Detailed Location</a></li>
+    </ul>
+  </nav>
+  <!-- NAVBAR END -->
 
     <!-- Map -->
     <div class="row" id="mapContainer"></div>
