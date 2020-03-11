@@ -31,16 +31,13 @@ TODOs:
     . Reiter Locations
     . Reiter Events
 
-- Mapkomponente
+- Mapkomponente (https://developer.here.com/projects/PROD-eb099b62-a91c-4434-b6ab-1803c99b4808/usage)
     . Tutorial: https://www.w3schools.com/graphics/google_maps_intro.asp
     . Wie in App, alle Bars blau, Clubs rot
     . API Key: AIzaSyCE9REw7S_R1X6PNQZaCUlWw5TQGlxpuc0 
 
 - Our Team
     . https://bootsnipp.com/snippets/X2Db0
-
-
-
 
 
 FEATURED:
