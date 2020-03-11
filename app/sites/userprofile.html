@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-signin-client_id" content="564943322185-7bmpgs1tg5upve6aua0qmce4odh3tl88.apps.googleusercontent.com"/>
+  <link rel="stylesheet" href="../resources/css/style.css">
+  <link rel="stylesheet" href="../resources/css/navbar.css">
+  <link rel="stylesheet" href="../resources/css/reset.css">
+  <link rel="stylesheet" href="../resources/css/userprofile.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <title>Hangover - Profile 2</title>
+  <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="../resources/js/modernizr.js"></script>
+  <script src="../resources/js/jquery-2.1.1.js"></script>
+  <script src="../resources/js/navbar.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <!-- Google -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body class="body body-event">
+
+  <!-- NAVBAR START -->
+  <header class="cd-header">
+    <div class="cd-logo"><a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+          alt="Logo"></a></div>
+
+    <nav>
+      <ul class="cd-secondary-nav">
+        <li id="user-log-in-out"><a href="#0">Log In</a></li>
+        <li class="hidden"><a href="#0">Register</a></li>
+      </ul>
+    </nav> <!-- cd-nav -->
+
+    <a class="cd-primary-nav-trigger" href="#0">
+      <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+    </a> <!-- cd-primary-nav-trigger -->
+  </header>
+  <nav>
+    <ul class="cd-primary-nav">
+      <li class="cd-label">Find</li>
+      <li><a href="../index.html">Events</a></li>
+      <li><a href="locations.html">Locations</a></li>
+      <li><a href="./map.html">Map</a></li>
+
+      <li class="cd-label">Featured</li>
+      <li><a href="./detailedEvent.html">Detailed Event</a></li>
+      <li><a href="./detailedLocation.html">Detailed Location</a></li>
+    </ul>
+  </nav>
+  <!-- NAVBAR END -->
+
+  <!-- Übergeordnete Tabelle -->
+  <div class="row">
+    <!-- COL 1-->
+    <div class="col col1"></div>
+    <!-- COL 2-->
+    <div class="eventlist detailed-event col-10 col2">
+        <!-- Modal START-->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <div id="login-overlay" class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Einloggen mit deinem Google Konto</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <div class="well">
+                                <!-- GOOGLE Login start -->
+                                <center>
+                                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="lead">Jetzt einloggen <span class="text-success">KOSTENLOS</span></p>
+                            <ul class="list-unstyled" style="line-height: 2">
+                                <li><span class="fa fa-check text-success"></span> Persönlichen Bereich nutzen</li>
+                                <li><span class="fa fa-check text-success"></span> Bewertungen ansehen</li>
+                                <li><span class="fa fa-check text-success"></span> Bewertungen abgeben</li>
+                                <li><span class="fa fa-check text-success"></span> Locationbilder ansehen</li>
+                                <li><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></li>
+                                <li><a href="/read-more/"><u>Read more</u></a></li>
+                            </ul>
+                            <p><a href="/new-customer/" class="btn btn-info btn-block">Ja, jetzt einloggen!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
+
+        <!-- Profile Start-->
+        <div class="panel panel-default plain profile-panel hidden">
+            <div class="panel-body">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    
+                        <img class="img-responsive" id="user-img" src="https://via.placeholder.com/600x600" alt="profile picture">
+                    
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="user-name"><span class="user-full-name">
+                        Full name</span><span class="label label-success user-logout text-right" onclick="onSignOut()">Logout</span>
+                    </div>
+                    <script>
+                        const firebaseConfig = {
+                            apiKey: "AIzaSyBTkMmhZ7Z4luQB8cQQlrVFtYzDwqO0fcs",
+                            authDomain: "hangover-243509.firebaseapp.com",
+                            databaseURL: "https://hangover-243509.firebaseio.com",
+                            projectId: "hangover-243509",
+                            storageBucket: "hangover-243509.appspot.com",
+                            messagingSenderId: "852344862579",
+                            appID: "1:852344862579:web:b6fece9d8273f06f",
+                        };
+                        firebase.initializeApp(firebaseConfig);
+
+                        let database = firebase.firestore();
+                        function onSignIn(googleUser) {
+                            var profile = googleUser.getBasicProfile();
+                            console.log("ID: " + profile.getId());
+                            console.log("Name: " + profile.getName());
+                            console.log("Image URL: " + profile.getImageUrl());
+                            console.log("Email: " + profile.getEmail());
+                        
+                            const modal = document.querySelector(".modal-dialog");
+                            let profilePannel = document.querySelector(".profile-panel");
+                            let userName = document.querySelector(".user-full-name");
+                            let userImg = document.querySelector("#user-img");
+                            let userMail = document.querySelector("#user-email");
+                            let logInOut = document.querySelector("#user-log-in-out");
+                        
+                            modal.classList.add("hidden")
+                            profilePannel.classList.remove("hidden");
+                        
+                            userName.textContent = profile.getName();
+                            userImg.src = profile.getImageUrl();
+                            userMail.textContent = profile.getEmail();
+                            logInOut.firstElementChild.textContent = "LOG OUT";
+                        
+                            // Add a new document in collection "cities"
+                            database.collection("User")
+                            .doc(profile.getEmail())
+                            .set({
+                                name: profile.getName(),
+                                email: profile.getEmail(),
+                                img: profile.getImageUrl()
+                            })
+                            .then(function() {
+                                console.log("Document successfully written!");
+                            })
+                            .catch(function(error) {
+                                console.error("Error writing document: ", error);
+                            });
+                        }
+                        function onSignOut(){
+                            var auth2 = gapi.auth2.getAuthInstance();
+                            auth2.signOut().then(function() {
+                                const modal = document.querySelector(".modal-dialog");
+                                let profilePannel = document.querySelector(".profile-panel");
+                                let logInOut = document.querySelector("#user-log-in-out");
+                                modal.classList.remove("hidden")
+                                profilePannel.classList.add("hidden");
+                                logInOut.firstElementChild.textContent = "LOG IN";
+
+                            })
+                        }
+                    </script>
+                    <div class="user-information">
+                        <p>Creating awesome snippet for bootdey, bootdey is a gellery of free bootstrap snippets</p>
+                    </div>
+                    <div class="profile-stats-info">
+                        <a href="#" title="Views">    <i class="glyphicon glyphicon-eye-open">  </i> <strong>2000</strong></a>
+                        <a href="#" title="Comments"> <i class="glyphicon glyphicon-comment">   </i> <strong>120</strong></a>
+                        <a href="#" title="Likes">    <i class="glyphicon glyphicon-thumbs-up"> </i> <strong>60</strong></a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer white-content">
+                <ul class="profile-info">
+                    <!-- 
+                    <li><i class="glyphicon glyphicon-phone"></i>      +534 354 534</li>
+                    <li><i class="glyphicon glyphicon-map-marker"></i>  Medellin, colombia</li>
+                    <li><i class="glyphicon glyphicon-envelope"></i>    snippet@test.com</li>
+                    <li><i class="glyphicon glyphicon-edit"></i>        Web developer</li> -->
+                    <li><i class="glyphicon glyphicon-share"></i> <span id="user-email"></span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Profile End -->
+    </div>
+    <!-- COL 3-->
+    <div class="col col3"></div>
+  </div>
+
+  <!-- FOOTER START -->
+  <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+    <div class="container">
+      <div class="row row-30">
+        <div class="col-md-4 col-l-5">
+          <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                src="../resources/img/Hangover_Logo_mit_Schrift.png" alt="" class="w-100" height="37"></a>
+            <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
+            <!-- Rights-->
+            <p class="rights"><span>©</span><span
+                class="copyright-year">2020</span><span> </span><span>HANGOVER</span><span>. </span><span>All Rights
+                Reserved.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- FOOTER END -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- Read Date Format -->
+  <script src="https://momentjs.com/downloads/moment.min.js"></script>
+</body>
+
+</html>
