@@ -52,7 +52,7 @@
 .col3, .detailed-event, .detailed-event-img, .detailed-event-card-header, .detailed-event-card-body, .card-body{
     cursor: default !important;
 }
-..detailed-event-img:hover{
+.detailed-event-img:hover{
   background: rgba(2, 23, 37, 0.96) !important;
 }
 .detailed-event-card-footer{
@@ -201,7 +201,7 @@ body{
     display: inline-block;
     width: 60px;
     height: 34px;
-    float:right;
+    float: right;
   }
   /* Hide default HTML checkbox */
   .switch input {
@@ -421,4 +421,10 @@ body{
 
 .H_ib_body{
   width: 20vw !important;
+}
+
+@media screen and (max-width: 767px){
+  .H_ib_body{
+    width: 53vw !important;
+  }
 }
