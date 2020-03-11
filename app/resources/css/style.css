@@ -410,3 +410,15 @@ body{
   width:100vw;
   height: 100vh
 }
+
+.bubble-link{
+  color: black !important;
+}
+
+.bubble-link span {
+  font-size: 0.8rem;
+}
+
+.H_ib_body{
+  width: 20vw !important;
+}

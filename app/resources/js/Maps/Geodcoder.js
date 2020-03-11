@@ -15,9 +15,8 @@ class Geodcoder extends Observable {
             street: location.street,
             city: location.city,
             country: "germany",
-            jsonattributes: 1
+            jsonattributes: 1,
         };
-
         this.geocoder.geocode(params, this.onSuccess.bind(this), this.onError);
     }
 

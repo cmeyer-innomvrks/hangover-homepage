@@ -4,16 +4,19 @@ import MapView from "./UI/MapView.js";
 import platform from "./Maps/mapk.js";
 import Geodcoder from "./Maps/Geodcoder.js";
 
-let mapView;
+let mapView,
+    locations,
+    i = 0;
 
 function init() {
     mapView = new MapView();
     mapView.setElement(document.querySelector("#mapContainer"));
     mapView.addMap(initMap());
     mapView.addEventListener("geocode", onGeodcodingRequested);
+    mapView.addEventListener("bubbleClicked", onBubbleClicked);
     Geodcoder.addEventListener("geocodingFinished", onGeocodingFinished);
 
-    let locations = JSON.parse(localStorage.getItem("locations"));
+    locations = JSON.parse(localStorage.getItem("locations"));
     for (let i = 0; i < locations.length; i++) {
         mapView.requestMarker(locations[i]);
     }
@@ -40,7 +43,17 @@ function onGeodcodingRequested(event) {
 
 function onGeocodingFinished(event) {
     let result = event.data.result;
-    mapView.addMarker(result);
+    mapView.addMarker(result, locations[i]);
+    i++;
+}
+
+function onBubbleClicked(event) {
+    let locationID = event.data.locationID;
+    for (let i = 0; i < locations.length; i++) {
+        if (locationID === locations[i].id) {
+            localStorage.setItem("locationDetail", JSON.stringify(locations[i]));
+        }
+    }
 }
 
 init();
