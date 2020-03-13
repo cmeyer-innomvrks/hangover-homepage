@@ -12,7 +12,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Detailed Event</title>
+  <title>Hangover - Event</title>
   <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -26,7 +26,7 @@
 
   <!-- NAVBAR START -->
   <header class="cd-header">
-    <div class="cd-logo"><a href="#0"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+    <div class="cd-logo"><a href="../index.html"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
           alt="Logo"></a></div>
 
     <nav>
@@ -43,13 +43,15 @@
   <nav>
     <ul class="cd-primary-nav">
       <li class="cd-label">Find</li>
-      <li><a href="../index.html">Events</a></li>
-      <li><a href="locations.html">Locations</a></li>
-      <li><a href="./map.html">Map</a></li>
+      <li><a class="menu-link" href="../index.html">Events</a></li>
+      <li><a class="menu-link" href="./locations.html">Locations</a></li>
+      <li><a class="menu-link" href="./map.html">Map</a></li>
+      <li><a class="menu-link" href="./userprofile.html">Persönlicher Bereich</a></li>
 
-      <li class="cd-label">Featured</li>
-      <li><a href="./detailedEvent.html">Detailed Event</a></li>
-      <li><a href="./detailedLocation.html">Detailed Location</a></li>
+
+      <li class="cd-label">Rechtliches</li>
+      <li><a class="menu-link" href="./detailedEvent.html">Detailed Event</a></li>
+      <li><a class="menu-link" href="./detailedLocation.html">Detailed Location</a></li>
     </ul>
   </nav>
   <!-- NAVBAR END -->
@@ -82,10 +84,13 @@
           <p><b>Musik:</b> <span class="event-musik"></span></p>
         </div>
         <a href="./detailedEvent.html">
-          <div class="card-footer detailed-event-card-footer text-right">
+          <div class="card-footer detailed-event-card-footer text-center">
             <b><span class="location-name"></span></b>
           </div>
         </a>
+        <div class="card-footer">
+          <b><span class="save-event"> <input type="checkbox" name="saveevent" id="">Dieses Event speichern</span></b>
+        </div>
       </div>
     </div>
     <!-- COL 3-->

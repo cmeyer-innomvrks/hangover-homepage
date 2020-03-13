@@ -14,7 +14,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Hangover - Profile 2</title>
+  <title>Hangover - Profil</title>
   <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -27,6 +27,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
   <!-- Google -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://kit.fontawesome.com/a67950b77b.js" crossorigin="anonymous"></script>
 </head>
 <body class="body body-event">
 
@@ -48,13 +49,14 @@
   <nav>
     <ul class="cd-primary-nav">
       <li class="cd-label">Find</li>
-      <li><a href="../index.html">Events</a></li>
-      <li><a href="locations.html">Locations</a></li>
-      <li><a href="./map.html">Map</a></li>
+      <li><a class="menu-link" href="../index.html">Events</a></li>
+      <li><a class="menu-link" href="./locations.html">Locations</a></li>
+      <li><a class="menu-link" href="./map.html">Map</a></li>
+      <li><a class="menu-link" href="userprofile.html">Persönlicher Bereich</a></li>
 
-      <li class="cd-label">Featured</li>
-      <li><a href="./detailedEvent.html">Detailed Event</a></li>
-      <li><a href="./detailedLocation.html">Detailed Location</a></li>
+      <li class="cd-label">Rechtliches</li>
+      <li><a class="menu-link" href="./detailedEvent.html">Detailed Event</a></li>
+      <li><a class="menu-link" href="./detailedLocation.html">Detailed Location</a></li>
     </ul>
   </nav>
   <!-- NAVBAR END -->
@@ -113,69 +115,7 @@
                     <div class="user-name"><span class="user-full-name">
                         Full name</span><span class="label label-success user-logout text-right" onclick="onSignOut()">Logout</span>
                     </div>
-                    <script>
-                        const firebaseConfig = {
-                            apiKey: "AIzaSyBTkMmhZ7Z4luQB8cQQlrVFtYzDwqO0fcs",
-                            authDomain: "hangover-243509.firebaseapp.com",
-                            databaseURL: "https://hangover-243509.firebaseio.com",
-                            projectId: "hangover-243509",
-                            storageBucket: "hangover-243509.appspot.com",
-                            messagingSenderId: "852344862579",
-                            appID: "1:852344862579:web:b6fece9d8273f06f",
-                        };
-                        firebase.initializeApp(firebaseConfig);
 
-                        let database = firebase.firestore();
-                        function onSignIn(googleUser) {
-                            var profile = googleUser.getBasicProfile();
-                            console.log("ID: " + profile.getId());
-                            console.log("Name: " + profile.getName());
-                            console.log("Image URL: " + profile.getImageUrl());
-                            console.log("Email: " + profile.getEmail());
-                        
-                            const modal = document.querySelector(".modal-dialog");
-                            let profilePannel = document.querySelector(".profile-panel");
-                            let userName = document.querySelector(".user-full-name");
-                            let userImg = document.querySelector("#user-img");
-                            let userMail = document.querySelector("#user-email");
-                            let logInOut = document.querySelector("#user-log-in-out");
-                        
-                            modal.classList.add("hidden")
-                            profilePannel.classList.remove("hidden");
-                        
-                            userName.textContent = profile.getName();
-                            userImg.src = profile.getImageUrl();
-                            userMail.textContent = profile.getEmail();
-                            logInOut.classList.add("hidden");
-                        
-                            // Add a new document in collection "cities"
-                            database.collection("User")
-                            .doc(profile.getEmail())
-                            .set({
-                                name: profile.getName(),
-                                email: profile.getEmail(),
-                                img: profile.getImageUrl()
-                            })
-                            .then(function() {
-                                console.log("Document successfully written!");
-                            })
-                            .catch(function(error) {
-                                console.error("Error writing document: ", error);
-                            });
-                        }
-                        function onSignOut(){
-                            var auth2 = gapi.auth2.getAuthInstance();
-                            auth2.signOut().then(function() {
-                                const modal = document.querySelector(".modal-dialog");
-                                let profilePannel = document.querySelector(".profile-panel");
-                                let logInOut = document.querySelector("#user-log-in-out");
-                                modal.classList.remove("hidden")
-                                profilePannel.classList.add("hidden");
-                                logInOut.firstElementChild.textContent = "LOG IN";
-
-                            })
-                        }
-                    </script>
                     <div class="user-information">
                         <p>Creating awesome snippet for bootdey, bootdey is a gellery of free bootstrap snippets</p>
                     </div>
@@ -198,7 +138,147 @@
             </div>
         </div>
         <!-- Profile End -->
+
+
+        <!-- Profile CONTENT START -->
+        <!-- SWITCH Loc or Eve Start-->
+        <div class="btn-group center selection-toggler hidden" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary active btn-events">Events</button> <!-- TODO JS: Wenn Loc ausgewählt wird, classList.remove("active") und zu location hinzufügen -->
+          <button type="button" class="btn btn-secondary btn-locations">Locations</button>
+        </div>
+        <!-- SWITCH Loc or Eve Start-->
+
+        <!-- List Eve Start -->
+        <div class="col mb-4 profile-event-list hidden">
+          <div class="card h-100 my-2">
+            <div class="card-footer">
+              <small class="text-muted"><span class="location-art pull-right">ART</span></small>
+            </div>
+            <img src="../resources/img/party1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title headline">Card title</h5>
+              <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><span class="event-location">@BeatsClub</span> <span class="event-time">23:00
+                  Uhr</span></small>
+            </div>
+            <div class="card-footer">
+              <b><span class="save-event"> <input type="checkbox" name="saveevent" id="">Dieses Event entfernen</span></b>
+            </div>
+          </div>
+        </div>
+        <!-- List Eve End -->
+
+        <!-- List Loc Start -->
+        <div class="locationlist profile-location-list hidden">
+          <div class="col mb-4">
+            <div class="card h-100 my-2">
+              <img src="../resources/img/party1.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title location-name"><b>HARDCODE LOCATION</b> <span class="float-right" id="location-average">4.3 </span><span class="location-star float-right"><i class="far fa-star"></i></span></h5>
+                <p class="card-text location-adress"><span class="location-street">Hardcode Straße</span><span
+                    class="location-housenumber">Hardcode Hausnummer</span>,
+                  <span class="location-zip">Hardcode PLZ</span> <span class="location-city">Hardcode City</span></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted"><span class="location-art">Bar</span></small>
+              </div>
+              <div class="card-footer">
+                <b><span class="save-event"> <input type="checkbox" name="saveevent" id="">Dieses Location entfernen</span></b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- List Loc End-->
+        <!-- Profile CONTENT END-->
     </div>
+
+
+    <script>
+      const firebaseConfig = {
+          apiKey: "AIzaSyBTkMmhZ7Z4luQB8cQQlrVFtYzDwqO0fcs",
+          authDomain: "hangover-243509.firebaseapp.com",
+          databaseURL: "https://hangover-243509.firebaseio.com",
+          projectId: "hangover-243509",
+          storageBucket: "hangover-243509.appspot.com",
+          messagingSenderId: "852344862579",
+          appID: "1:852344862579:web:b6fece9d8273f06f",
+      };
+      firebase.initializeApp(firebaseConfig);
+
+      let database = firebase.firestore();
+      function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log("ID: " + profile.getId());
+          console.log("Name: " + profile.getName());
+          console.log("Image URL: " + profile.getImageUrl());
+          console.log("Email: " + profile.getEmail());
+      
+          const modal = document.querySelector(".modal-dialog");
+          let profilePannel = document.querySelector(".profile-panel");
+          let userName = document.querySelector(".user-full-name");
+          let userImg = document.querySelector("#user-img");
+          let userMail = document.querySelector("#user-email");
+          let logInOut = document.querySelector("#user-log-in-out");
+          let selectionToggler = document.querySelector(".selection-toggler");
+          let profileEventList = document.querySelector(".profile-event-list");
+          let profileLocationList = document.querySelector(".profile-location-list");
+          let btnEvents = document.querySelector(".btn-events");
+          let btnLocations = document.querySelector(".btn-locations");
+      
+          modal.classList.add("hidden")
+          profilePannel.classList.remove("hidden");
+          selectionToggler.classList.remove("hidden");
+          profileEventList.classList.remove("hidden");
+
+          btnEvents.addEventListener("click", function() {
+            profileEventList.classList.remove("hidden");
+            profileLocationList.classList.add("hidden");
+          });
+
+          btnLocations.addEventListener("click", function(){
+            profileEventList.classList.add("hidden");
+            profileLocationList.classList.remove("hidden");
+          })
+      
+          userName.textContent = profile.getName();
+          userImg.src = profile.getImageUrl();
+          userMail.textContent = profile.getEmail();
+          logInOut.classList.add("hidden");
+      
+          // Add a new document in collection "cities"
+          database.collection("User")
+          .doc(profile.getEmail())
+          .set({
+              name: profile.getName(),
+              email: profile.getEmail(),
+              img: profile.getImageUrl()
+          })
+          .then(function() {
+              console.log("Document successfully written!");
+          })
+          .catch(function(error) {
+              console.error("Error writing document: ", error);
+          });
+      }
+      function onSignOut(){
+          var auth2 = gapi.auth2.getAuthInstance();
+          auth2.signOut().then(function() {
+              const modal = document.querySelector(".modal-dialog");
+              let profilePannel = document.querySelector(".profile-panel");
+              let logInOut = document.querySelector("#user-log-in-out");
+              modal.classList.remove("hidden")
+              profilePannel.classList.add("hidden");
+              logInOut.firstElementChild.textContent = "LOG IN";
+
+          })
+      }
+  </script>
+
+
+
     <!-- COL 3-->
     <div class="col col3"></div>
   </div>

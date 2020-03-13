@@ -20,20 +20,11 @@ TODOs:
         #Userbilder Upload
         #Userbilder anzeigen
 
-- Locationlisten:
-    . Durchschnittliche Bewertung anzeigen
-
-- Event Detailansicht:
-    . Event in persönlichen Bereich speichern
-
 - Persönlicher Bereich
-    . Google-Login
     . Reiter Locations
     . Reiter Events
 
 - Mapkomponente (https://developer.here.com/projects/PROD-eb099b62-a91c-4434-b6ab-1803c99b4808/usage)
-    . Tutorial: https://www.w3schools.com/graphics/google_maps_intro.asp
-    . Wie in App, alle Bars blau, Clubs rot
     . API Key: AIzaSyCE9REw7S_R1X6PNQZaCUlWw5TQGlxpuc0 
 
 - Our Team
