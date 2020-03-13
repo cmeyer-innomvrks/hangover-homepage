@@ -1,8 +1,30 @@
-filename, language, HTML, Markdown, comment, blank, total
-c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\sites\detailedEvent.html, HTML, 112, 0, 16, 9, 137
-c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\sites\detailedLocation.html, HTML, 83, 0, 15, 14, 112
-c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\sites\locations.html, HTML, 193, 0, 26, 15, 234
-c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\sites\map.html, HTML, 70, 0, 12, 10, 92
-c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\sites\notice.md, Markdown, 0, 36, 0, 9, 45
-c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\sites\userprofile.html, HTML, 197, 0, 27, 17, 241
-Total, -, 655, 36, 96, 74, 861
+filename, language, JavaScript, comment, blank, total
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\FirebaseDownloader\Database.js, JavaScript, 12, 1, 2, 15
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\FirebaseDownloader\Event.js, JavaScript, 65, 1, 5, 71
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\FirebaseDownloader\EventLoader.js, JavaScript, 33, 1, 6, 40
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\FirebaseDownloader\Location.js, JavaScript, 119, 1, 5, 125
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\FirebaseDownloader\LocationLoader.js, JavaScript, 33, 1, 5, 39
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\Maps\Geodcoder.js, JavaScript, 27, 1, 6, 34
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\Maps\mapk.js, JavaScript, 4, 0, 1, 5
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\EventFilterBtn.js, JavaScript, 24, 1, 5, 30
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\EventFilterView.js, JavaScript, 144, 1, 19, 164
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\EventList.js, JavaScript, 121, 1, 19, 141
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\LocationFilterBtn.js, JavaScript, 24, 1, 5, 30
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\LocationFilterView.js, JavaScript, 85, 1, 15, 101
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\LocationList.js, JavaScript, 67, 1, 13, 81
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\MapView.js, JavaScript, 72, 1, 13, 86
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\View.js, JavaScript, 21, 1, 7, 29
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\UI\eventDetail\EventDetailCard.js, JavaScript, 36, 1, 5, 42
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\eventdetail.js, JavaScript, 9, 1, 4, 14
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\filter\EventFilter.js, JavaScript, 86, 1, 10, 97
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\filter\LocationFilter.js, JavaScript, 26, 1, 4, 31
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\index.js, JavaScript, 62, 1, 9, 72
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\jquery-2.1.1.js, JavaScript, 6167, 1488, 1536, 9191
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\locationdetail.js, JavaScript, 4, 0, 1, 5
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\locations.js, JavaScript, 38, 1, 8, 47
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\login.js, JavaScript, 29, 1, 6, 36
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\map.js, JavaScript, 49, 1, 11, 61
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\modernizr.js, JavaScript, 609, 510, 288, 1407
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\navbar.js, JavaScript, 37, 7, 3, 47
+c:\Users\slipp\Documents\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app\resources\js\utils\Observable.js, JavaScript, 27, 1, 7, 35
+Total, -, 8030, 2028, 2018, 12076

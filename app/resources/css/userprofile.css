@@ -15,6 +15,11 @@
     border-top: 1px solid #ddd;
 }
 
+.well{
+    background-color: white !important;
+    border-color: white !important;
+}
+
 .panel-default .panel-footer {
     color: #768399;
     background-color: #e4e9eb;

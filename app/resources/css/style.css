@@ -75,7 +75,6 @@
   }
 }
 .col2{
-  background:linear-gradient(90deg, #e8e8e8 50%, rgba(2, 23, 37, 0.96) 50%) !important;
   margin-top: 7rem !important;
 }
 .map-col{
@@ -427,4 +426,25 @@ body{
   .H_ib_body{
     width: 53vw !important;
   }
+}
+
+.user-logout{
+  background: rgba(2, 23, 37, 0.96) !important;
+}
+
+.delete-location button, .delete-event button {
+  border-style: none !important;
+  background: rgba(255, 255, 255, 0) !important;
+}
+.delete-location button:hover,  .delete-event button:hover{
+  background: rgba(2, 23, 37, 0.96) !important;
+  color: white;
+}
+.is-active{
+  background: rgba(2, 23, 37, 0.96) !important;
+  color: white !important;
+}
+
+.container-footer-to-bot{
+  min-height: 100%;
 }
