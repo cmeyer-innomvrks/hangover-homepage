@@ -1,5 +1,9 @@
 /* eslint-env browser */
 
+function round(value, decimals) {
+  return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+}
+
 class Location {
   constructor(
     id,
@@ -57,6 +61,23 @@ class Location {
 
   addId(id) {
     this.id = id;
+  }
+
+  addRatings(rating) {
+    this.rating = rating;
+  }
+
+  calcAverageRating() {
+    if (this.rating.length > 0) {
+      let sum = 0;
+      for (let i = 0; i < this.rating.length; i++) {
+        sum += this.rating[i].stars;
+      }
+      this.average = round(sum / this.rating.length, 1);
+      return round(sum / this.rating.length, 1);
+    }
+    this.average = "";
+    return "";
   }
 }
 

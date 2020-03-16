@@ -20,6 +20,7 @@ function init() {
 
 async function getLocations() {
   locations = await LocationLoader.getLocations();
+  console.log(locations);
   locationListView = new LocationList();
   locationListView.setElement(document.querySelector(".locationlist"));
   locationListView.appendLocationsToLetterCards(locations);

@@ -14,13 +14,13 @@ class View extends Observable {
 
   show() {
     if (this.element) {
-      this.element.classList.remove("Test");
+      this.element.classList.remove("hidden");
     }
   }
 
   hide() {
     if (this.element) {
-      this.element.classList.add("Test");
+      this.element.classList.add("hidden");
     }
   }
 }

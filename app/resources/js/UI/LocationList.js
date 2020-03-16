@@ -36,6 +36,12 @@ class LocationList extends View {
     item.querySelector(".location-zip").textContent = location.zip;
     item.querySelector(".location-city").textContent = location.city;
     item.querySelector(".location-art").textContent = location.art;
+
+    item.querySelector("#location-average").textContent = location.calcAverageRating();
+    if (location.calcAverageRating() === "") {
+      item.querySelector(".location-star").classList.add("hidden");
+    }
+
     item = item.firstElementChild;
     item.addEventListener("click", this.onClick.bind(this));
     return item;
