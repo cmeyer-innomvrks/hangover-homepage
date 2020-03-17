@@ -1,4 +1,16 @@
 jQuery(document).ready(function ($) {
+
+    if (JSON.parse(localStorage.getItem("isSignedIn"))) {
+        document.querySelector(".cd-secondary-nav")
+            .firstElementChild.firstElementChild
+            .textContent = "PERSÖNLICHER BEREICH";
+    } else {
+        document.querySelector(".cd-secondary-nav")
+            .firstElementChild.firstElementChild
+            .textContent = "LOG IN";
+    }
+
+
     //if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
     var MQL = 1170;
 

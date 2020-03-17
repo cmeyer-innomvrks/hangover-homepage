@@ -14,6 +14,8 @@ class EventDetailCard extends View {
         if (JSON.parse(localStorage.getItem("isSignedIn"))) {
             let checkIfSavedEvent = new Event("isEventSaved", { id: this.event.id });
             this.notifyAll(checkIfSavedEvent);
+        } else {
+            this.element.querySelector(".save-event").classList.add("inactive");
         }
     }
 

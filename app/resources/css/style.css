@@ -448,3 +448,8 @@ body{
 .container-footer-to-bot{
   min-height: 100%;
 }
+
+.inactive {
+  pointer-events: none;
+  opacity: 0.5;
+}

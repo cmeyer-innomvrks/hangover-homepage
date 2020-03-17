@@ -4,6 +4,9 @@ function init() {
 }
 
 function onSignIn(googleUser) {
+  document.querySelector(".cd-secondary-nav")
+    .firstElementChild.firstElementChild
+    .textContent = "PERSÖNLICHER BEREICH";
   let profile = googleUser.getBasicProfile(),
     user = {
       name: profile.getName(),
@@ -19,6 +22,9 @@ function onSignIn(googleUser) {
 function onSignOut() {
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
+    document.querySelector(".cd-secondary-nav")
+      .firstElementChild.firstElementChild
+      .textContent = "LOG IN";
     localStorage.setItem("isSignedIn", JSON.stringify(gapi.auth2.getAuthInstance().isSignedIn.get()));
     alert("Sie wurden erfolgreich ausgeloggt.");
   });
