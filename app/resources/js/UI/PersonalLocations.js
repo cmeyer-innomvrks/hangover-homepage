@@ -1,7 +1,7 @@
 /* eslint-env browser */
 
 import View from "./View.js";
-import { Event } from "../utils/Observable.js"
+import { Event } from "../utils/Observable.js";
 
 class PersonalLocations extends View {
     constructor() {
@@ -50,6 +50,7 @@ class PersonalLocations extends View {
         item.querySelector(".location-art").textContent = location.art;
 
         item.querySelector("#location-average").textContent = location.average;
+        console.log(location.average);
         if (location.average === "") {
             item.querySelector(".location-star").classList.add("hidden");
         }

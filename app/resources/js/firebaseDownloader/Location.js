@@ -65,6 +65,7 @@ class Location {
 
   addRatings(rating) {
     this.rating = rating;
+    this.calcAverageRating();
   }
 
   calcAverageRating() {

@@ -23,6 +23,7 @@ function init() {
 async function getEvents() {
 	events = await EventLoader.getEvents();
 	locations = await LocationLoader.getLocations();
+	console.log(locations);
 	localStorage.setItem("events", JSON.stringify(events));
 	localStorage.setItem("locations", JSON.stringify(locations));
 	events.sort(function (a, b) {

@@ -12,37 +12,65 @@ class LocationDetailCard extends View {
     setElement(element) {
         super.setElement(element);
         if (JSON.parse(localStorage.getItem("isSignedIn"))) {
-            let checkIfSavedEvent = new Event("isEventSaved", { id: this.event.id });
+            let checkIfSavedEvent = new Event("isLocationSaved", { id: this.location.id });
             this.notifyAll(checkIfSavedEvent);
         } else {
-            // TODO this.element.querySelector("").classList.add("inactive");
+            this.element.querySelector(".save-event").classList.add("inactive");
         }
-    }
-
-    updateNavigator() {
-        let listItems = this.element.querySelector(".breadcrumb").getElementsByTagName("li");
-        listItems[1].firstElementChild.textContent = this.location.art;
-        listItems[2].textContent = this.location.name;
-        /* TODO localStorage.setItem("locationDetail", JSON.stringify(this.location)); */
     }
 
     displayLocation() {
-        let card = this.element.querySelector(".card");
-        if (this.event.image !== "") {
-            card.querySelector(".card-img-top").src = this.location.image;
-        } else {
-            card.querySelector(".card-img-top").src = "../resources/img/Hangover_Logo_mit_Schrift.png";
-        }
-        /* TODO card.querySelector(".event-date").textContent = this.event.date;
-        card.querySelector(".event-title").textContent = this.event.headline;
-        card.querySelector(".card-text").textContent = this.event.info;
-        card.querySelector(".event-time").textContent = this.event.time;
-        card.querySelector(".event-cost").textContent = this.event.price;
-        card.querySelector(".event-musik").textContent = this.event.music; */
+        let card = this.element;
+        card.querySelector(".art").textContent = this.location.art;
+        card.querySelector(".info").textContent = this.location.info;
 
+        // ÖFFNUNGSZEITEN
+        if (this.location.monday_from !== "") {
+            card.querySelector("#monday-from").textContent = this.location.monday_from;
+            card.querySelector(".monday-till").textContent = this.location.monday_till;
+        } else {
+            card.querySelector("#monday-from").textContent = "- geschlossen";
+        }
+        if (this.location.tuesday_from !== "") {
+            card.querySelector("#tuesday-from").textContent = this.location.tuesday_from;
+            card.querySelector(".tuesday-till").textContent = this.location.tuesday_till;
+        } else {
+            card.querySelector("#tuesday-from").textContent = "- geschlossen";
+        }
+        if (this.location.wednesday_from !== "") {
+            card.querySelector("#wednesday-from").textContent = this.location.wednesday_from;
+            card.querySelector(".wednesday-till").textContent = this.location.wednesday_till;
+        } else {
+            card.querySelector("#wednesday-from").textContent = "- geschlossen";
+        }
+        if (this.location.thursday_from !== "") {
+            card.querySelector("#thursday-from").textContent = this.location.thursday_from;
+            card.querySelector(".thursday-till").textContent = this.location.thursday_till;
+        } else {
+            card.querySelector("#thursday-from").textContent = "- geschlossen";
+        }
+        if (this.location.friday_from !== "") {
+            card.querySelector("#friday-from").textContent = this.location.friday_from;
+            card.querySelector(".friday-till").textContent = this.location.friday_till;
+        } else {
+            card.querySelector("#friday-from").textContent = "- geschlossen";
+        }
+        if (this.location.saturday_from !== "") {
+            card.querySelector("#saturday-from").textContent = this.location.saturday_from;
+            card.querySelector(".saturday-till").textContent = this.location.saturday_till;
+        } else {
+            card.querySelector("#saturday-from").textContent = "- geschlossen";
+        }
+        if (this.location.sunday_from !== "") {
+            card.querySelector("#sunday-from").textContent = this.location.sunday_from;
+            card.querySelector(".sunday-till").textContent = this.location.sunday_till;
+        } else {
+            card.querySelector("#sunday-from").textContent = "- geschlossen";
+        }
     }
 
     setSavedStatus(status) {
+        console.log(status);
         this.saveStatus = status;
         this.element.querySelector("#save-location").checked = status;
         this.element.querySelector("#save-location").addEventListener("click", this.onSave.bind(this));

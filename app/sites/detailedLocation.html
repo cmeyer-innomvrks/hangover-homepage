@@ -11,12 +11,12 @@
   <link rel="stylesheet" href="../resources/css/reset.css">
   <link rel="stylesheet" href="../resources/css/userprofile.css">
   <link rel="stylesheet" href="../resources/css/raiting.css">
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-    <!-- Google -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://kit.fontawesome.com/a67950b77b.js" crossorigin="anonymous"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  <!-- Google -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://kit.fontawesome.com/a67950b77b.js" crossorigin="anonymous"></script>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -30,7 +30,7 @@
   <script src="../resources/js/modernizr.js"></script> <!-- Modernizr -->
   <script src="../resources/js/jquery-2.1.1.js"></script>
   <script src="../resources/js/navbar.js"></script>
-  <script src="../resources/js/locdetailtest.js"></script>
+  <script src="../resources/js/locationdetail.js" type="module"></script>
 
 </head>
 
@@ -43,7 +43,7 @@
 
     <nav>
       <ul class="cd-secondary-nav">
-        <li id="user-log-in-out"><a href="#0">Log In</a></li>
+        <li id="user-log-in-out"><a href="userprofile.html">Log In</a></li>
       </ul>
     </nav> <!-- cd-nav -->
 
@@ -92,9 +92,12 @@
                 <p>93053 Regensburg, St.-Peters-Weg 5</p>
               </div>
               <div class="profile-stats-info">
-                <a href="#" title="Views"> <i class="glyphicon glyphicon-eye-open profile-info-stats"> </i> <strong class="profile-info-stats profile-views">2000</strong></a>
-                <a href="#" title="Comments"> <i class="glyphicon glyphicon-comment profile-info-stats"> </i> <strong class="profile-info-stats profile-comments">120</strong></a>
-                <a href="#" title="Likes"> <i class="glyphicon glyphicon-thumbs-up profile-info-stats"> </i> <strong class="profile-info-stats profile-likes">60</strong></a>
+                <a href="#" title="Views"> <i class="glyphicon glyphicon-eye-open profile-info-stats"> </i> <strong
+                    class="profile-info-stats profile-views">2000</strong></a>
+                <a href="#" title="Comments"> <i class="glyphicon glyphicon-comment profile-info-stats"> </i> <strong
+                    class="profile-info-stats profile-comments">120</strong></a>
+                <a href="#" title="Likes"> <i class="glyphicon glyphicon-thumbs-up profile-info-stats"> </i> <strong
+                    class="profile-info-stats profile-likes">60</strong></a>
               </div>
             </div>
           </div>
@@ -107,7 +110,7 @@
         <!-- Profile End -->
 
         <!-- SWITCH Start-->
-        <div class="selection-toggler text-center">
+        <div class="selection-toggler text-center navigator">
           <div> Hardcodename</div>
           <div class="btn-group text-center" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary is-active btn-info">Info</button>
@@ -121,41 +124,38 @@
         <!-- Info Starts -->
         <div class="card infos">
           <div class="card-body text-center">
-            <p><b>Art:</b><br> <span class="location-info">Club</span></p><br>
-            <p><b>Info:</b><br> <span class="location-info">Modernes Shisha Café im Herzen von Regensburg!ÜBER UNSTop Service, Top Location, rießen Auswahl an Getränken und Tabaksorten..Kommt vorbei und überzeugt euch selbst von uns!STANDORT & KONTAKTAnschrift: Ziegetsdorfer Str. 115, 93051 Regensburg, DeutschlandTelefon: 01515 8886027</span></p><br>
+            <p><b>Art:</b><br> <span class="location-info art">Club</span></p><br>
+            <p><b>Info:</b><br> <span class="location-info info">Modernes Shisha Café im Herzen von Regensburg!ÜBER
+                UNSTop
+                Service, Top Location, rießen Auswahl an Getränken und Tabaksorten..Kommt vorbei und überzeugt euch
+                selbst von uns!STANDORT & KONTAKTAnschrift: Ziegetsdorfer Str. 115, 93051 Regensburg,
+                DeutschlandTelefon: 01515 8886027</span></p><br>
             <p><b>Öffnungszeiten:</b><br> <span class="location-openings">
-              <b>Montag: </b> <span id="monday-from">geschlossen</span> - <span class="monday-till"></span> <br>
-              <b>Dienstag: </b> <span id="tuesday-from">geschlossen</span> - <span class="tuesday-till"></span> <br>
-              <b>Mittwoch: </b> <span id="wedmesday-from">geschlossen</span> - <span class="wednesday-till"></span> <br>
-              <b>Donnerstag: <span id="thursday-from">20:00</span> Uhr - <span class="thursday-till">03:00 </span>Uhr <br>
-              <b>Freitag: <span id="friday-from">21:00</span> Uhr - <span class="friday-till"> 04:00</span> Uhr <br>
-              <b>Samstag: <span id="saturday-from">21:00</span> Uhr - <span class="saturday-till">04:00</span> Uhr <br>
-              <b>Sonntag: </b> <span id="sunday-from">geschlossen</span> - <span class="sunday-till"></span> <br>
-            </span> </p>
+                <b>Montag: </b> <span id="monday-from">geschlossen</span> - <span class="monday-till"></span> <br>
+                <b>Dienstag: </b> <span id="tuesday-from">geschlossen</span> - <span class="tuesday-till"></span> <br>
+                <b>Mittwoch: </b> <span id="wednesday-from">geschlossen</span> - <span class="wednesday-till"></span>
+                <br>
+                <b>Donnerstag:</b> <span id="thursday-from">20:00</span> Uhr - <span class="thursday-till">03:00
+                </span>Uhr
+                <br>
+                <b>Freitag:</b> <span id="friday-from">21:00</span> Uhr - <span class="friday-till"> 04:00</span> Uhr
+                <br>
+                <b>Samstag:</b> <span id="saturday-from">21:00</span> Uhr - <span class="saturday-till">04:00</span> Uhr
+                <br>
+                <b>Sonntag:</b> </b> <span id="sunday-from">geschlossen</span> - <span class="sunday-till"></span>
+                <br>
+              </span> </p>
           </div>
           <div class="card-footer">
-            <b><span class="save-event"> <input type="checkbox" name="saveevent" id="save-event"> Diese Location
+            <b><span class="save-event"> <input type="checkbox" name="saveevent" id="save-location"> Diese Location
                 speichern</span></b>
           </div>
         </div>
         <!-- Info End -->
 
         <!-- Event Start -->
-          <div class="card my-2 events">
-            <div class="card-footer">
-              <small class="text-muted"><span class="location-art pull-right">ART</span></small>
-            </div>
-            <img src="../resources/img/party1.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title headline">Event Title Hardcode</h5>
-              <p class="card-text shortDescription">First 150 letters... This is a longer card with supporting text below as a natural lead-in to
-                additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted"><span class="event-location">@BeatsClubHardcode</span> <span class="event-time">23:00
-                  Uhr Hardcode</span></small>
-            </div>
-          </div>
+        <div class="card my-2 events">
+        </div>
         <!-- Event End-->
 
         <!-- Comment Start -->
@@ -163,198 +163,211 @@
         <!-- Comment End-->
 
         <!-- Rating Start -->
-        <div class="row reviews">
-          <div class="col-sm-3">
-            <div class="rating-block">
-              <h4 class="rating-headline">Nutzerbewertungen</h4>
-              <h2 class="padding-bottom-7 average-value">4.3 <small>/ 5</small></h2>
-              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
+        <div class="review-block">
+          <div class="row reviews">
+            <div class="col-sm-3">
+              <div class="rating-block">
+                <h4 class="rating-headline">Nutzerbewertungen</h4>
+                <h2 class="padding-bottom-7 average-value"><span class="average">0.0</span><small>/ 5</small></h2>
+                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <h4 class="font-black">Bewertungsübersicht</h4>
+              <div class="pull-left">
+                <div class="pull-left" style="width:35px; line-height:1;">
+                  <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+                </div>
+                <div class="pull-left" style="width:180px;">
+                  <div class="progress" style="height:9px; margin:8px 0;">
+                    <div class="progress-bar progress-bar-success font-black" role="progressbar" aria-valuenow="5"
+                      aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pull-right" style="margin-left:10px;">1</div>
+              </div>
+              <div class="pull-left">
+                <div class="pull-left" style="width:35px; line-height:1;">
+                  <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+                </div>
+                <div class="pull-left" style="width:180px;">
+                  <div class="progress" style="height:9px; margin:8px 0;">
+                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4"
+                      aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pull-right" style="margin-left:10px;">1</div>
+              </div>
+              <div class="pull-left">
+                <div class="pull-left" style="width:35px; line-height:1;">
+                  <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+                </div>
+                <div class="pull-left" style="width:180px;">
+                  <div class="progress" style="height:9px; margin:8px 0;">
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0"
+                      aria-valuemax="5" style="width: 60%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pull-right" style="margin-left:10px;">0</div>
+              </div>
+              <div class="pull-left">
+                <div class="pull-left" style="width:35px; line-height:1;">
+                  <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+                </div>
+                <div class="pull-left" style="width:180px;">
+                  <div class="progress" style="height:9px; margin:8px 0;">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2"
+                      aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pull-right" style="margin-left:10px;">0</div>
+              </div>
+              <div class="pull-left">
+                <div class="pull-left" style="width:35px; line-height:1;">
+                  <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+                </div>
+                <div class="pull-left" style="width:180px;">
+                  <div class="progress" style="height:9px; margin:8px 0;">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0"
+                      aria-valuemax="5" style="width: 20%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pull-right" style="margin-left:10px;">0</div>
+              </div>
             </div>
           </div>
-          <div class="col-sm-3">
-            <h4 class="font-black">Bewertungsübersicht</h4>
-            <div class="pull-left">
-              <div class="pull-left" style="width:35px; line-height:1;">
-                <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
-              </div>
-              <div class="pull-left" style="width:180px;">
-                <div class="progress" style="height:9px; margin:8px 0;">
-                  <div class="progress-bar progress-bar-success font-black" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
-                  <span class="sr-only">80% Complete (danger)</span>
+          <div class="row reviews">
+            <div class="col-sm-7">
+              <hr />
+              <div class="review-block">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                    <div class="review-block-name">nktailor</div>
+                    <div class="review-block-date">January 29, 2016<br />1 day ago</div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="review-block-title">this was nice in buy</div>
+                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in
+                      buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was
+                      nice in buy</div>
                   </div>
                 </div>
-              </div>
-              <div class="pull-right" style="margin-left:10px;">1</div>
-            </div>
-            <div class="pull-left">
-              <div class="pull-left" style="width:35px; line-height:1;">
-                <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
-              </div>
-              <div class="pull-left" style="width:180px;">
-                <div class="progress" style="height:9px; margin:8px 0;">
-                  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
-                  <span class="sr-only">80% Complete (danger)</span>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                    <div class="review-block-name">nktailor</div>
+                    <div class="review-block-date">January 29, 2016<br />1 day ago</div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="review-block-title">this was nice in buy</div>
+                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in
+                      buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was
+                      nice in buy</div>
                   </div>
                 </div>
-              </div>
-              <div class="pull-right" style="margin-left:10px;">1</div>
-            </div>
-            <div class="pull-left">
-              <div class="pull-left" style="width:35px; line-height:1;">
-                <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
-              </div>
-              <div class="pull-left" style="width:180px;">
-                <div class="progress" style="height:9px; margin:8px 0;">
-                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
-                  <span class="sr-only">80% Complete (danger)</span>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-3">
+                    <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+                    <div class="review-block-name">nktailor</div>
+                    <div class="review-block-date">January 29, 2016<br />1 day ago</div>
                   </div>
-                </div>
-              </div>
-              <div class="pull-right" style="margin-left:10px;">0</div>
-            </div>
-            <div class="pull-left">
-              <div class="pull-left" style="width:35px; line-height:1;">
-                <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
-              </div>
-              <div class="pull-left" style="width:180px;">
-                <div class="progress" style="height:9px; margin:8px 0;">
-                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
-                  <span class="sr-only">80% Complete (danger)</span>
+                  <div class="col-sm-9">
+                    <div class="review-block-rate">
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="review-block-title">this was nice in buy</div>
+                    <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in
+                      buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was
+                      nice in buy</div>
                   </div>
-                </div>
-              </div>
-              <div class="pull-right" style="margin-left:10px;">0</div>
-            </div>
-            <div class="pull-left">
-              <div class="pull-left" style="width:35px; line-height:1;">
-                <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
-              </div>
-              <div class="pull-left" style="width:180px;">
-                <div class="progress" style="height:9px; margin:8px 0;">
-                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
-                  <span class="sr-only">80% Complete (danger)</span>
-                  </div>
-                </div>
-              </div>
-              <div class="pull-right" style="margin-left:10px;">0</div>
-            </div>
-          </div>			
-        </div>			
-        <div class="row reviews">
-          <div class="col-sm-7">
-            <hr/>
-            <div class="review-block">
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-                  <div class="review-block-name">nktailor</div>
-                  <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-                </div>
-                <div class="col-sm-9">
-                  <div class="review-block-rate">
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                  <div class="review-block-title">this was nice in buy</div>
-                  <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                </div>
-              </div>
-              <hr/>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-                  <div class="review-block-name">nktailor</div>
-                  <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-                </div>
-                <div class="col-sm-9">
-                  <div class="review-block-rate">
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                  <div class="review-block-title">this was nice in buy</div>
-                  <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
-                </div>
-              </div>
-              <hr/>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
-                  <div class="review-block-name">nktailor</div>
-                  <div class="review-block-date">January 29, 2016<br/>1 day ago</div>
-                </div>
-                <div class="col-sm-9">
-                  <div class="review-block-rate">
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                    <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
-                      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    </button>
-                  </div>
-                  <div class="review-block-title">this was nice in buy</div>
-                  <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was nice in buy</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-            <!-- Rating End-->
-      <!-- COL 2 End-->
+        <!-- Rating End-->
+        <!-- COL 2 End-->
       </div>
 
       <!-- COL 3 -->
       <div class="col col3"></div>
-   
-  </div>
+
+    </div>
   </div>
   <!-- CONTENT END -->
 
@@ -377,6 +390,30 @@
   </footer>
   <!-- FOOTER END -->
 
+  <!-- TEMPLATE EVENT START -->
+  <template class="event-template">
+    <div class="col mb-4">
+      <div class="card h-100 my-2">
+        <div class="card-footer">
+          <small class="text-muted"><span class="location-art pull-right">ART</span></small>
+        </div>
+        <img src="../resources/img/party1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title headline">HARDCODE EVENT Title</h5>
+          <p class="card-text shortDescription">This is a longer card with supporting text below as a natural
+            lead-in to
+            additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"><span class="event-location">@BeatsClubHardcode</span> <span
+              class="event-time">23:00
+              Uhr</span></small>
+        </div>
+      </div>
+    </div>
+  </template>
+  <!-- TEMPLATE EVENT END -->
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -389,12 +426,12 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
 
-    <!-- Rating -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  <!-- Rating -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
 
 </html>
