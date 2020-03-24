@@ -31,6 +31,7 @@
   <script src="../resources/js/jquery-2.1.1.js"></script>
   <script src="../resources/js/navbar.js"></script>
   <script src="../resources/js/locationdetail.js" type="module"></script>
+  <script src="../resources/js/rating.js"></script>
 </head>
 
 <body class="body">
@@ -115,6 +116,7 @@
             <button type="button" class="btn btn-secondary is-active btn-info">Info</button>
             <button type="button" class="btn btn-secondary btn-event">Events</button>
             <button type="button" class="btn btn-secondary btn-review">Bewertungen</button>
+            <button type="button" class="btn btn-secondary btn-pictures">Bilder</button>
           </div>
           <div>anzeigen</div>
         </div>
@@ -157,12 +159,57 @@
         </div>
         <!-- Event End-->
 
-        <!-- Comment Start -->
-
-        <!-- Comment End-->
-
         <!-- Rating Start -->
+        <!-- Insert Review Start -->
         <div class="review-block">
+          <div class="row reviews">
+            <div class="container">
+              <div class="row" style="margin-top:40px;">
+                <div class="col-md-6">
+                  <div class="well well-sm">
+                        <div class="text-right">
+                            <a class="btn btn-success btn-green" href="#reviews-anchor" id="open-review-box">Leave a Review</a>
+                        </div>
+                    
+                        <div class="rating-block">
+                          <h4 class="rating-headline">Bewertung abgeben</h4>
+                          <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          </button>
+                          <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          </button>
+                          <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          </button>
+                          <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          </button>
+                          <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          </button>
+                        </div>
+                        <div class="row" id="post-review-box">
+                            <div class="col-md-12">
+                                <form accept-charset="UTF-8" action="" method="post">
+                                    <input id="ratings-hidden" name="rating" type="hidden"> 
+                                    <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
+                                    <div class="text-right">
+                                        <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+                                        <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+                                        <button class="btn btn-success btn-lg" type="submit">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Insert Review End -->
+
+          <!-- General Reviews Start -->
           <div class="row reviews">
             <div class="col-sm-3">
               <div class="rating-block">
@@ -259,6 +306,9 @@
               </div>
             </div>
           </div>
+          <!-- General Reviews End -->
+
+          <!-- User Reviews Start -->
           <div class="row reviews">
             <div class="col-sm-7">
               <hr />
@@ -358,10 +408,56 @@
               </div>
             </div>
           </div>
+          <!-- User Reviews End -->
         </div>
         <!-- Rating End-->
-        <!-- COL 2 End-->
-      </div>
+        
+
+      <!-- Pictures Start -->
+      <div class="container picture-area">
+        <div class="panel panel-default">
+          <div class="panel-heading"><strong>Upload Image</strong> <small>Hangover file upload</small></div>
+          <div class="panel-body picture-area">
+  
+            <!-- Standar Form -->
+            <h4>Wähle ein Bild von deinem Gerät aus</h4>
+            <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+              <div class="form-inline">
+                <div class="form-group">
+                  <input type="file" name="files[]" id="js-upload-files" multiple>
+                </div>
+                <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+              </div>
+            </form>
+  
+            <!-- Drop Zone -->
+            <br>
+            <h4>Oder nutze das Drag&Drop Feld</h4>
+            <div class="upload-drop-zone" id="drop-zone">
+              Just drag and drop files here
+            </div>
+  
+            <!-- Progress Bar -->
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+              </div>
+            </div>
+  
+            <!-- Upload Finished -->
+            <div class="js-upload-finished">
+              <h3>Processed files</h3>
+              <div class="list-group upload-group">
+                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
+                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /container -->
+      <!-- Pictures End -->
+      <!-- COL 2 End-->
+    </div>
 
       <!-- COL 3 -->
       <div class="col col3"></div>
