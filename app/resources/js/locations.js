@@ -5,9 +5,7 @@ import LocationFilter from "./filter/LocationFilter.js";
 import LocationFilterView from "./UI/LocationFilterView.js";
 import LocationFilterBtn from "./UI/LocationFilterBtn.js";
 
-let locationListView,
-  locationFilter,
-  locations;
+let locationListView, locationFilter, locations;
 
 function init() {
   getLocations();
@@ -23,12 +21,18 @@ async function getLocations() {
   console.log(locations);
   locationListView = new LocationList();
   locationListView.setElement(document.querySelector(".locationlist"));
+  locationListView.addEventListener(
+    "toLocationDetail",
+    onLocationDetailRequested
+  );
   locationListView.appendLocationsToLetterCards(locations);
 }
 
 function onFilterRequested() {
   locationFilter = new LocationFilter(locations);
-  LocationFilterView.setupFilterView(locationFilter.getListOfAvailableLocationTypes());
+  LocationFilterView.setupFilterView(
+    locationFilter.getListOfAvailableLocationTypes()
+  );
 }
 
 function hideFilters() {
@@ -40,8 +44,23 @@ function onFilterChanged(event) {
     result = locationFilter.getFilteredLocationsByArt(selectedTypes);
   locationListView.element.innerHTML = "";
   locationListView = new LocationList();
-  locationListView.setElement(document.querySelector(".locationlist"))
+  locationListView.setElement(document.querySelector(".locationlist"));
+  locationListView.addEventListener(
+    "toLocationDetail",
+    onLocationDetailRequested
+  );
   locationListView.appendLocationsToLetterCards(result);
+}
+
+function onLocationDetailRequested(event) {
+  let locationID = event.data.locationId;
+  for (let i = 0; i < locations.length; i++) {
+    if (locationID === locations[i].id) {
+      localStorage.setItem("locationDetail", JSON.stringify(locations[i]));
+      window.location.href = "./detailedLocation.html";
+      break;
+    }
+  }
 }
 
 init();
