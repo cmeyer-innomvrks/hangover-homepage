@@ -123,8 +123,13 @@ function onEventDetailRequested(event) {
 }
 
 function onReviewInputRequested() {
-  LocationDetailLeaveRating.show();
-  // TODO
+  console.log(JSON.parse(localStorage.getItem("isSignedIn")));
+  if (JSON.parse(localStorage.getItem("isSignedIn"))) {
+    LocationDetailLeaveRating.show();
+    LocationDetailLeaveRatingBtn.hide();
+  } else {
+    alert("Du musst eingeloggt sein, um eine Bewertung abgeben zu können.");
+  }
 }
 
 init();
