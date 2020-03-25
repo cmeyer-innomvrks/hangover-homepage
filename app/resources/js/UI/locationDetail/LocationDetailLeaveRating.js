@@ -18,3 +18,5 @@ class LocationDetailLeaveRating extends View {
     // TODO
   }
 }
+
+export default new LocationDetailLeaveRating();

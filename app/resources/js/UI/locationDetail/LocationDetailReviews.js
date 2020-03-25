@@ -44,7 +44,29 @@ class LocationDetailReviews extends View {
   }
 
   showReviews() {
-    // TODO
+    let ratings = this.location.rating;
+    for (let i = 0; i < ratings.length; i++) {
+      let template = document.querySelector(".rating-template").innerHTML,
+        item = document.createElement("div");
+      item.innerHTML = template;
+      item.querySelector(".img-rounded").src =
+        "../resources/img/Hangover_Logo_ohne_Schrift.png";
+      item.querySelector(".review-block-name").textContent = "HARDCODE";
+      item.querySelector(".review-block-date").textContent = ratings[i].date;
+      let stars = item.getElementsByTagName("button");
+      for (let j = 0; j < stars.length; j++) {
+        if (ratings[i].stars >= j + 1) {
+          stars[j].classList.add("btn-warning");
+          stars[j].classList.remove("btn-grey");
+          stars[j].classList.remove("btn-default");
+        }
+      }
+      item.querySelector(".review-block-description").textContent =
+        ratings[i].text;
+
+      item = item.firstElementChild;
+      this.element.appendChild(item);
+    }
   }
 }
 

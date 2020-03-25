@@ -505,3 +505,9 @@ li .event-date {
 b a {
   color: black !important;
 }
+
+.review-img,
+.img-rounded {
+  width: 40% !important;
+  height: auto !important;
+}

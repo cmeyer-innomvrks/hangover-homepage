@@ -6,6 +6,9 @@ import LocationDetailHeader from "./UI/locationDetail/LocationDetailHeader.js";
 import LocationDetailNavigator from "./UI/locationDetail/LocationDetailNavigator.js";
 import LocationDetailEvents from "./UI/locationDetail/LocationDetailEvents.js";
 import LocationDetailReviews from "./UI/locationDetail/LocationDetailReviews.js";
+import LocationDetailPics from "./UI/locationDetail/LocationDetailPics.js";
+import LocationDetailLeaveRatingBtn from "./UI/locationDetail/LocationDetailLeaveRatingBtn.js";
+import LocationDetailLeaveRating from "./UI/locationDetail/LocationDetailLeaveRating.js";
 
 let locationDetailCard;
 
@@ -44,7 +47,22 @@ function init() {
   LocationDetailReviews.setElement(document.querySelector(".review-block"));
   LocationDetailReviews.setAverage();
   LocationDetailReviews.setOverview();
+  LocationDetailReviews.showReviews();
   LocationDetailReviews.hide();
+
+  LocationDetailPics.setElement(document.querySelector(".picture-area"));
+  LocationDetailPics.hide();
+
+  LocationDetailLeaveRatingBtn.setElement(
+    document.querySelector(".leave-rating-btn")
+  );
+  LocationDetailLeaveRatingBtn.addEventListener(
+    "leaveReview",
+    onReviewInputRequested
+  );
+
+  LocationDetailLeaveRating.setElement(document.querySelector(".leave-review"));
+  LocationDetailLeaveRating.hide();
 }
 
 function onInfoRequested() {
@@ -73,7 +91,7 @@ function onPicsRequested() {
   LocationDetailNavigator.activatePics();
   LocationDetailEvents.hide();
   LocationDetailReviews.hide();
-  // LocationDetailPics.hide();
+  LocationDetailPics.show();
 }
 
 async function checkIfLocationSaved(event) {
@@ -102,6 +120,11 @@ function onEventDetailRequested(event) {
       break;
     }
   }
+}
+
+function onReviewInputRequested() {
+  LocationDetailLeaveRating.show();
+  // TODO
 }
 
 init();
