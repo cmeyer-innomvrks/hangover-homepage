@@ -70,6 +70,7 @@ function onInfoRequested() {
   LocationDetailNavigator.activateInfo();
   LocationDetailEvents.hide();
   LocationDetailReviews.hide();
+  LocationDetailPics.hide();
 }
 
 function onEventRequested() {
@@ -77,6 +78,7 @@ function onEventRequested() {
   LocationDetailNavigator.activateEvents();
   LocationDetailEvents.show();
   LocationDetailReviews.hide();
+  LocationDetailPics.hide();
 }
 
 function onReviewRequested() {
@@ -84,6 +86,7 @@ function onReviewRequested() {
   LocationDetailNavigator.activateReviews();
   LocationDetailEvents.hide();
   LocationDetailReviews.show();
+  LocationDetailPics.hide();
 }
 
 function onPicsRequested() {

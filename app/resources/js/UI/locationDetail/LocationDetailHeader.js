@@ -30,7 +30,7 @@ class LocationDetailHeader extends View {
     ).textContent = this.location.rating.length;
     this.element.querySelector(".profile-views").textContent = "TODO";
     this.element.querySelector(".profile-likes").textContent = "TODO";
-    this.element.querySelector("#user-email").textContent = "TODO";
+    this.element.querySelector("#user-email").textContent = this.location.art;
   }
 }
 
