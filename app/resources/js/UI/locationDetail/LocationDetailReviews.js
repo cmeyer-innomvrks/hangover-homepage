@@ -51,7 +51,7 @@ class LocationDetailReviews extends View {
       item.innerHTML = template;
       item.querySelector(".img-rounded").src =
         "../resources/img/Hangover_Logo_ohne_Schrift.png";
-      item.querySelector(".review-block-name").textContent = "HARDCODE";
+      item.querySelector(".review-block-name").textContent = ratings[i].name;
       item.querySelector(".review-block-date").textContent = ratings[i].date;
       let stars = item.getElementsByTagName("button");
       for (let j = 0; j < stars.length; j++) {
@@ -65,9 +65,13 @@ class LocationDetailReviews extends View {
         ratings[i].text;
 
       item = item.firstElementChild;
-      this.element.appendChild(item);
+      this.element.querySelector(".user-reviews").appendChild(item);
     }
+  }
+
+  resetReviews() {
+    this.element.querySelector(".user-reviews").innerHTML = "";
   }
 }
 
-export default new LocationDetailReviews();
+export default LocationDetailReviews;

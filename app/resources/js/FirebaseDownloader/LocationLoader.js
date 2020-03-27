@@ -40,7 +40,8 @@ class LocationLoader extends Observable {
           let currRating = {
             stars: parseFloat(doc.data().ratingStars),
             text: doc.data().ratingText,
-            date: doc.data().ratingDate
+            date: doc.data().ratingDate,
+            name: doc.data().userName
           };
           ratings.push(currRating);
         });
@@ -56,6 +57,22 @@ class LocationLoader extends Observable {
       this.locations[i].addRatings(await this.getRatings(this.locations[i].id));
     }
     return this.locations;
+  }
+
+  pushReview(id, stars, text, date) {
+    let userName = JSON.parse(localStorage.getItem("user")).name;
+    database
+      .collection(`Locations/${id}/Rating`)
+      .doc()
+      .set({
+        ratingDate: date,
+        ratingStars: stars,
+        ratingText: text,
+        userName: userName
+      })
+      .then(function() {
+        console.log("Doc written...");
+      });
   }
 }
 

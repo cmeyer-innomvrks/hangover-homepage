@@ -9,8 +9,10 @@ import LocationDetailReviews from "./UI/locationDetail/LocationDetailReviews.js"
 import LocationDetailPics from "./UI/locationDetail/LocationDetailPics.js";
 import LocationDetailLeaveRatingBtn from "./UI/locationDetail/LocationDetailLeaveRatingBtn.js";
 import LocationDetailLeaveRating from "./UI/locationDetail/LocationDetailLeaveRating.js";
+import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
+import ProfileLoader from "./FirebaseDownloader/ProfileLoader.js";
 
-let locationDetailCard;
+let locationDetailCard, locationDetailReviews;
 
 function init() {
   LocationDetailHeader.setElement(document.querySelector(".profile-panel"));
@@ -44,11 +46,12 @@ function init() {
   );
   LocationDetailEvents.hide();
 
-  LocationDetailReviews.setElement(document.querySelector(".review-block"));
-  LocationDetailReviews.setAverage();
-  LocationDetailReviews.setOverview();
-  LocationDetailReviews.showReviews();
-  LocationDetailReviews.hide();
+  locationDetailReviews = new LocationDetailReviews();
+  locationDetailReviews.setElement(document.querySelector(".review-block"));
+  locationDetailReviews.setAverage();
+  locationDetailReviews.setOverview();
+  locationDetailReviews.showReviews();
+  locationDetailReviews.hide();
 
   LocationDetailPics.setElement(document.querySelector(".picture-area"));
   LocationDetailPics.hide();
@@ -62,6 +65,7 @@ function init() {
   );
 
   LocationDetailLeaveRating.setElement(document.querySelector(".leave-review"));
+  LocationDetailLeaveRating.addEventListener("submitReview", onReviewSubmit);
   LocationDetailLeaveRating.hide();
 }
 
@@ -69,7 +73,7 @@ function onInfoRequested() {
   locationDetailCard.show();
   LocationDetailNavigator.activateInfo();
   LocationDetailEvents.hide();
-  LocationDetailReviews.hide();
+  locationDetailReviews.hide();
   LocationDetailPics.hide();
 }
 
@@ -77,7 +81,7 @@ function onEventRequested() {
   locationDetailCard.hide();
   LocationDetailNavigator.activateEvents();
   LocationDetailEvents.show();
-  LocationDetailReviews.hide();
+  locationDetailReviews.hide();
   LocationDetailPics.hide();
 }
 
@@ -85,7 +89,7 @@ function onReviewRequested() {
   locationDetailCard.hide();
   LocationDetailNavigator.activateReviews();
   LocationDetailEvents.hide();
-  LocationDetailReviews.show();
+  locationDetailReviews.show();
   LocationDetailPics.hide();
 }
 
@@ -93,7 +97,7 @@ function onPicsRequested() {
   locationDetailCard.hide();
   LocationDetailNavigator.activatePics();
   LocationDetailEvents.hide();
-  LocationDetailReviews.hide();
+  locationDetailReviews.hide();
   LocationDetailPics.show();
 }
 
@@ -126,13 +130,49 @@ function onEventDetailRequested(event) {
 }
 
 function onReviewInputRequested() {
-  console.log(JSON.parse(localStorage.getItem("isSignedIn")));
+  let flag = false;
+
   if (JSON.parse(localStorage.getItem("isSignedIn"))) {
-    LocationDetailLeaveRating.show();
-    LocationDetailLeaveRatingBtn.hide();
+    flag = true;
   } else {
     alert("Du musst eingeloggt sein, um eine Bewertung abgeben zu können.");
   }
+  if (
+    JSON.parse(localStorage.getItem("user")).reviews.indexOf(
+      JSON.parse(localStorage.getItem("locationDetail")).id
+    ) !== -1
+  ) {
+    flag = false;
+    alert(
+      "Du hast schon eine Bewertung für diese Location geschrieben. Du kannst keine weitere Bewertung schreiben."
+    );
+  }
+  if (flag) {
+    LocationDetailLeaveRating.show();
+    LocationDetailLeaveRatingBtn.hide();
+  }
+}
+
+function onReviewSubmit(event) {
+  let data = event.data,
+    userName = JSON.parse(localStorage.getItem("user")).name;
+  LocationLoader.pushReview(data.id, data.stars, data.text, data.date);
+  LocationDetailLeaveRating.hide();
+  let location = JSON.parse(localStorage.getItem("locationDetail"));
+  location.rating.push({
+    stars: data.stars,
+    text: data.text,
+    date: data.date,
+    name: userName
+  });
+  localStorage.setItem("locationDetail", JSON.stringify(location));
+  locationDetailReviews.resetReviews();
+  locationDetailReviews = new LocationDetailReviews();
+  locationDetailReviews.setElement(document.querySelector(".review-block"));
+  locationDetailReviews.setAverage();
+  locationDetailReviews.setOverview();
+  locationDetailReviews.showReviews();
+  ProfileLoader.updateUserReviews(data.id);
 }
 
 init();
