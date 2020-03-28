@@ -1,7 +1,7 @@
 /* eslint-env browser */
 
 function round(value, decimals) {
-  return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
+  return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
 }
 
 class Location {
@@ -77,13 +77,13 @@ class Location {
       this.average = round(sum / this.rating.length, 1);
       return round(sum / this.rating.length, 1);
     }
-    this.average = "";
-    return "";
+    this.average = 0;
+    return 0;
   }
 }
 
 const locationConverter = {
-  toFirestore: function (event) {
+  toFirestore: function(event) {
     return {
       art: art,
       city: city,
@@ -111,7 +111,7 @@ const locationConverter = {
       sunday_till: sunday_till
     };
   },
-  fromFirestore: function (snapshot, options) {
+  fromFirestore: function(snapshot, options) {
     const data = snapshot.data(options);
     return new Location(
       data.id,
@@ -143,4 +143,5 @@ const locationConverter = {
   }
 };
 
-export default (Location, locationConverter);
+export default Location;
+export { locationConverter };

@@ -49,11 +49,13 @@ class LocationList extends View {
     item.querySelector(".location-city").textContent = location.city;
     item.querySelector(".location-art").textContent = location.art;
 
-    item.querySelector(
-      "#location-average"
-    ).textContent = location.calcAverageRating();
-    if (location.calcAverageRating() === "") {
+    if (location.calcAverageRating() === 0) {
       item.querySelector(".location-star").classList.add("hidden");
+      item.querySelector("#location-average").classList.add("hidden");
+    } else {
+      item.querySelector(
+        "#location-average"
+      ).textContent = location.calcAverageRating();
     }
 
     item = item.firstElementChild;

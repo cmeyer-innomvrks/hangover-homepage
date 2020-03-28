@@ -9,7 +9,9 @@ class LocationDetailReviews extends View {
   }
 
   setAverage() {
-    this.element.querySelector(".average").textContent = this.location.average;
+    this.element.querySelector(
+      ".average"
+    ).textContent = this.location.average.toFixed(2);
     let stars = this.element
       .querySelector(".rating-avg")
       .getElementsByTagName("button");
@@ -49,8 +51,7 @@ class LocationDetailReviews extends View {
       let template = document.querySelector(".rating-template").innerHTML,
         item = document.createElement("div");
       item.innerHTML = template;
-      item.querySelector(".img-rounded").src =
-        "../resources/img/Hangover_Logo_ohne_Schrift.png";
+      item.querySelector(".img-rounded").src = ratings[i].img;
       item.querySelector(".review-block-name").textContent = ratings[i].name;
       item.querySelector(".review-block-date").textContent = ratings[i].date;
       let stars = item.getElementsByTagName("button");
@@ -66,6 +67,9 @@ class LocationDetailReviews extends View {
 
       item = item.firstElementChild;
       this.element.querySelector(".user-reviews").appendChild(item);
+      this.element
+        .querySelector(".user-reviews")
+        .appendChild(document.createElement("hr"));
     }
   }
 
