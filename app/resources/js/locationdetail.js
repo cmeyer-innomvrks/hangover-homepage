@@ -12,11 +12,12 @@ import LocationDetailLeaveRating from "./UI/locationDetail/LocationDetailLeaveRa
 import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
 import ProfileLoader from "./FirebaseDownloader/ProfileLoader.js";
 
-let locationDetailCard, locationDetailReviews;
+let locationDetailCard, locationDetailReviews, locationDetailHeader;
 
 function init() {
-  LocationDetailHeader.setElement(document.querySelector(".profile-panel"));
-  LocationDetailHeader.setHeader();
+  locationDetailHeader = new LocationDetailHeader();
+  locationDetailHeader.setElement(document.querySelector(".profile-panel"));
+  locationDetailHeader.setHeader();
 
   LocationDetailNavigator.setElement(document.querySelector(".navigator"));
   LocationDetailNavigator.setLocationName();
@@ -47,7 +48,9 @@ function init() {
   LocationDetailEvents.hide();
 
   locationDetailReviews = new LocationDetailReviews();
-  locationDetailReviews.setElement(document.querySelector(".review-block"));
+  locationDetailReviews.setElement(
+    document.getElementsByClassName("review-class")[0]
+  );
   locationDetailReviews.setAverage();
   locationDetailReviews.setOverview();
   locationDetailReviews.showReviews();
@@ -63,8 +66,10 @@ function init() {
     "leaveReview",
     onReviewInputRequested
   );
+  LocationDetailLeaveRatingBtn.hide();
 
   LocationDetailLeaveRating.setElement(document.querySelector(".leave-review"));
+  console.log(LocationDetailLeaveRating.element);
   LocationDetailLeaveRating.addEventListener("submitReview", onReviewSubmit);
   LocationDetailLeaveRating.hide();
 }
@@ -74,6 +79,8 @@ function onInfoRequested() {
   LocationDetailNavigator.activateInfo();
   LocationDetailEvents.hide();
   locationDetailReviews.hide();
+  LocationDetailLeaveRating.hide();
+  LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
 }
 
@@ -82,6 +89,8 @@ function onEventRequested() {
   LocationDetailNavigator.activateEvents();
   LocationDetailEvents.show();
   locationDetailReviews.hide();
+  LocationDetailLeaveRating.hide();
+  LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
 }
 
@@ -90,6 +99,7 @@ function onReviewRequested() {
   LocationDetailNavigator.activateReviews();
   LocationDetailEvents.hide();
   locationDetailReviews.show();
+  LocationDetailLeaveRatingBtn.show();
   LocationDetailPics.hide();
 }
 
@@ -98,6 +108,8 @@ function onPicsRequested() {
   LocationDetailNavigator.activatePics();
   LocationDetailEvents.hide();
   locationDetailReviews.hide();
+  LocationDetailLeaveRating.hide();
+  LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.show();
 }
 
@@ -137,16 +149,16 @@ function onReviewInputRequested() {
   } else {
     alert("Du musst eingeloggt sein, um eine Bewertung abgeben zu können.");
   }
-  if (
-    JSON.parse(localStorage.getItem("user")).reviews.indexOf(
-      JSON.parse(localStorage.getItem("locationDetail")).id
-    ) !== -1
-  ) {
-    flag = false;
-    alert(
-      "Du hast schon eine Bewertung für diese Location geschrieben. Du kannst keine weitere Bewertung schreiben."
-    );
-  }
+  // if (
+  //   JSON.parse(localStorage.getItem("user")).reviews.indexOf(
+  //     JSON.parse(localStorage.getItem("locationDetail")).id
+  //   ) !== -1
+  // ) {
+  //   flag = false;
+  //   alert(
+  //     "Du hast schon eine Bewertung für diese Location geschrieben. Du kannst keine weitere Bewertung schreiben."
+  //   );
+  // }
   if (flag) {
     LocationDetailLeaveRating.show();
     LocationDetailLeaveRatingBtn.hide();
@@ -155,7 +167,10 @@ function onReviewInputRequested() {
 
 function onReviewSubmit(event) {
   let data = event.data,
-    userName = JSON.parse(localStorage.getItem("user")).name;
+    userName = JSON.parse(localStorage.getItem("user")).name,
+    userImg = JSON.parse(localStorage.getItem("user")).img,
+    count = 0,
+    sum = 0;
   LocationLoader.pushReview(data.id, data.stars, data.text, data.date);
   LocationDetailLeaveRating.hide();
   let location = JSON.parse(localStorage.getItem("locationDetail"));
@@ -163,12 +178,23 @@ function onReviewSubmit(event) {
     stars: data.stars,
     text: data.text,
     date: data.date,
-    name: userName
+    name: userName,
+    img: userImg
   });
+  for (let i = 0; i < location.rating.length; i++) {
+    count++;
+    sum += location.rating[i].stars;
+  }
+  location.average = sum / count;
   localStorage.setItem("locationDetail", JSON.stringify(location));
   locationDetailReviews.resetReviews();
+  locationDetailHeader = new LocationDetailHeader();
+  locationDetailHeader.setElement(document.querySelector(".profile-panel"));
+  locationDetailHeader.setHeader();
   locationDetailReviews = new LocationDetailReviews();
-  locationDetailReviews.setElement(document.querySelector(".review-block"));
+  locationDetailReviews.setElement(
+    document.getElementsByClassName("review-class")[0]
+  );
   locationDetailReviews.setAverage();
   locationDetailReviews.setOverview();
   locationDetailReviews.showReviews();

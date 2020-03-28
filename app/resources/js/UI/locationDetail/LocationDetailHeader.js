@@ -34,4 +34,4 @@ class LocationDetailHeader extends View {
   }
 }
 
-export default new LocationDetailHeader();
+export default LocationDetailHeader;

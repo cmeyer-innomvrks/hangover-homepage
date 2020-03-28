@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-import locationConverter from "./Location.js";
+import { locationConverter } from "./Location.js";
 import { Event, Observable } from "../utils/Observable.js";
 import database from "./Database.js";
 
@@ -41,7 +41,8 @@ class LocationLoader extends Observable {
             stars: parseFloat(doc.data().ratingStars),
             text: doc.data().ratingText,
             date: doc.data().ratingDate,
-            name: doc.data().userName
+            name: doc.data().userName,
+            img: doc.data().userImg
           };
           ratings.push(currRating);
         });
@@ -60,7 +61,8 @@ class LocationLoader extends Observable {
   }
 
   pushReview(id, stars, text, date) {
-    let userName = JSON.parse(localStorage.getItem("user")).name;
+    let userName = JSON.parse(localStorage.getItem("user")).name,
+      img = JSON.parse(localStorage.getItem("user")).img;
     database
       .collection(`Locations/${id}/Rating`)
       .doc()
@@ -68,7 +70,8 @@ class LocationLoader extends Observable {
         ratingDate: date,
         ratingStars: stars,
         ratingText: text,
-        userName: userName
+        userName: userName,
+        userImg: img
       })
       .then(function() {
         console.log("Doc written...");
