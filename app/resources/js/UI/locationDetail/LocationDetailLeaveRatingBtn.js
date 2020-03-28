@@ -15,6 +15,14 @@ class LocationDetailLeaveRatingBtn extends View {
       .addEventListener("click", this.onClick.bind(this));
   }
 
+  hide() {
+    this.element.querySelector(".leave-rating-btn").classList.add("hidden");
+  }
+
+  show() {
+    this.element.querySelector(".leave-rating-btn").classList.remove("hidden");
+  }
+
   onClick() {
     let newReviewEvent = new Event("leaveReview", {});
     this.notifyAll(newReviewEvent);

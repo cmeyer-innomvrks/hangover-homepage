@@ -1,6 +1,7 @@
 /* eslint-env browser */
 
 import View from "../View.js";
+import { Event } from "../../utils/Observable.js";
 
 class LocationDetailEvents extends View {
   constructor() {

@@ -206,6 +206,7 @@ function onReviewSubmit(event) {
   locationDetailReviews.setAverage();
   locationDetailReviews.setOverview();
   locationDetailReviews.showReviews();
+  locationDetailReviews.show();
   ProfileLoader.updateUserReviews(data.id);
 }
 

@@ -4,7 +4,8 @@ import database from "../FirebaseDownloader/Database.js";
 
 class ProfileLoader {
   async isExisting(profile) {
-    let flag;
+    let flag,
+      self = this;
     await database
       .collection("User")
       .doc(profile.mail)
@@ -14,12 +15,13 @@ class ProfileLoader {
           console.log("user exists");
           flag = true;
           let user = {
-            name: doc.data().name,
+            name: profile.name,
             mail: doc.data().email,
-            img: doc.data().img,
+            img: profile.img,
             reviews: doc.data().reviews
           };
           localStorage.setItem("user", JSON.stringify(user));
+          self.updateProfile(profile);
         } else {
           console.log("user does not exist");
           flag = false;
@@ -42,6 +44,25 @@ class ProfileLoader {
       })
       .then(function() {
         console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+        console.error("Error writing document: ", error);
+      });
+  }
+
+  updateProfile(profile) {
+    database
+      .collection("User")
+      .doc(profile.mail)
+      .set(
+        {
+          name: profile.name,
+          img: profile.img
+        },
+        { merge: true }
+      )
+      .then(function() {
+        console.log("Document successfully updated!");
       })
       .catch(function(error) {
         console.error("Error writing document: ", error);
