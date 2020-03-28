@@ -59,9 +59,7 @@ function init() {
   LocationDetailPics.setElement(document.querySelector(".picture-area"));
   LocationDetailPics.hide();
 
-  LocationDetailLeaveRatingBtn.setElement(
-    document.querySelector(".leave-rating-btn")
-  );
+  LocationDetailLeaveRatingBtn.setElement(document.querySelector(".well-sm"));
   LocationDetailLeaveRatingBtn.addEventListener(
     "leaveReview",
     onReviewInputRequested

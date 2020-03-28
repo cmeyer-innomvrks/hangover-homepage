@@ -9,9 +9,8 @@ class LocationDetailReviews extends View {
   }
 
   setAverage() {
-    this.element.querySelector(
-      ".average"
-    ).textContent = this.location.average.toFixed(2);
+    this.element.querySelector(".average").innerHTML =
+      this.location.average.toFixed(2) + "<small>/ 5</small>";
     let stars = this.element
       .querySelector(".rating-avg")
       .getElementsByTagName("button");

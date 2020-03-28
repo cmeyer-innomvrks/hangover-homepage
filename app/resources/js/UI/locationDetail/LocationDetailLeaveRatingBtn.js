@@ -10,7 +10,9 @@ class LocationDetailLeaveRatingBtn extends View {
 
   setElement(element) {
     super.setElement(element);
-    this.element.addEventListener("click", this.onClick.bind(this));
+    this.element
+      .querySelector(".leave-rating-btn")
+      .addEventListener("click", this.onClick.bind(this));
   }
 
   onClick() {

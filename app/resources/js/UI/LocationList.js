@@ -55,7 +55,7 @@ class LocationList extends View {
     } else {
       item.querySelector(
         "#location-average"
-      ).textContent = location.calcAverageRating();
+      ).textContent = location.calcAverageRating().tofixed(2);
     }
 
     item = item.firstElementChild;
