@@ -162,12 +162,13 @@
         <!-- Rating Start -->
         <!-- Leave Comment Start -->
         <div class="well well-sm justify-content-center"> <!-- CHRIS HIER KLASSE VERGEBEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-          <div class="text-right">
-              <button class="btn btn-success btn-green leave-rating-btn" id="open-review-box">Leave a Review</a>
+          <div class="text-center">
+              <button class="btn btn-success btn-green leave-rating-btn" id="open-review-box">Bewertung abgeben</a>
           </div>
+          <br>
           <div class="leave-review">
             <div class="rating-block">
-              <h4 class="rating-headline">Bewertung abgeben</h4>
+              <h4 class="rating-headline">Jetzt Bewertung verfassen</h4>
               <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
               </button>
@@ -191,7 +192,7 @@
                         <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5" value=""></textarea>
                         <div class="text-right">
                             <button class="btn btn-danger btn-sm" id="close-review-box" style="display:none; margin-right: 10px;">
-                            <span class="glyphicon glyphicon-remove"></span>Cancel</button>
+                            <span class="glyphicon glyphicon-remove"></span>Cancel</button> <br>
                             <button class="btn btn-success btn-lg">Save</button>
                         </div>
                       </div>
@@ -203,7 +204,7 @@
         <!-- Insert Review Start -->
         <div class="container"> <!-- CHRIS HIER KLASSE VERGEBEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
           <div class="row reviews">
-            <div class="col-sm-3">
+            <div class="col-sm-4">
               <div class="rating-block">
                 <h4 class="font-black">Average user rating</h4>
                 <h2 class="bold padding-bottom-7 font-black">4.3 <small>/ 5</small></h2>
@@ -224,24 +225,26 @@
                 </button>
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-6 col-md-3">
               <h4 class="font-black">Rating breakdown</h4>
               <div class="pull-left">
                 <div class="pull-left" style="width:35px; line-height:1;">
-                  <div style="height:9px; margin:5px 0;" class="font-black">5 <span class="glyphicon glyphicon-star"></span></div>
+                  <div style="height:9px; margin:5px 0;" class="font-black">5 <span class="glyphicon glyphicon-star"></span> </div>
                 </div>
+              
                 <div class="pull-left" style="width:180px;">
                   <div class="progress" style="height:9px; margin:8px 0;">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 100%">
                     <span class="sr-only">80% Complete (danger)</span>
                     </div>
                   </div>
                 </div>
                 <div class="pull-right font-black" style="margin-left:10px;">1</div>
               </div>
+            
               <div class="pull-left">
                 <div class="pull-left" style="width:35px; line-height:1;">
-                  <div style="height:9px; margin:5px 0;" class="font-black">4 <span class="glyphicon glyphicon-star"></span></div>
+                  <div style="height:9px; margin:5px 0;" class="font-black">4 <span class="glyphicon glyphicon-star"></span> </div>
                 </div>
                 <div class="pull-left" style="width:180px;">
                   <div class="progress" style="height:9px; margin:8px 0;">
@@ -291,13 +294,15 @@
                 </div>
                 <div class="pull-right font-black" style="margin-left:10px;">0</div>
               </div>
-            </div>			
+            </div>		
+            
+            
           </div>			
           
           <div class="row user-reviews">
             <div class="col-sm-10">
               <hr/>
-              <div class="review-block">
+              <div class="review-block col-sm-10">
                 <div class="row">
                   <div class="col-sm-3">
                     <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
@@ -392,7 +397,7 @@
         
 
       <!-- Pictures Start -->
-      <div class="container picture-area">
+      <div class="container picture-area col-sm-10">
         <div class="panel panel-default">
           <div class="panel-heading"><strong>Upload Image</strong> <small>Hangover file upload</small></div>
           <div class="panel-body picture-area">
