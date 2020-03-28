@@ -74,8 +74,8 @@ class Location {
       for (let i = 0; i < this.rating.length; i++) {
         sum += this.rating[i].stars;
       }
-      this.average = round(sum / this.rating.length, 1);
-      return round(sum / this.rating.length, 1);
+      this.average = sum / this.rating.length;
+      return sum / this.rating.length;
     }
     this.average = 0;
     return 0;

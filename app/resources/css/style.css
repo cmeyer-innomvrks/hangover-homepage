@@ -511,3 +511,23 @@ b a {
   width: 40% !important;
   height: auto !important;
 }
+
+.no-background:hover {
+  background: white !important;
+  cursor: default;
+}
+
+.leave-rating-btn {
+  display: inline !important;
+}
+
+.location-name {
+  margin-top: 10px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.given-review {
+  cursor: default !important;
+  pointer-events: none;
+}

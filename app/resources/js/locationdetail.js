@@ -80,6 +80,7 @@ function onInfoRequested() {
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
+  locationDetailHeader.setIndexTab("Info");
 }
 
 function onEventRequested() {
@@ -90,15 +91,23 @@ function onEventRequested() {
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
+  locationDetailHeader.setIndexTab("Events");
 }
 
 function onReviewRequested() {
   locationDetailCard.hide();
   LocationDetailNavigator.activateReviews();
   LocationDetailEvents.hide();
-  locationDetailReviews.show();
+  if (JSON.parse(localStorage.getItem("locationDetail")).rating.length === 0) {
+    locationDetailReviews.hide();
+    document.querySelector(".no-review").textContent =
+      "Noch kein Review vorhanden. Jetzt ";
+  } else {
+    locationDetailReviews.show();
+  }
   LocationDetailLeaveRatingBtn.show();
   LocationDetailPics.hide();
+  locationDetailHeader.setIndexTab("Reviews");
 }
 
 function onPicsRequested() {
@@ -109,6 +118,7 @@ function onPicsRequested() {
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.show();
+  locationDetailHeader.setIndexTab("Pictures");
 }
 
 async function checkIfLocationSaved(event) {

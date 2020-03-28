@@ -76,6 +76,18 @@
       <div class="profile-col col-md-8 eventlist">
         <!-- Profile Start-->
         <div class="panel panel-default plain profile-panel">
+                            <nav aria-label="breadcrumb">
+                              <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                  <a href="./locations.html">Locations</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                  <a class="location-name" href="">Havana Bar</a>
+                                </li>
+                                <li class="breadcrumb-item active breadcrumb-active-item tab-index" aria-current="page">Info
+                                </li>
+                              </ol>
+                            </nav>
           <div class="panel-body">
             <div class="col-lg-4 col-md-4 col-sm-12">
               <center>
@@ -84,7 +96,7 @@
               </center>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
-              <div class="user-name"><span class="user-full-name">
+              <div class="location-name"><span class="location-full-name">
                   Clubname Hardcode</span>
               </div>
               <div class="location-adress">
@@ -123,7 +135,7 @@
         <!-- SWITCH End-->
 
         <!-- Info Starts -->
-        <div class="card infos">
+        <div class="card infos no-background">
           <div class="card-body text-center">
             <p><b>Art:</b><br> <span class="location-info art">Club</span></p><br>
             <p><b>Info:</b><br> <span class="location-info info">Modernes Shisha Café im Herzen von Regensburg!ÜBER
@@ -148,14 +160,14 @@
               </span> </p>
           </div>
           <div class="card-footer">
-            <b><span class="save-event"> <input type="checkbox" name="saveevent" id="save-location"> Diese Location
-                speichern</span></b>
+            <b><span class="save-event"> <input type="checkbox" name="saveevent" id="save-location"> <span class="location-save-text">Diese Location
+                speichern</span></span></b>
           </div>
         </div>
         <!-- Info End -->
 
         <!-- Event Start -->
-        <div class="card my-2 events">
+        <div class="card my-2 events no-background">
         </div>
         <!-- Event End-->
 
@@ -163,6 +175,7 @@
         <!-- Leave Comment Start -->
         <div class="well well-sm justify-content-center"> <!-- CHRIS HIER KLASSE VERGEBEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
           <div class="text-center">
+            <span class="no-review"></span>
               <button class="btn btn-success btn-green leave-rating-btn" id="open-review-box">Bewertung abgeben</a>
           </div>
           <br>
@@ -208,19 +221,19 @@
               <div class="rating-block rating-avg">
                 <h4 class="font-black">Average user rating</h4>
                 <h2 class="bold padding-bottom-7 font-black average">4.3 <small>/ 5</small></h2>
-                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
               </div>
@@ -463,19 +476,19 @@
     </div>
     <div class="col-sm-9">
       <div class="review-block-rate">
-        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+        <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+        <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+        <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+        <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         </button>
-        <button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+        <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         </button>
       </div>
@@ -484,7 +497,6 @@
         nice in buy</div>
     </div>
   </div>
-  <hr />
   </template>
   <!-- TEMPLATE REVIEW END -->
 
