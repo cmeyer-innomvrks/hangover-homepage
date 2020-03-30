@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../resources/css/raiting.css">
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
   <!-- Google -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -326,10 +327,10 @@
         <!-- Rating End-->
 
       <!-- Pictures Start -->
-      <div class="container picture-area col-sm-10">
-        <div class="panel panel-default">
+      <div class="container col-sm-10">
+        <div class="panel panel-default upload-image">
           <div class="panel-heading"><strong>Upload Image</strong> <small>Hangover file upload</small></div>
-          <div class="panel-body picture-area">
+          <div class="panel-body">
   
             <!-- Standar Form -->
             <h4>Wähle ein Bild von deinem Gerät aus</h4>
@@ -368,44 +369,7 @@
         </div>
 
             <!-- Picture Grid Start -->
-            <div class="row row-cols-1 row-cols-md-3 d-flex justify-content-center">
-              <div class="card">
-                <img src="../resources/img/vodka.jpg" class="card-img-top" alt="...">
-                <div class="card-footer">
-                  <small class="text-muted">Günstiges Vodka Boot</small>
-                </div>
-              </div>
-              <div class="card">
-                <img src="../resources/img/shisha.jpg" class="card-img-top" alt="...">
-                <div class="card-footer">
-                  <small class="text-muted">Geile Shisha, Top Ausstattung</small>
-                </div>
-              </div>
-              <div class="card">
-                <img src="../resources/img/burger.jpg" class="card-img-top" alt="...">
-                <div class="card-footer">
-                  <small class="text-muted">Super Location und perfekte Burger!</small>
-                </div>
-              </div>
-              <div class="card">
-                <img src="../resources/img/burger.jpg" class="card-img-top" alt="...">
-                <div class="card-footer">
-                  <small class="text-muted">Super Location und perfekte Burger!</small>
-                </div>
-              </div>
-              <div class="card">
-                <img src="../resources/img/vodka.jpg" class="card-img-top" alt="...">
-                <div class="card-footer">
-                  <small class="text-muted">Guter Vodka</small>
-                </div>
-              </div>
-              <div class="card">
-                <img src="../resources/img/shisha.jpg" class="card-img-top" alt="...">
-                <div class="card-footer">
-                  <small class="text-muted">Fruchtige Shisha!</small>
-                </div>
-              </div>
-            
+            <div class="row row-cols-1 row-cols-md-3 d-flex justify-content-center picture-area">            
             </div>
             <!-- Picture Grid End-->
       </div> <!-- /container -->
@@ -465,8 +429,7 @@
 
   <!-- TEMPLATE REVIEW START -->
   <template class="rating-template">
-    <center>
-      <div class="leave-review">
+      <div class="row">
         <div class="col-sm-3">
           <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded review-img">
           <div class="review-block-name">nktailor</div>
@@ -495,9 +458,19 @@
             nice in buy</div>
         </div>
       </div>
-    </center>
   </template>
   <!-- TEMPLATE REVIEW END -->
+
+    <!-- TEMPLATE IMG START -->
+    <template class="img-template">
+      <div class="card">
+        <img src="../resources/img/shisha.jpg" class="card-img-top location-img" alt="...">
+        <div class="card-footer">
+          <small class="text-muted location-img-text">Fruchtige Shisha!</small>
+        </div>
+      </div>
+    </template>
+    <!-- TEMPLATE IMG END -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

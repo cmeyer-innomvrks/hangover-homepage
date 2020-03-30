@@ -1,6 +1,6 @@
 /* eslint-env browser */
 
-import database from "../FirebaseDownloader/Database.js";
+import { database } from "../FirebaseDownloader/Database.js";
 
 class ProfileLoader {
   async isExisting(profile) {

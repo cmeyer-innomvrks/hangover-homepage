@@ -2,7 +2,7 @@
 
 import { locationConverter } from "./Location.js";
 import { Event, Observable } from "../utils/Observable.js";
-import database from "./Database.js";
+import { database } from "./Database.js";
 
 class LocationLoader extends Observable {
   constructor() {
@@ -76,6 +76,38 @@ class LocationLoader extends Observable {
       .then(function() {
         console.log("Doc written...");
       });
+  }
+
+  pushPicture(url, text) {
+    database
+      .collection(`Locations/${id}/Pics`)
+      .doc()
+      .set({
+        url: url,
+        text: text
+      })
+      .then(function() {
+        console.log("Doc written...");
+      });
+  }
+
+  async getPictures(locationID) {
+    let pictures = [];
+    await database
+      .collection("Locations")
+      .doc(locationID)
+      .collection("Pics")
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          let currPicture = {
+            url: doc.data().url,
+            text: doc.data().ratingText
+          };
+          pictures.push(currPicture);
+        });
+      });
+    return pictures;
   }
 }
 

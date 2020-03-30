@@ -11,6 +11,8 @@ import LocationDetailLeaveRatingBtn from "./UI/locationDetail/LocationDetailLeav
 import LocationDetailLeaveRating from "./UI/locationDetail/LocationDetailLeaveRating.js";
 import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
 import ProfileLoader from "./FirebaseDownloader/ProfileLoader.js";
+import PictureLoader from "./FirebaseDownloader/PictureLoader.js";
+import LocationDetailUploadImage from "./UI/locationDetail/LocationDetailUploadImage.js";
 
 let locationDetailCard, locationDetailReviews, locationDetailHeader;
 
@@ -70,6 +72,11 @@ function init() {
   console.log(LocationDetailLeaveRating.element);
   LocationDetailLeaveRating.addEventListener("submitReview", onReviewSubmit);
   LocationDetailLeaveRating.hide();
+
+  PictureLoader.addEventListener("imageSrcRdy", onImgSrcRdy);
+
+  LocationDetailUploadImage.setElement(document.querySelector(".upload-image"));
+  LocationDetailUploadImage.hide();
 }
 
 function onInfoRequested() {
@@ -80,6 +87,7 @@ function onInfoRequested() {
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
+  LocationDetailUploadImage.hide();
   locationDetailHeader.setIndexTab("Info");
 }
 
@@ -91,6 +99,7 @@ function onEventRequested() {
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
+  LocationDetailUploadImage.hide();
   locationDetailHeader.setIndexTab("Events");
 }
 
@@ -107,6 +116,7 @@ function onReviewRequested() {
   }
   LocationDetailLeaveRatingBtn.show();
   LocationDetailPics.hide();
+  LocationDetailUploadImage.hide();
   locationDetailHeader.setIndexTab("Reviews");
 }
 
@@ -118,7 +128,12 @@ function onPicsRequested() {
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.show();
+  LocationDetailUploadImage.show();
   locationDetailHeader.setIndexTab("Pictures");
+  console.log(JSON.parse(localStorage.getItem("locationDetail")).id);
+  PictureLoader.getDownloadURLs(
+    JSON.parse(localStorage.getItem("locationDetail")).id
+  );
 }
 
 async function checkIfLocationSaved(event) {
@@ -208,6 +223,11 @@ function onReviewSubmit(event) {
   locationDetailReviews.showReviews();
   locationDetailReviews.show();
   ProfileLoader.updateUserReviews(data.id);
+}
+
+function onImgSrcRdy(event) {
+  let url = event.data.url;
+  LocationDetailPics.addPicture(url);
 }
 
 init();
