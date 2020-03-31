@@ -8,7 +8,7 @@ class PictureLoader extends Observable {
     super();
   }
 
-  async uploadPicture(locationID, blob, metaData) {
+  async uploadPicture(locationID, blob, metaData, caption) {
     let self = this,
       uploadTask = storageRef
         .child(`${locationID}/images/${new Date().toString()}.jpg`)
@@ -29,9 +29,9 @@ class PictureLoader extends Observable {
               return url;
             }),
           onUploadFinishedEvent = new Event("imageUploadFinished", {
-            url: downloadURL
+            url: downloadURL,
+            caption: caption
           });
-        console.log("upload Finished");
         self.notifyAll(onUploadFinishedEvent);
       }
     );

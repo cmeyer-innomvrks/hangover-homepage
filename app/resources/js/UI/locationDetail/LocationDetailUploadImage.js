@@ -14,7 +14,7 @@ class LocationDetailUploadImage extends View {
     this.progressBar = this.element.querySelector(".progress-bar");
     this.dropZone = this.element.querySelector("#drop-zone");
     this.uploadForm = this.element.querySelector("#js-upload-form");
-    this.uploadForm.addEventListener("click", function(e) {
+    this.element.addEventListener("click", function(e) {
       if (event.target.classList.contains("upload-btn")) {
         console.log(
           self.element.querySelector("#js-upload-files"),
@@ -54,8 +54,10 @@ class LocationDetailUploadImage extends View {
   }
 
   startUpload(file) {
-    let newFileEvent = new Event("newFile", { file: file });
+    let caption = this.element.querySelector("#new-image-caption").value,
+      newFileEvent = new Event("newFile", { file: file, caption: caption });
     this.notifyAll(newFileEvent);
+    this.element.querySelector("#new-image-caption").value = "";
   }
 
   updateProgress(progress) {

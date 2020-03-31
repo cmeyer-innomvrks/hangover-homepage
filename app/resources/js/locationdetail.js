@@ -244,28 +244,30 @@ function onReviewSubmit(event) {
 
 function onNewFileUploadRequest(event) {
   let file = event.data.file,
+    caption = event.data.caption,
     reader = new FileReader();
   reader.onload = function(e) {
     let blob = new Blob([new Uint8Array(e.target.result)], { type: file.type });
-    handleFile(blob);
+    handleFile(blob, caption);
   };
   reader.readAsArrayBuffer(file);
 }
 
-function handleFile(blob) {
+function handleFile(blob, caption) {
   let metaData = {
     contentType: "image/jpeg"
   };
   PictureLoader.uploadPicture(
     JSON.parse(localStorage.getItem("locationDetail")).id,
     blob,
-    metaData
+    metaData,
+    caption
   );
 }
 
 async function onImageUploadFinished(event) {
   let url = event.data.url,
-    text = "Test Image",
+    text = event.data.caption,
     id = JSON.parse(localStorage.getItem("locationDetail")).id;
   await LocationLoader.pushPicture(id, url, text);
   LocationDetailPics.reset();
