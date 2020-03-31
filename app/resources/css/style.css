@@ -531,3 +531,9 @@ b a {
   cursor: default !important;
   pointer-events: none;
 }
+
+@media screen and (min-width: 768px) {
+  .draganddrop {
+    display: none;
+  }
+}
