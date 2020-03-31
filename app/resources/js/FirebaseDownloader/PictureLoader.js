@@ -36,27 +36,6 @@ class PictureLoader extends Observable {
       }
     );
   }
-
-  async getDownloadURLs(locationID) {
-    let self = this;
-    console.log(self);
-    await storageRef
-      .child(`${locationID}/images`)
-      .listAll()
-      .then(function(res) {
-        res.items.forEach(function(itemRef) {
-          console.log(itemRef.getDownloadURL());
-          itemRef.getDownloadURL().then(function(url) {
-            self.sendEvent(self, url);
-          });
-        });
-      });
-  }
-
-  sendEvent(self, url) {
-    let imageSrcRdyEvent = new Event("imageSrcRdy", { url: url });
-    self.notifyAll(imageSrcRdyEvent);
-  }
 }
 
 export default new PictureLoader();
