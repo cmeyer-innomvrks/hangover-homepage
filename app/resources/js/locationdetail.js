@@ -13,6 +13,7 @@ import LocationLoader from "./FirebaseDownloader/LocationLoader.js";
 import ProfileLoader from "./FirebaseDownloader/ProfileLoader.js";
 import PictureLoader from "./FirebaseDownloader/PictureLoader.js";
 import LocationDetailUploadImage from "./UI/locationDetail/LocationDetailUploadImage.js";
+import LocationDetailUploadPicBtn from "./UI/locationDetail/LocationDetailUploadPicBtn.js";
 
 let locationDetailCard, locationDetailReviews, locationDetailHeader;
 
@@ -73,10 +74,20 @@ function init() {
   LocationDetailLeaveRating.addEventListener("submitReview", onReviewSubmit);
   LocationDetailLeaveRating.hide();
 
-  PictureLoader.addEventListener("imageSrcRdy", onImgSrcRdy);
+  // PictureLoader.addEventListener("imageSrcRdy", onImgSrcRdy);
+  PictureLoader.addEventListener("imageUploadFinished", onImageUploadFinished);
+  PictureLoader.addEventListener("updateProgress", onProgressUpdate);
 
   LocationDetailUploadImage.setElement(document.querySelector(".upload-image"));
+  LocationDetailUploadImage.addEventListener("newFile", onNewFileUploadRequest);
   LocationDetailUploadImage.hide();
+
+  LocationDetailUploadPicBtn.setElement(document.querySelector(".upload-pic"));
+  LocationDetailUploadPicBtn.addEventListener(
+    "uploadPic",
+    onPicUploadRequested
+  );
+  LocationDetailUploadPicBtn.hide();
 }
 
 function onInfoRequested() {
@@ -88,6 +99,7 @@ function onInfoRequested() {
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
   LocationDetailUploadImage.hide();
+  LocationDetailUploadPicBtn.hide();
   locationDetailHeader.setIndexTab("Info");
 }
 
@@ -100,6 +112,7 @@ function onEventRequested() {
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
   LocationDetailUploadImage.hide();
+  LocationDetailUploadPicBtn.hide();
   locationDetailHeader.setIndexTab("Events");
 }
 
@@ -117,10 +130,11 @@ function onReviewRequested() {
   LocationDetailLeaveRatingBtn.show();
   LocationDetailPics.hide();
   LocationDetailUploadImage.hide();
+  LocationDetailUploadPicBtn.hide();
   locationDetailHeader.setIndexTab("Reviews");
 }
 
-function onPicsRequested() {
+async function onPicsRequested() {
   locationDetailCard.hide();
   LocationDetailNavigator.activatePics();
   LocationDetailEvents.hide();
@@ -128,12 +142,15 @@ function onPicsRequested() {
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.show();
-  LocationDetailUploadImage.show();
+  LocationDetailUploadImage.hide();
+  LocationDetailUploadPicBtn.show();
   locationDetailHeader.setIndexTab("Pictures");
   console.log(JSON.parse(localStorage.getItem("locationDetail")).id);
-  PictureLoader.getDownloadURLs(
+  let pictures = await LocationLoader.getPictures(
     JSON.parse(localStorage.getItem("locationDetail")).id
   );
+  console.log(pictures);
+  LocationDetailPics.addPictures(pictures);
 }
 
 async function checkIfLocationSaved(event) {
@@ -225,9 +242,49 @@ function onReviewSubmit(event) {
   ProfileLoader.updateUserReviews(data.id);
 }
 
-function onImgSrcRdy(event) {
-  let url = event.data.url;
-  LocationDetailPics.addPicture(url);
+function onNewFileUploadRequest(event) {
+  let file = event.data.file,
+    reader = new FileReader();
+  reader.onload = function(e) {
+    let blob = new Blob([new Uint8Array(e.target.result)], { type: file.type });
+    handleFile(blob);
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function handleFile(blob) {
+  let metaData = {
+    contentType: "image/jpeg"
+  };
+  PictureLoader.uploadPicture(
+    JSON.parse(localStorage.getItem("locationDetail")).id,
+    blob,
+    metaData
+  );
+}
+
+async function onImageUploadFinished(event) {
+  let url = event.data.url,
+    text = "Test Image",
+    id = JSON.parse(localStorage.getItem("locationDetail")).id;
+  await LocationLoader.pushPicture(id, url, text);
+  LocationDetailPics.reset();
+  let pictures = await LocationLoader.getPictures(
+    JSON.parse(localStorage.getItem("locationDetail")).id
+  );
+  LocationDetailPics.addPictures(pictures);
+  LocationDetailUploadImage.hide();
+  LocationDetailUploadPicBtn.show();
+}
+
+function onProgressUpdate(event) {
+  let progress = event.data.progress;
+  LocationDetailUploadImage.updateProgress(progress);
+}
+
+function onPicUploadRequested() {
+  LocationDetailUploadImage.show();
+  LocationDetailUploadPicBtn.hide();
 }
 
 init();

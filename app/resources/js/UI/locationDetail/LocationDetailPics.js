@@ -11,14 +11,21 @@ class LocationDetailPics extends View {
     super.setElement(element);
   }
 
-  addPicture(url, text) {
-    let template = document.querySelector(".img-template").innerHTML,
-      item = document.createElement("div");
-    item.innerHTML = template;
-    item.querySelector(".location-img").src = url;
-    item.querySelector(".location-img-text").textContent = url; // TODO
-    item = item.firstElementChild;
-    this.element.appendChild(item);
+  addPictures(pictures) {
+    for (let i = 0; i < pictures.length; i++) {
+      let template = document.querySelector(".img-template").innerHTML,
+        item = document.createElement("div");
+      item.innerHTML = template;
+      item.querySelector(".location-img").src = pictures[i].url;
+      item.querySelector(".location-img-text").textContent = pictures[i].text; // TODO
+      item = item.firstElementChild;
+      // TODO CLICK LISTENER
+      this.element.appendChild(item);
+    }
+  }
+
+  reset() {
+    this.element.innerHTML = "";
   }
 }
 

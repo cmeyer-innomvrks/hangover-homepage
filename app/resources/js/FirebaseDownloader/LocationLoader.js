@@ -78,7 +78,8 @@ class LocationLoader extends Observable {
       });
   }
 
-  pushPicture(url, text) {
+  pushPicture(id, url, text) {
+    console.log(url);
     database
       .collection(`Locations/${id}/Pics`)
       .doc()
@@ -102,7 +103,7 @@ class LocationLoader extends Observable {
         querySnapshot.forEach(function(doc) {
           let currPicture = {
             url: doc.data().url,
-            text: doc.data().ratingText
+            text: doc.data().text
           };
           pictures.push(currPicture);
         });

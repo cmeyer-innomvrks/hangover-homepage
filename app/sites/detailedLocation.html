@@ -32,7 +32,7 @@
   <script src="../resources/js/jquery-2.1.1.js"></script>
   <script src="../resources/js/navbar.js"></script>
   <script src="../resources/js/locationdetail.js" type="module"></script>
-  <script src="../resources/js/rating.js"></script>
+  <!-- <script src="../resources/js/rating.js"></script> -->
 </head>
 
 <body class="body">
@@ -327,6 +327,12 @@
         <!-- Rating End-->
 
       <!-- Pictures Start -->
+          <div class="text-center upload-pic">
+            <span class="no-review"></span>
+            <button class="btn btn-success btn-green upload-pic-btn" id="open-review-box">Bild hochladen</a>
+          </div>
+          <br>
+
       <div class="container col-sm-10">
         <div class="panel panel-default upload-image">
           <div class="panel-heading"><strong>Upload Image</strong> <small>Hangover file upload</small></div>
@@ -334,14 +340,14 @@
   
             <!-- Standar Form -->
             <h4>Wähle ein Bild von deinem Gerät aus</h4>
-            <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+            <div action="" method="post" enctype="multipart/form-data" id="js-upload-form">
               <div class="form-inline">
                 <div class="form-group">
-                  <input type="file" name="files[]" id="js-upload-files" multiple>
+                  <input type="file" name="files[]" id="js-upload-files" accept="image/jpeg">
                 </div>
-                <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+                <button type="submit" class="btn btn-sm btn-primary upload-btn" id="js-upload-submit">Upload files</button>
               </div>
-            </form>
+            </div>
   
             <!-- Drop Zone -->
             <br>
@@ -358,13 +364,12 @@
             </div>
   
             <!-- Upload Finished -->
-            <div class="js-upload-finished">
+            <!-- <div class="js-upload-finished">
               <h3>Processed files</h3>
               <div class="list-group upload-group">
                 <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
-                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
