@@ -1,163 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="../resources/css/style.css" />
+    <link rel="stylesheet" href="../resources/css/navbar.css" />
+    <link rel="stylesheet" href="../resources/css/reset.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hangover - Event</title>
+    <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png" />
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../resources/js/modernizr.js"></script>
+    <!-- Modernizr -->
+    <script src="../resources/js/jquery-2.1.1.js"></script>
+    <script src="../resources/js/navbar.js"></script>
+    <script src="../resources/js/eventdetail.js" type="module"></script>
+  </head>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="../resources/css/style.css" />
-  <link rel="stylesheet" href="../resources/css/navbar.css" />
-  <link rel="stylesheet" href="../resources/css/reset.css" />
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <title>Hangover - Event</title>
-  <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png" />
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="../resources/js/modernizr.js"></script>
-  <!-- Modernizr -->
-  <script src="../resources/js/jquery-2.1.1.js"></script>
-  <script src="../resources/js/navbar.js"></script>
-  <script src="../resources/js/eventdetail.js" type="module"></script>
-</head>
+  <body class="body body-event">
+    <!-- NAVBAR START -->
+    <header class="cd-header">
+      <div class="cd-logo">
+        <a href="../index.html"
+          ><img
+            src="../resources/img/Hangover_Logo_mit_Schrift.png"
+            width="100rem"
+            alt="Logo"
+        /></a>
+      </div>
 
-<body class="body body-event">
-  <!-- NAVBAR START -->
-  <header class="cd-header">
-    <div class="cd-logo">
-      <a href="../index.html"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem" alt="Logo" /></a>
-    </div>
+      <nav>
+        <ul class="cd-secondary-nav">
+          <li><a href="./userprofile.html">Log In</a></li>
+        </ul>
+      </nav>
+      <!-- cd-nav -->
 
+      <a class="cd-primary-nav-trigger" href="#0">
+        <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+      </a>
+      <!-- cd-primary-nav-trigger -->
+    </header>
     <nav>
-      <ul class="cd-secondary-nav">
-        <li><a href="./userprofile.html">Log In</a></li>
+      <ul class="cd-primary-nav">
+        <li class="cd-label">Find</li>
+        <li><a class="menu-link" href="../index.html">Events</a></li>
+        <li><a class="menu-link" href="./locations.html">Locations</a></li>
+        <li><a class="menu-link" href="./map.html">Map</a></li>
+        <li>
+          <a class="menu-link" href="./userprofile.html"
+            >Persönlicher Bereich</a
+          >
+        </li>
+
+        <li class="cd-label">Rechtliches</li>
+        <li>
+          <a class="menu-link" href="./detailedEvent.html">Detailed Event</a>
+        </li>
+        <li>
+          <a class="menu-link" href="./detailedLocation.html"
+            >Detailed Location</a
+          >
+        </li>
       </ul>
     </nav>
-    <!-- cd-nav -->
+    <!-- NAVBAR END -->
 
-    <a class="cd-primary-nav-trigger" href="#0">
-      <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
-    </a>
-    <!-- cd-primary-nav-trigger -->
-  </header>
-  <nav>
-    <ul class="cd-primary-nav">
-      <li class="cd-label">Find</li>
-      <li><a class="menu-link" href="../index.html">Events</a></li>
-      <li><a class="menu-link" href="./locations.html">Locations</a></li>
-      <li><a class="menu-link" href="./map.html">Map</a></li>
-      <li>
-        <a class="menu-link" href="./userprofile.html">Persönlicher Bereich</a>
-      </li>
-
-      <li class="cd-label">Rechtliches</li>
-      <li>
-        <a class="menu-link" href="./detailedEvent.html">Detailed Event</a>
-      </li>
-      <li>
-        <a class="menu-link" href="./detailedLocation.html">Detailed Location</a>
-      </li>
-    </ul>
-  </nav>
-  <!-- NAVBAR END -->
-
-  <!-- CONTENT START -->
-  <div class="container-footer-to-bot">
-    <div class="row">
-      <!-- COL 1-->
-      <div class="col col1"></div>
-      <!-- COL 2-->
-      <div class="eventlist detailed-event col-10 col2">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="../index.html">Events</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="./detailedLocation.html">BeatsClub</a>
-            </li>
-            <li class="breadcrumb-item active breadcrumb-active-item" aria-current="page">
-              Ballermann Deluxe Party
-            </li>
-          </ol>
-        </nav>
-        <div class="card">
-          <h5 class="event-title card-title text-center"><b></b></h5>
-          <br />
-          <img src="../resources/img/Hangover_Logo_mit_Schrift.png" class="card-img-top party-img"
-            style="margin: 0 auto" alt="..." />
-          <div class="card-body text-center">
-            <div class="event-date  detailed-event-card-header text-muted"></div>
-            <br />
-            <p class="card-text"></p>
-            <br />
-            <p><b>Startzeit:</b> <span class="event-time"></span> Uhr</p>
-            <p><b>Eintritt:</b> <span class="event-cost"></span> €</p>
-            <p><b>Musik:</b> <span class="event-musik"></span></p>
-          </div>
-          <a href="./detailedEvent.html">
-            <div class="card-footer detailed-event-card-footer text-center">
-              <b><a href="./detailedLocation.html"><span class="location-name"></span></a></b>
+    <!-- CONTENT START -->
+    <div class="container-footer-to-bot">
+      <div class="row">
+        <!-- COL 1-->
+        <div class="col col1"></div>
+        <!-- COL 2-->
+        <div class="eventlist detailed-event col-10 col2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../index.html">Events</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="./detailedLocation.html">BeatsClub</a>
+              </li>
+              <li
+                class="breadcrumb-item active breadcrumb-active-item"
+                aria-current="page"
+              >
+                Ballermann Deluxe Party
+              </li>
+            </ol>
+          </nav>
+          <div class="card">
+            <h5 class="event-title card-title text-center"></h5>
+            <div class="profile-stats-info text-center">
+              <a href="#" title="Views">
+                <i
+                  class="glyphicon glyphicon-eye-open profile-info-stats font-black"
+                >
+                </i>
+                <strong class="profile-info-stats profile-views font-black"
+                  >2000</strong
+                ></a
+              >
+              <a href="#" title="Likes">
+                <i
+                  class="glyphicon glyphicon-thumbs-up profile-info-stats font-black"
+                >
+                </i>
+                <strong class="profile-info-stats profile-likes font-black"
+                  >60</strong
+                ></a
+              >
             </div>
-          </a>
-          <div class="card-footer">
-            <b><span class="save-event">
-                <input type="checkbox" name="saveevent" id="save-event" />Dieses Event speichern</span></b>
+            <br />
+            <br />
+            <img
+              src="../resources/img/Hangover_Logo_mit_Schrift.png"
+              class="card-img-top party-img"
+              style="margin: 0 auto"
+              alt="..."
+            />
+            <div class="card-body text-center">
+              <div
+                class="event-date  detailed-event-card-header text-muted"
+              ></div>
+              <br />
+              <p class="card-text"></p>
+              <br />
+              <p><b>Startzeit:</b> <span class="event-time"></span> Uhr</p>
+              <p><b>Eintritt:</b> <span class="event-cost"></span> €</p>
+              <p><b>Musik:</b> <span class="event-musik"></span></p>
+            </div>
+            <a href="./detailedEvent.html">
+              <div class="card-footer detailed-event-card-footer text-center">
+                <b
+                  ><a href="./detailedLocation.html"
+                    ><span class="location-name"></span></a
+                ></b>
+              </div>
+            </a>
+            <div class="card-footer">
+              <b
+                ><span class="save-event">
+                  <input
+                    type="checkbox"
+                    name="saveevent"
+                    id="save-event"
+                  />Dieses Event speichern</span
+                ></b
+              >
+            </div>
+          </div>
+        </div>
+        <!-- COL 3-->
+        <div class="col col3"></div>
+      </div>
+    </div>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+    <footer
+      class="section footer-classic context-dark bg-image"
+      style="background: #2d3246;"
+    >
+      <div class="container">
+        <div class="row row-30">
+          <div class="col-md-4 col-l-5">
+            <div class="pr-xl-4">
+              <a class="brand" href="index.html"
+                ><img
+                  class="brand-logo-light"
+                  src="../resources/img/Hangover_Logo_mit_Schrift.png"
+                  alt=""
+                  class="w-100"
+                  height="37"
+              /></a>
+
+              <p>
+                Wir sind eine Informations Website die dir alle nötigen Infos
+                aller Partys in deiner Stadt liefert.
+              </p>
+              <!-- Rights-->
+              <p class="rights">
+                <span>©</span><span class="copyright-year">2020</span
+                ><span> </span><span>HANGOVER</span><span>. </span
+                ><span>All Rights Reserved.</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <!-- COL 3-->
-      <div class="col col3"></div>
-    </div>
-  </div>
-  <!-- CONTENT END -->
+    </footer>
+    <!-- FOOTER END -->
 
-  <!-- FOOTER START -->
-  <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
-    <div class="container">
-      <div class="row row-30">
-        <div class="col-md-4 col-l-5">
-          <div class="pr-xl-4">
-            <a class="brand" href="index.html"><img class="brand-logo-light"
-                src="../resources/img/Hangover_Logo_mit_Schrift.png" alt="" class="w-100" height="37" /></a>
-
-            <p>
-              Wir sind eine Informations Website die dir alle nötigen Infos
-              aller Partys in deiner Stadt liefert.
-            </p>
-            <!-- Rights-->
-            <p class="rights">
-              <span>©</span><span class="copyright-year">2020</span><span> </span><span>HANGOVER</span><span>.
-              </span><span>All Rights Reserved.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- FOOTER END -->
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  <!-- Read Date Format -->
-  <script src="https://momentjs.com/downloads/moment.min.js"></script>
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Read Date Format -->
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+  </body>
 </html>

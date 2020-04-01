@@ -537,3 +537,7 @@ b a {
     display: none;
   }
 }
+
+.font-black {
+  color: black !important;
+}
