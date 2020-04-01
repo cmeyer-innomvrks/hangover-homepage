@@ -1,0 +1,60 @@
+[debug] [2020-04-01T16:09:50.392Z] ----------------------------------------------------------------------
+[debug] [2020-04-01T16:09:50.393Z] Command:       /usr/local/bin/firebase /Users/stefanlippl/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2020-04-01T16:09:50.394Z] CLI Version:   7.8.1
+[debug] [2020-04-01T16:09:50.394Z] Platform:      darwin
+[debug] [2020-04-01T16:09:50.394Z] Node Version:  v10.15.3
+[debug] [2020-04-01T16:09:50.394Z] Time:          Wed Apr 01 2020 18:09:50 GMT+0200 (GMT+02:00)
+[debug] [2020-04-01T16:09:50.394Z] ----------------------------------------------------------------------
+[debug] [2020-04-01T16:09:50.394Z] 
+[debug] [2020-04-01T16:09:50.400Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-04-01T16:09:50.400Z] > authorizing via signed-in user
+[debug] [2020-04-01T16:09:50.401Z] [iam] checking project hangover-party for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-04-01T16:09:50.402Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/hangover-party:testIamPermissions  
+
+[debug] [2020-04-01T16:09:51.260Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-01T16:09:51.262Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hangover-party  
+ 
+[debug] [2020-04-01T16:09:51.473Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'hangover-party'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-04-01T16:09:51.477Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hangover-party-ef024/versions  
+
+[debug] [2020-04-01T16:09:53.101Z] <<< HTTP RESPONSE 200
+[info] i  hosting[hangover-party-ef024]: beginning deploy...
+[info] i  hosting[hangover-party-ef024]: found 85 files in app
+[debug] [2020-04-01T16:09:53.137Z] [hosting] hash cache [YXBw] stored for 85 files
+[debug] [2020-04-01T16:09:53.138Z] [hosting][hash queue][FINAL]
+[debug] [2020-04-01T16:09:53.138Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hangover-party-ef024/versions/30081ccdb66812b9:populateFiles  
+ <request body omitted>
+[debug] [2020-04-01T16:09:54.717Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-01T16:09:54.719Z] [hosting][populate queue][FINAL]
+[debug] [2020-04-01T16:09:54.719Z] [hosting] uploads queued: 1
+[debug] [2020-04-01T16:09:57.093Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[hangover-party-ef024]: file upload complete
+[debug] [2020-04-01T16:09:57.094Z] [hosting] deploy completed after 3992ms
+[debug] [2020-04-01T16:09:57.211Z] [
+  {
+    "config": {
+      "public": "app",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "site": "hangover-party-ef024"
+    },
+    "site": "hangover-party-ef024",
+    "version": "sites/hangover-party-ef024/versions/30081ccdb66812b9"
+  }
+]
+[info] i  hosting[hangover-party-ef024]: finalizing version...
+[debug] [2020-04-01T16:09:57.211Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/hangover-party-ef024/versions/30081ccdb66812b9?updateMask=status  
+
+[debug] [2020-04-01T16:09:58.323Z] <<< HTTP RESPONSE 200
+[debug] [2020-04-01T16:09:58.323Z] [hosting] finalized version for hangover-party-ef024:
+[info] ✔  hosting[hangover-party-ef024]: version finalized
+[info] i  hosting[hangover-party-ef024]: releasing new version...
+[debug] [2020-04-01T16:09:58.323Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/hangover-party-ef024/releases?version_name=sites/hangover-party-ef024/versions/30081ccdb66812b9  
+
