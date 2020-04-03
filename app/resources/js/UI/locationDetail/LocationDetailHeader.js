@@ -13,6 +13,7 @@ class LocationDetailHeader extends View {
   }
 
   setHeader() {
+    this.location = JSON.parse(localStorage.getItem("locationDetail"));
     this.element.querySelector(
       ".location-name"
     ).textContent = this.location.name;
@@ -31,8 +32,11 @@ class LocationDetailHeader extends View {
     this.element.querySelector(
       ".profile-comments"
     ).textContent = this.location.rating.length;
-    this.element.querySelector(".profile-views").textContent = "TODO";
-    this.element.querySelector(".profile-likes").textContent = "TODO";
+    this.element.querySelector(".profile-views").textContent =
+      this.location.watched + 1;
+    this.element.querySelector(
+      ".profile-likes"
+    ).textContent = this.location.saved;
     this.element.querySelector("#user-email").textContent =
       " " + this.location.art;
   }

@@ -88,6 +88,11 @@ function init() {
     onPicUploadRequested
   );
   LocationDetailUploadPicBtn.hide();
+
+  LocationLoader.pushViews(
+    JSON.parse(localStorage.getItem("locationDetail")).id,
+    JSON.parse(localStorage.getItem("locationDetail")).watched
+  );
 }
 
 function onInfoRequested() {
@@ -162,11 +167,26 @@ async function checkIfLocationSaved(event) {
 function onLocationSafeRequest(event) {
   console.log("SAVE");
   SavedLocationsLoader.save(event.data.id);
+  LocationLoader.pushSaved(
+    JSON.parse(localStorage.getItem("locationDetail")).id,
+    true,
+    JSON.parse(localStorage.getItem("locationDetail")).saved
+  );
+  let location = JSON.parse(localStorage.getItem("locationDetail"));
+  location.saved = location.saved + 1;
+  locationDetailHeader.setHeader();
 }
 
 function onLocationUnsaveRequest(event) {
   console.log("UNSAVE");
   SavedLocationsLoader.unsave(event.data.id);
+  LocationLoader.pushSaved(
+    JSON.parse(localStorage.getItem("locationDetail")).id,
+    false,
+    JSON.parse(localStorage.getItem("locationDetail")).saved
+  );
+  location.saved = location.saved - 1;
+  locationDetailHeader.setHeader();
 }
 
 function onEventDetailRequested(event) {

@@ -30,7 +30,9 @@ class Location {
     saturday_from,
     saturday_till,
     sunday_from,
-    sunday_till
+    sunday_till,
+    watched,
+    saved
   ) {
     this.id = id;
     this.art = art;
@@ -57,6 +59,8 @@ class Location {
     this.saturday_till = saturday_till;
     this.sunday_from = sunday_from;
     this.sunday_till = sunday_till;
+    this.watched = watched;
+    this.saved = saved;
   }
 
   addId(id) {
@@ -108,7 +112,9 @@ const locationConverter = {
       saturday_from: saturday_from,
       saturday_till: saturday_till,
       sunday_from: sunday_from,
-      sunday_till: sunday_till
+      sunday_till: sunday_till,
+      watched: watched,
+      saved: saved
     };
   },
   fromFirestore: function(snapshot, options) {
@@ -138,7 +144,9 @@ const locationConverter = {
       data.saturday_from,
       data.saturday_till,
       data.sunday_from,
-      data.sunday_till
+      data.sunday_till,
+      data.watched,
+      data.saved
     );
   }
 };

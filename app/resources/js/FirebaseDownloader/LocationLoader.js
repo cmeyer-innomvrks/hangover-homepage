@@ -78,6 +78,42 @@ class LocationLoader extends Observable {
       });
   }
 
+  pushViews(id, views) {
+    database
+      .collection(`Locations`)
+      .doc(id)
+      .set(
+        {
+          watched: views + 1
+        },
+        { merge: true }
+      )
+      .then(function() {
+        console.log("Doc written...");
+      });
+  }
+
+  pushSaved(id, flag, saved) {
+    let newVal = saved;
+    if (flag) {
+      newVal += 1;
+    } else {
+      newVal -= 1;
+    }
+    database
+      .collection(`Locations`)
+      .doc(id)
+      .set(
+        {
+          saved: newVal
+        },
+        { merge: true }
+      )
+      .then(function() {
+        console.log("Doc written...");
+      });
+  }
+
   pushPicture(id, url, text) {
     console.log(url);
     database

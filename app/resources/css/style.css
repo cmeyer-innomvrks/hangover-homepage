@@ -541,3 +541,7 @@ b a {
 .font-black {
   color: black !important;
 }
+
+.file-name {
+  color: black !important;
+}

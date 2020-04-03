@@ -11,17 +11,15 @@ class LocationDetailUploadImage extends View {
   setElement(element) {
     super.setElement(element);
     let self = this;
+    this.agb = this.element.querySelector(".form-check-input");
+    this.fileName = this.element.querySelector(".file-name");
     this.progressBar = this.element.querySelector(".progress-bar");
     this.dropZone = this.element.querySelector("#drop-zone");
     this.uploadForm = this.element.querySelector("#js-upload-form");
+    this.uploadForm.addEventListener("change", this.onFileInput.bind(this));
     this.element.addEventListener("click", function(e) {
       if (event.target.classList.contains("upload-btn")) {
-        console.log(
-          self.element.querySelector("#js-upload-files"),
-          "upload input"
-        );
-        let file = self.element.querySelector("#js-upload-files").files[0];
-        self.startUpload(file);
+        self.startUpload(self.file);
       }
     });
     ["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
@@ -39,8 +37,9 @@ class LocationDetailUploadImage extends View {
 
   onDrop(e) {
     let files = e.dataTransfer.files;
+    this.file = files[0];
     if (files[0].type.match(/image.*/)) {
-      this.startUpload(files[0]);
+      this.fileName.textContent = files[0].name;
     }
     this.dropZone.classList.remove("drop");
   }
@@ -54,14 +53,28 @@ class LocationDetailUploadImage extends View {
   }
 
   startUpload(file) {
-    let caption = this.element.querySelector("#new-image-caption").value,
-      newFileEvent = new Event("newFile", { file: file, caption: caption });
-    this.notifyAll(newFileEvent);
-    this.element.querySelector("#new-image-caption").value = "";
+    if (this.agb.checked) {
+      let caption = this.element.querySelector("#new-image-caption").value,
+        newFileEvent = new Event("newFile", { file: file, caption: caption });
+      this.notifyAll(newFileEvent);
+      this.element.querySelector("#new-image-caption").value = "";
+      this.agb.checked = false;
+    } else {
+      alert(
+        "Du musst unsere AGB und Datenschutzerklärung akzeptieren, um Bilder hochzuladen."
+      );
+    }
   }
 
   updateProgress(progress) {
     this.progressBar.style.width = progress + "%";
+  }
+
+  onFileInput(e) {
+    console.log(e);
+    let file = e.target.files[0];
+    this.file = file;
+    this.fileName.textContent = file.name;
   }
 }
 

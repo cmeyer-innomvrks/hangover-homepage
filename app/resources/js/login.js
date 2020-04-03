@@ -7,7 +7,7 @@ function init() {
 function onSignIn(googleUser) {
   document.querySelector(
     ".cd-secondary-nav"
-  ).firstElementChild.firstElementChild.textContent = "PERSÖNLICHER BEREICH";
+  ).firstElementChild.firstElementChild.textContent = "Log out";
   let profile = googleUser.getBasicProfile(),
     user = {
       name: profile.getName(),
