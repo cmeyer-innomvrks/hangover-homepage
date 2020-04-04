@@ -10,8 +10,8 @@ async function fetchEvents() {
     .collection("Events")
     .withConverter(eventConverter)
     .get()
-    .then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
         let currEvent = doc.data();
         events.push(currEvent);
       });
@@ -26,8 +26,8 @@ class EventLoader extends Observable {
       .collection("Events")
       .withConverter(eventConverter)
       .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
           let currEvent = doc.data();
           currEvent.addId(doc.id);
           events.push(currEvent);
@@ -36,6 +36,42 @@ class EventLoader extends Observable {
     let downloadEvent = new Event("eventDL", { events: events });
     this.notifyAll(downloadEvent);
     return events;
+  }
+
+  pushViews(id, views) {
+    database
+      .collection(`Events`)
+      .doc(id)
+      .set(
+        {
+          watched: views + 1,
+        },
+        { merge: true }
+      )
+      .then(function () {
+        console.log("Doc written...");
+      });
+  }
+
+  pushSaved(id, flag, saved) {
+    let newVal = saved;
+    if (flag) {
+      newVal += 1;
+    } else {
+      newVal -= 1;
+    }
+    database
+      .collection(`Events`)
+      .doc(id)
+      .set(
+        {
+          saved: newVal,
+        },
+        { merge: true }
+      )
+      .then(function () {
+        console.log("Doc written...");
+      });
   }
 }
 

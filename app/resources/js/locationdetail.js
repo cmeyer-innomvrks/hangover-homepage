@@ -174,6 +174,7 @@ function onLocationSafeRequest(event) {
   );
   let location = JSON.parse(localStorage.getItem("locationDetail"));
   location.saved = location.saved + 1;
+  localStorage.setItem("locationDetail", JSON.stringify(location));
   locationDetailHeader.setHeader();
 }
 
@@ -186,6 +187,7 @@ function onLocationUnsaveRequest(event) {
     JSON.parse(localStorage.getItem("locationDetail")).saved
   );
   location.saved = location.saved - 1;
+  localStorage.setItem("locationDetail", JSON.stringify(location));
   locationDetailHeader.setHeader();
 }
 
@@ -239,7 +241,7 @@ function onReviewSubmit(event) {
     text: data.text,
     date: data.date,
     name: userName,
-    img: userImg
+    img: userImg,
   });
   for (let i = 0; i < location.rating.length; i++) {
     count++;
@@ -266,7 +268,7 @@ function onNewFileUploadRequest(event) {
   let file = event.data.file,
     caption = event.data.caption,
     reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = function (e) {
     let blob = new Blob([new Uint8Array(e.target.result)], { type: file.type });
     handleFile(blob, caption);
   };
@@ -275,7 +277,7 @@ function onNewFileUploadRequest(event) {
 
 function handleFile(blob, caption) {
   let metaData = {
-    contentType: "image/jpeg"
+    contentType: "image/jpeg",
   };
   PictureLoader.uploadPicture(
     JSON.parse(localStorage.getItem("locationDetail")).id,

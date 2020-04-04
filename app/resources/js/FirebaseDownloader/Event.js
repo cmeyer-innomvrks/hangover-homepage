@@ -9,7 +9,9 @@ class Event {
     locationid,
     music,
     price,
-    time
+    time,
+    watched,
+    saved
   ) {
     this.date = date;
     this.headline = headline;
@@ -20,6 +22,8 @@ class Event {
     this.music = music;
     this.price = parseFloat(price);
     this.time = time;
+    this.watched = watched;
+    this.saved = saved;
     this.addDate();
   }
 
@@ -48,7 +52,9 @@ const eventConverter = {
       locationid: event.locationid,
       music: event.music,
       price: event.price,
-      time: event.time
+      time: event.time,
+      watched: event.watched,
+      saved: event.saved,
     };
   },
   fromFirestore: function (snapshot, options) {
@@ -62,9 +68,11 @@ const eventConverter = {
       data.locationid,
       data.music,
       data.price,
-      data.time
+      data.time,
+      data.watched,
+      data.saved
     );
-  }
+  },
 };
 
 export default (Event, eventConverter);
