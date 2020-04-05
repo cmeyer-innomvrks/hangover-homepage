@@ -542,6 +542,14 @@ b a {
   color: black !important;
 }
 
+.font-grey {
+  color: rgb(91, 91, 91) !important;
+}
+
+.font-lightgrey{
+  color: rgb(167, 167, 167) !important;
+}
+
 .file-name {
   color: black !important;
 }
