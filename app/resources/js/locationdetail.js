@@ -14,8 +14,9 @@ import ProfileLoader from "./FirebaseDownloader/ProfileLoader.js";
 import PictureLoader from "./FirebaseDownloader/PictureLoader.js";
 import LocationDetailUploadImage from "./UI/locationDetail/LocationDetailUploadImage.js";
 import LocationDetailUploadPicBtn from "./UI/locationDetail/LocationDetailUploadPicBtn.js";
+import ReportLoader from "./FirebaseDownloader/ReportLoader.js";
 
-let locationDetailCard, locationDetailReviews, locationDetailHeader;
+let locationDetailCard, locationDetailHeader;
 
 function init() {
   locationDetailHeader = new LocationDetailHeader();
@@ -50,17 +51,22 @@ function init() {
   );
   LocationDetailEvents.hide();
 
-  locationDetailReviews = new LocationDetailReviews();
-  locationDetailReviews.setElement(
+  LocationDetailReviews.setElement(
     document.getElementsByClassName("review-class")[0]
   );
-  locationDetailReviews.setAverage();
-  locationDetailReviews.setOverview();
-  locationDetailReviews.showReviews();
-  locationDetailReviews.hide();
+  LocationDetailReviews.setAverage();
+  LocationDetailReviews.setOverview();
+  LocationDetailReviews.showReviews();
+  LocationDetailReviews.addEventListener("reviewLike", onReviewLike);
+  LocationDetailReviews.addEventListener("reviewDislike", onReviewDislike);
+  LocationDetailReviews.addEventListener("report", onReportRequested);
+  LocationDetailReviews.hide();
 
   LocationDetailPics.setElement(document.querySelector(".picture-area"));
   LocationDetailPics.addEventListener("displaySinglePic", onSinglePicRequested);
+  LocationDetailPics.addEventListener("pictureLike", onPictureLike);
+  LocationDetailPics.addEventListener("pictureDislike", onPictureDislike);
+  LocationDetailPics.addEventListener("report", onReportRequested);
   LocationDetailPics.hide();
 
   LocationDetailLeaveRatingBtn.setElement(document.querySelector(".well-sm"));
@@ -100,7 +106,7 @@ function onInfoRequested() {
   locationDetailCard.show();
   LocationDetailNavigator.activateInfo();
   LocationDetailEvents.hide();
-  locationDetailReviews.hide();
+  LocationDetailReviews.hide();
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
@@ -113,7 +119,7 @@ function onEventRequested() {
   locationDetailCard.hide();
   LocationDetailNavigator.activateEvents();
   LocationDetailEvents.show();
-  locationDetailReviews.hide();
+  LocationDetailReviews.hide();
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.hide();
@@ -127,11 +133,11 @@ function onReviewRequested() {
   LocationDetailNavigator.activateReviews();
   LocationDetailEvents.hide();
   if (JSON.parse(localStorage.getItem("locationDetail")).rating.length === 0) {
-    locationDetailReviews.hide();
+    LocationDetailReviews.hide();
     document.querySelector(".no-review").textContent =
       "Noch kein Review vorhanden. Jetzt ";
   } else {
-    locationDetailReviews.show();
+    LocationDetailReviews.show();
   }
   LocationDetailLeaveRatingBtn.show();
   LocationDetailPics.hide();
@@ -144,7 +150,7 @@ async function onPicsRequested() {
   locationDetailCard.hide();
   LocationDetailNavigator.activatePics();
   LocationDetailEvents.hide();
-  locationDetailReviews.hide();
+  LocationDetailReviews.hide();
   LocationDetailLeaveRating.hide();
   LocationDetailLeaveRatingBtn.hide();
   LocationDetailPics.show();
@@ -243,6 +249,8 @@ function onReviewSubmit(event) {
     date: data.date,
     name: userName,
     img: userImg,
+    liked: 0,
+    disliked: 0,
   });
   for (let i = 0; i < location.rating.length; i++) {
     count++;
@@ -250,18 +258,14 @@ function onReviewSubmit(event) {
   }
   location.average = sum / count;
   localStorage.setItem("locationDetail", JSON.stringify(location));
-  locationDetailReviews.resetReviews();
+  LocationDetailReviews.resetReviews();
   locationDetailHeader = new LocationDetailHeader();
   locationDetailHeader.setElement(document.querySelector(".profile-panel"));
   locationDetailHeader.setHeader();
-  locationDetailReviews = new LocationDetailReviews();
-  locationDetailReviews.setElement(
-    document.getElementsByClassName("review-class")[0]
-  );
-  locationDetailReviews.setAverage();
-  locationDetailReviews.setOverview();
-  locationDetailReviews.showReviews();
-  locationDetailReviews.show();
+  LocationDetailReviews.setAverage();
+  LocationDetailReviews.setOverview();
+  LocationDetailReviews.showReviews();
+  LocationDetailReviews.show();
   ProfileLoader.updateUserReviews(data.id);
 }
 
@@ -317,6 +321,42 @@ function onSinglePicRequested(event) {
     url = "./singleImage.html";
   localStorage.setItem("picSrc", JSON.stringify(src));
   window.location.href = url;
+}
+
+function onPictureLike(event) {
+  let pictureID = event.data.pictureID,
+    likes = event.data.likes,
+    locationID = JSON.parse(localStorage.getItem("locationDetail")).id;
+  LocationLoader.pushLike(locationID, pictureID, likes);
+}
+
+function onPictureDislike(event) {
+  let pictureID = event.data.pictureID,
+    dislikes = event.data.dislikes,
+    locationID = JSON.parse(localStorage.getItem("locationDetail")).id;
+  LocationLoader.pushDislike(locationID, pictureID, dislikes);
+}
+
+function onReviewLike(event) {
+  let reviewID = event.data.reviewID,
+    likes = event.data.likes,
+    locationID = JSON.parse(localStorage.getItem("locationDetail")).id;
+  LocationLoader.pushReviewLike(locationID, reviewID, likes);
+}
+
+function onReviewDislike(event) {
+  let reviewID = event.data.reviewID,
+    dislikes = event.data.dislikes,
+    locationID = JSON.parse(localStorage.getItem("locationDetail")).id;
+  LocationLoader.pushReviewDislike(locationID, reviewID, dislikes);
+}
+
+function onReportRequested(event) {
+  let objectID = event.data.objectID,
+    locationID = JSON.parse(localStorage.getItem("locationDetail")).id,
+    reportType = event.data.reportType;
+  ReportLoader.pushReport(locationID, reportType, objectID);
+  alert("Danke für deine Mithilfe!");
 }
 
 init();

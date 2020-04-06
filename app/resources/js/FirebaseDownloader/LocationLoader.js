@@ -16,8 +16,8 @@ class LocationLoader extends Observable {
       .collection("Locations")
       .withConverter(locationConverter)
       .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
           let currLocation = doc.data();
           currLocation.addId(doc.id);
           locations.push(currLocation);
@@ -35,14 +35,17 @@ class LocationLoader extends Observable {
       .doc(locationID)
       .collection("Rating")
       .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
           let currRating = {
             stars: parseFloat(doc.data().ratingStars),
             text: doc.data().ratingText,
             date: doc.data().ratingDate,
             name: doc.data().userName,
-            img: doc.data().userImg
+            img: doc.data().userImg,
+            liked: doc.data().liked,
+            disliked: doc.data().disliked,
+            id: doc.id,
           };
           ratings.push(currRating);
         });
@@ -71,9 +74,41 @@ class LocationLoader extends Observable {
         ratingStars: stars,
         ratingText: text,
         userName: userName,
-        userImg: img
+        userImg: img,
+        liked: 0,
+        disliked: 0,
       })
-      .then(function() {
+      .then(function () {
+        console.log("Doc written...");
+      });
+  }
+
+  pushReviewLike(locationID, reviewID, likes) {
+    database
+      .collection(`Locations/${locationID}/Rating`)
+      .doc(reviewID)
+      .set(
+        {
+          liked: likes + 1,
+        },
+        { merge: true }
+      )
+      .then(function () {
+        console.log("Doc written...");
+      });
+  }
+
+  pushReviewDislike(locationID, reviewID, dislikes) {
+    database
+      .collection(`Locations/${locationID}/Rating`)
+      .doc(reviewID)
+      .set(
+        {
+          disliked: dislikes + 1,
+        },
+        { merge: true }
+      )
+      .then(function () {
         console.log("Doc written...");
       });
   }
@@ -84,11 +119,11 @@ class LocationLoader extends Observable {
       .doc(id)
       .set(
         {
-          watched: views + 1
+          watched: views + 1,
         },
         { merge: true }
       )
-      .then(function() {
+      .then(function () {
         console.log("Doc written...");
       });
   }
@@ -105,11 +140,11 @@ class LocationLoader extends Observable {
       .doc(id)
       .set(
         {
-          saved: newVal
+          saved: newVal,
         },
         { merge: true }
       )
-      .then(function() {
+      .then(function () {
         console.log("Doc written...");
       });
   }
@@ -121,9 +156,41 @@ class LocationLoader extends Observable {
       .doc()
       .set({
         url: url,
-        text: text
+        text: text,
+        liked: 0,
+        disliked: 0,
       })
-      .then(function() {
+      .then(function () {
+        console.log("Doc written...");
+      });
+  }
+
+  pushLike(locationID, pictureID, likes) {
+    database
+      .collection(`Locations/${locationID}/Pics`)
+      .doc(pictureID)
+      .set(
+        {
+          liked: likes + 1,
+        },
+        { merge: true }
+      )
+      .then(function () {
+        console.log("Doc written...");
+      });
+  }
+
+  pushDislike(locationID, pictureID, dislikes) {
+    database
+      .collection(`Locations/${locationID}/Pics`)
+      .doc(pictureID)
+      .set(
+        {
+          disliked: dislikes + 1,
+        },
+        { merge: true }
+      )
+      .then(function () {
         console.log("Doc written...");
       });
   }
@@ -135,11 +202,14 @@ class LocationLoader extends Observable {
       .doc(locationID)
       .collection("Pics")
       .get()
-      .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
           let currPicture = {
             url: doc.data().url,
-            text: doc.data().text
+            text: doc.data().text,
+            liked: doc.data().liked,
+            disliked: doc.data().disliked,
+            id: doc.id,
           };
           pictures.push(currPicture);
         });

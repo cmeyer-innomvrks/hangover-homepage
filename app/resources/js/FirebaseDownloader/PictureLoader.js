@@ -16,21 +16,21 @@ class PictureLoader extends Observable {
 
     uploadTask.on(
       firebase.storage.TaskEvent.STATE_CHANGED,
-      function(snapshot) {
+      function (snapshot) {
         let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
           progressEvent = new Event("updateProgress", { progress: progress });
         self.notifyAll(progressEvent);
       },
-      function(error) {},
-      async function() {
+      function (error) {},
+      async function () {
         let downloadURL = await uploadTask.snapshot.ref
             .getDownloadURL()
-            .then(function(url) {
+            .then(function (url) {
               return url;
             }),
           onUploadFinishedEvent = new Event("imageUploadFinished", {
             url: downloadURL,
-            caption: caption
+            caption: caption,
           });
         self.notifyAll(onUploadFinishedEvent);
       }

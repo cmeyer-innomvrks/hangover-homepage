@@ -1,6 +1,7 @@
 /* eslint-env browser */
 
 import View from "../View.js";
+import { Event } from "../../utils/Observable.js";
 
 class LocationDetailReviews extends View {
   constructor() {
@@ -9,6 +10,7 @@ class LocationDetailReviews extends View {
   }
 
   setAverage() {
+    this.location = JSON.parse(localStorage.getItem("locationDetail"));
     this.element.querySelector(".average").innerHTML =
       this.location.average.toFixed(2) + "<small>/ 5</small>";
     let stars = this.element
@@ -56,7 +58,6 @@ class LocationDetailReviews extends View {
         month1 = parseInt(b.date.split(".")[1]),
         year1 = parseInt(b.date.split(".")[2]),
         bDate = new Date(year1, month1 - 1, day1, 0, 0, 0, 0);
-      console.log(aDate, bDate, bDate - aDate, year, year1);
       return bDate - aDate;
     });
 
@@ -67,6 +68,8 @@ class LocationDetailReviews extends View {
       item.querySelector(".img-rounded").src = ratings[i].img;
       item.querySelector(".review-block-name").textContent = ratings[i].name;
       item.querySelector(".review-block-date").textContent = ratings[i].date;
+      item.querySelector(".fa-thumbs-up").textContent = ratings[i].liked;
+      item.querySelector(".fa-thumbs-down").textContent = ratings[i].disliked;
       let stars = item.getElementsByTagName("button");
       for (let j = 0; j < stars.length; j++) {
         if (ratings[i].stars >= j + 1) {
@@ -79,6 +82,8 @@ class LocationDetailReviews extends View {
         ratings[i].text;
 
       item = item.firstElementChild;
+      item.setAttribute("id", ratings[i].id);
+      item.addEventListener("click", this.onClick.bind(this));
       this.element.querySelector(".user-reviews").appendChild(item);
       this.element
         .querySelector(".user-reviews")
@@ -89,6 +94,36 @@ class LocationDetailReviews extends View {
   resetReviews() {
     this.element.querySelector(".user-reviews").innerHTML = "";
   }
+
+  onClick(event) {
+    let target = event.target;
+    if (target.classList.contains("fa-thumbs-up")) {
+      let likes = parseInt(target.textContent),
+        id = target.parentElement.parentElement.getAttribute("id"),
+        likeEvent = new Event("reviewLike", { reviewID: id, likes: likes });
+      this.notifyAll(likeEvent);
+      target.textContent = likes + 1;
+      target.style.pointerEvents = "none";
+    } else if (target.classList.contains("fa-thumbs-down")) {
+      let dislikes = parseInt(target.textContent),
+        id = target.parentElement.parentElement.getAttribute("id"),
+        likeEvent = new Event("reviewDislike", {
+          reviewID: id,
+          dislikes: dislikes,
+        });
+      this.notifyAll(likeEvent);
+      target.textContent = dislikes + 1;
+      target.style.pointerEvents = "none";
+    } else if (target.classList.contains("fa-bomb")) {
+      let id = target.parentElement.parentElement.getAttribute("id"),
+        reportEvent = new Event("report", {
+          objectID: id,
+          reportType: "Review",
+        });
+      this.notifyAll(reportEvent);
+      target.classList.add("hidden");
+    }
+  }
 }
 
-export default LocationDetailReviews;
+export default new LocationDetailReviews();
