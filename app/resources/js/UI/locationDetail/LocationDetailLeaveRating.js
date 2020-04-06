@@ -38,15 +38,14 @@ class LocationDetailLeaveRating extends View {
         starsCount++;
       }
     }
-    date =
-      now.getDate() + ".0" + (now.getMonth() + 1) + "." + now.getFullYear();
+    date = now.getDate() + "." + (now.getMonth() + 1) + "." + now.getFullYear();
     text = this.element.querySelector(".form-control").value;
     id = this.location.id;
     let reviewSubmit = new Event("submitReview", {
       id: id,
       stars: starsCount,
       text: text,
-      date: date
+      date: date,
     });
     this.notifyAll(reviewSubmit);
   }

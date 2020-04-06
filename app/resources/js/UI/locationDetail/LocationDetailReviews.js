@@ -46,6 +46,20 @@ class LocationDetailReviews extends View {
 
   showReviews() {
     let ratings = this.location.rating;
+
+    ratings.sort(function (a, b) {
+      let day = parseInt(a.date.split(".")[0]),
+        month = parseInt(a.date.split(".")[1]),
+        year = parseInt(a.date.split(".")[2]),
+        aDate = new Date(year, month - 1, day, 0, 0, 0, 0),
+        day1 = parseInt(b.date.split(".")[0]),
+        month1 = parseInt(b.date.split(".")[1]),
+        year1 = parseInt(b.date.split(".")[2]),
+        bDate = new Date(year1, month1 - 1, day1, 0, 0, 0, 0);
+      console.log(aDate, bDate, bDate - aDate, year, year1);
+      return bDate - aDate;
+    });
+
     for (let i = 0; i < ratings.length; i++) {
       let template = document.querySelector(".rating-template").innerHTML,
         item = document.createElement("div");

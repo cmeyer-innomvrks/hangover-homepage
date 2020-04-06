@@ -60,6 +60,7 @@ function init() {
   locationDetailReviews.hide();
 
   LocationDetailPics.setElement(document.querySelector(".picture-area"));
+  LocationDetailPics.addEventListener("displaySinglePic", onSinglePicRequested);
   LocationDetailPics.hide();
 
   LocationDetailLeaveRatingBtn.setElement(document.querySelector(".well-sm"));
@@ -309,6 +310,13 @@ function onProgressUpdate(event) {
 function onPicUploadRequested() {
   LocationDetailUploadImage.show();
   LocationDetailUploadPicBtn.hide();
+}
+
+function onSinglePicRequested(event) {
+  let src = event.data.src,
+    url = "./singleImage.html";
+  localStorage.setItem("picSrc", JSON.stringify(src));
+  window.location.href = url;
 }
 
 init();

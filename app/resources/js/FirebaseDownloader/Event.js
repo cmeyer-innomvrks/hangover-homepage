@@ -28,11 +28,11 @@ class Event {
   }
 
   addDate() {
-    let day = parseInt(this.date.substring(0, 2)),
-      month = parseInt(this.date.substring(3, 5)),
-      year = parseInt(this.date.substring(6)),
-      hours = parseInt(this.time.substring(0, 2)),
-      minutes = parseInt(this.time.substring(3));
+    let day = parseInt(this.date.split(".")[0]),
+      month = parseInt(this.date.split(".")[1]),
+      year = parseInt(this.date.split(".")[2]),
+      hours = parseInt(this.time.split(":")[0]),
+      minutes = parseInt(this.time.split(":")[1]);
     this.jsDate = new Date(year, month, day, hours, minutes, 0, 0);
   }
 
