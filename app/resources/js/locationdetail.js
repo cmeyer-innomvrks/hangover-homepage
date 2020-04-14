@@ -81,7 +81,6 @@ function init() {
   LocationDetailLeaveRating.addEventListener("submitReview", onReviewSubmit);
   LocationDetailLeaveRating.hide();
 
-  // PictureLoader.addEventListener("imageSrcRdy", onImgSrcRdy);
   PictureLoader.addEventListener("imageUploadFinished", onImageUploadFinished);
   PictureLoader.addEventListener("updateProgress", onProgressUpdate);
 
@@ -113,6 +112,8 @@ function onInfoRequested() {
   LocationDetailUploadImage.hide();
   LocationDetailUploadPicBtn.hide();
   locationDetailHeader.setIndexTab("Info");
+  document.querySelector(".no-pictures").textContent = "";
+  document.querySelector(".no-review").textContent = "";
 }
 
 function onEventRequested() {
@@ -126,6 +127,8 @@ function onEventRequested() {
   LocationDetailUploadImage.hide();
   LocationDetailUploadPicBtn.hide();
   locationDetailHeader.setIndexTab("Events");
+  document.querySelector(".no-pictures").textContent = "";
+  document.querySelector(".no-review").textContent = "";
 }
 
 function onReviewRequested() {
@@ -144,6 +147,7 @@ function onReviewRequested() {
   LocationDetailUploadImage.hide();
   LocationDetailUploadPicBtn.hide();
   locationDetailHeader.setIndexTab("Reviews");
+  document.querySelector(".no-pictures").textContent = "";
 }
 
 async function onPicsRequested() {
@@ -161,8 +165,13 @@ async function onPicsRequested() {
   let pictures = await LocationLoader.getPictures(
     JSON.parse(localStorage.getItem("locationDetail")).id
   );
-  console.log(pictures);
+  if (pictures.length == 0) {
+    document.querySelector(".no-pictures").textContent =
+      "Noch keine Bilder vorhanden. Jetzt";
+  }
+  LocationDetailPics.reset();
   LocationDetailPics.addPictures(pictures);
+  document.querySelector(".no-review").textContent = "";
 }
 
 async function checkIfLocationSaved(event) {
@@ -266,6 +275,7 @@ function onReviewSubmit(event) {
   LocationDetailReviews.setOverview();
   LocationDetailReviews.showReviews();
   LocationDetailReviews.show();
+  document.querySelector(".no-review").textContent = "";
   ProfileLoader.updateUserReviews(data.id);
 }
 
@@ -304,6 +314,7 @@ async function onImageUploadFinished(event) {
   LocationDetailPics.addPictures(pictures);
   LocationDetailUploadImage.hide();
   LocationDetailUploadPicBtn.show();
+  document.querySelector(".no-pictures").textContent = "";
 }
 
 function onProgressUpdate(event) {
