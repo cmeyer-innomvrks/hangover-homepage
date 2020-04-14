@@ -4,7 +4,13 @@
 
 ## Team
 
-[Beschreiben Sie hier die einzelnen Teammitglieder mit Namen, E-Mail-Adresse, Github-Nutzer und Foto. Nennen Sie mindestens eine Komponenten der Anwendung, die in wesentlichen Teilen vom jeweiligen Teammitglied entwickelt wurde.]
+|                                                                                    | Infos                                                                                                                            | Implementierte Komponenten |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| <img alt="Portrait von Stefan Lippl" src="docs/christoph_meyer.jpg" width="100" /> | **Stefan Lippl**<br />E-Mail: stefan.lippl@stud.uni-regensburg.de<br />Github-Nutzer: swstudentrgb<br /> Matrikelnummer: 2046000 | TODO                       |
+
+|                                                                                       | Infos                                                                                                                                      | Implementierte Komponenten |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| <img alt="Portrait von Christoph Meyer" src="docs/christoph_meyer.jpg" width="100" /> | **Christoph Meyer**<br />E-Mail: christoph.meyer@stud.uni-regensburg,de<br />Github-Nutzer: christophmeyer13<br /> Matrikelnummer: 2036571 | TODO                       |
 
 ## Setup und Testing
 
@@ -18,7 +24,7 @@ So nutzen Sie den vorgegebenen Server:
 
 ### Automatisches Bauen der Anwendung
 
-Unter Umständen müssen oder wollen Sie vor dem Ausführen bzw. Bereitstellen Ihrer Anwendung bestimmte Optimierungsvorgänge durchführen (z.B. mehrere Javascript-Dateien zu einer zusammenfügen oder Grafikdateien für die Verwendung im Browser anpassen). Versuchen Sie diese Schritte mithilfe entsprechende *Node.js*-Module zu lösen und implementieren Sie die Automatisierung in der Datei `build.js`. Sie können diese Datei über den Befehl `npm run build` starten. Dabei wird vor dem Ausführen der Datei der Javascript-Code unter `app/resources/js/` auf Fehler und Warnungen (*eslint*) geprüft. Der automatisierte Bau der Software startet nur dann, wenn Ihr Code fehlerfrei ist.
+Unter Umständen müssen oder wollen Sie vor dem Ausführen bzw. Bereitstellen Ihrer Anwendung bestimmte Optimierungsvorgänge durchführen (z.B. mehrere Javascript-Dateien zu einer zusammenfügen oder Grafikdateien für die Verwendung im Browser anpassen). Versuchen Sie diese Schritte mithilfe entsprechende _Node.js_-Module zu lösen und implementieren Sie die Automatisierung in der Datei `build.js`. Sie können diese Datei über den Befehl `npm run build` starten. Dabei wird vor dem Ausführen der Datei der Javascript-Code unter `app/resources/js/` auf Fehler und Warnungen (_eslint_) geprüft. Der automatisierte Bau der Software startet nur dann, wenn Ihr Code fehlerfrei ist.
 
 [Beschreiben Sie alle Schritte, die notwendig sind um Ihre Anwendung auf Basis dieses Repositorys zu starten.]
 
