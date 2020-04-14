@@ -4,9 +4,9 @@
 
 ## Team
 
-|                                                                                    | Infos                                                                                                                            | Implementierte Komponenten |
-| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
-| <img alt="Portrait von Stefan Lippl" src="docs/christoph_meyer.jpg" width="100" /> | **Stefan Lippl**<br />E-Mail: stefan.lippl@stud.uni-regensburg.de<br />Github-Nutzer: swstudentrgb<br /> Matrikelnummer: 2046000 | TODO                       |
+|                                                                                 | Infos                                                                                                                            | Implementierte Komponenten |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| <img alt="Portrait von Stefan Lippl" src="docs/stefan_lippl.JPG" width="100" /> | **Stefan Lippl**<br />E-Mail: stefan.lippl@stud.uni-regensburg.de<br />Github-Nutzer: swstudentrgb<br /> Matrikelnummer: 2046000 | TODO                       |
 
 |                                                                                       | Infos                                                                                                                                      | Implementierte Komponenten |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
