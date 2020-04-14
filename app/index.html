@@ -6,24 +6,25 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="google-signin-client_id"
-        content="1025215188376-cjvem92vgkhqvg4euhh5vjmrh2eacbmo.apps.googleusercontent.com" />
+  <!-- CSS Files -->
   <link rel="stylesheet" href="resources/css/style.css">
   <link rel="stylesheet" href="resources/css/navbar.css">
   <link rel="stylesheet" href="resources/css/reset.css">
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- Google -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+  <meta name="google-signin-client_id" content="1025215188376-cjvem92vgkhqvg4euhh5vjmrh2eacbmo.apps.googleusercontent.com" />
+  <!-- Name + Icon-->
   <link rel="icon" href="./resources/img/Hangover_Logo_ohne_Schrift.png">
   <title>HANGOVER - Events</title>
 </head>
 
 <body class="body">
-  <!-- NAVBAR START -->
+  <!-- NAVBAR -->
   <header class="cd-header">
     <div class="cd-logo"><a href="./index.html"><img src="./resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
           alt="Logo"></a></div>
@@ -44,18 +45,13 @@
       <li><a class="menu-link" href="./sites/locations.html">Locations</a></li>
       <li><a class="menu-link" href="./sites/map.html">Map</a></li>
       <li><a class="menu-link" href="./sites/userprofile.html">Persönlicher Bereich</a></li>
-
-      <li class="cd-label">Rechtliches</li>
-      <li><a class="menu-link" href="./sites/detailedEvent.html">Detailed Event</a></li>
-      <li><a class="menu-link" href="./sites/detailedLocation.html">Detailed Location</a></li>
     </ul>
   </nav>
   <section class="cd-intro event-img-adobe">
     <h1>PARTY THE WHOLE NIGHT! <br><br><b>EVENTS</b></h1>
   </section>
-  <!-- NAVBAR END -->
 
-  <!-- CONTENT START -->
+  <!-- CONTENT -->
   <div class="container-footer-to-bot">
     <div class="row">
       <!-- COL 1 - Aside FilterBar -->
@@ -67,16 +63,14 @@
       </div>
       <!-- COL 3-->
       <div class="col col3">
-        <!-- FILTER BUTTON START-->
+        <!-- FILTER BUTTON -->
         <button type="button" class="filter-btn btn btn-circle btn-lg">
           <img src="./resources/img/filter.png" alt="" srcset="" width="25px"></button>
-        <!-- FILTER BUTTON END-->
       </div>
     </div>
   </div>
-  <!-- CONTENT END -->
 
-  <!-- FOOTER START -->
+  <!-- FOOTER -->
   <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
     <div class="container">
       <div class="row row-30">
@@ -109,11 +103,8 @@
         <div class="col-md-4 col-xl-3">
           <h5><b>Links</b></h5>
           <ul class="nav-list">
-            <li><a href="index.html">Events</a></li>
-            <li><a href="./sites/locations.html">Locations</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Datenschutz</a></li>
-            <li><a href="#">Impressum</a></li>
+            <li><a href="./sites/impressum.html">Impressum</a></li>
+            <li><a href="./sites/agb.html">AGB & Datenschutz</a></li>
           </ul>
         </div>
       </div>
@@ -126,10 +117,9 @@
       <div class="col"><a class="social-inner" href="https://twitter.com/home"><span
             class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
   </footer>
-  <!-- FOOTER END -->
 
-  <!-- TAMPLATES START -->
-  <!-- EVENTCARD START-->
+  <!-- TEMPLATES -->
+  <!-- EVENTCARD Template -->
   <template class="event-template">
     <div class="col mb-4">
       <div class="card h-100 my-2">
@@ -149,9 +139,8 @@
       </div>
     </div>
   </template>
-  <!-- EVENTCARD END-->
 
-  <!-- DATE CARD START -->
+  <!-- DATE CARD Template -->
   <template class="date-card">
     <ul class="list-group my-1">
       <li class="list-group-item-datecard list-group-item my-2"><span class="week-day">Dienstag</span> | <span
@@ -159,9 +148,8 @@
     </ul>
     <div class="event-list row row-cols-1 row-cols-md-3"></div>
   </template>
-  <!-- DATE CARD END -->
 
-  <!-- FILTER START -->
+  <!-- FILTER Template -->
   <template class="event-filter">
     <div class="accordion" id="accordionExample">
 
@@ -232,9 +220,8 @@
       </div>
     </div>
   </template>
-  <!-- FILTER END -->
 
-  <!-- FILTER-SLIDER START -->
+  <!-- FILTER-SLIDER Template -->
   <template class="slider-template">
     <li class="list-group-item">
       <span>ALLE</span>
@@ -244,8 +231,6 @@
       </label>
     </li>
   </template>
-  <!-- FILTER-SLIDER END -->
-  <!-- TAMPLATES END -->
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -258,12 +243,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-  <script src="resources/js/index.js" type="module"></script>
-  <!-- Firebase -->
+  <!-- Firebase + JS -->
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="resources/js/modernizr.js"></script>
