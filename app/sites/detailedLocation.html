@@ -173,7 +173,7 @@
 
           <!-- Rating Start -->
           <!-- Leave Comment Start -->
-          <div class="well well-sm justify-content-center">
+          <div class="well well-sm justify-content-center review-container">
             <div class="text-center">
               <span class="no-review"></span>
                 <button class="btn btn-success btn-green leave-rating-btn" id="open-review-box">Bewertung abgeben</a>
@@ -206,6 +206,14 @@
                           <div class="text-right">
                               <button class="btn btn-danger btn-sm" id="close-review-box" style="display:none; margin-right: 10px;">
                               <span class="glyphicon glyphicon-remove"></span>Cancel</button> <br>
+                              <div class="form-check text-center">
+                                <input class="form-check-input float-center" type="checkbox" value="" id="defaultCheck1"><br>
+                                <label class="form-check-label font-black" for="defaultCheck1">
+                                  Hiermit akzeptiere ich die <a href="./agb.html" class="font-black"
+                                    style="text-decoration: underline !important;">AGB & Datenschutzbestimmungen</a> von Hangover Application
+                                </label>
+                              </div>
+                              <br><br>
                               <button class="btn btn-success btn-lg">Save</button>
                           </div>
                         </div>
@@ -325,8 +333,9 @@
           <!-- Rating End-->
 
         <!-- Pictures Start -->
+        <div class="well well-sm justify-content-center review-container">
             <div class="text-center upload-pic">
-              <span class="no-review"></span>
+              <span class="no-pictures"></span>
               <button class="btn btn-success btn-green upload-pic-btn" id="open-review-box">Bild hochladen</a>
             </div>
             <br>
@@ -384,15 +393,9 @@
                 </label>
               </div>
               <br><br>
-              <button class="btn btn-success btn-lg float-right upload-btn">Save</button> <!-- CHRIS NEUER UPLOAD BUTTON!!!!!!!-->
-              <!-- Upload Finished -->
-              <!-- <div class="js-upload-finished">
-                <h3>Processed files</h3>
-                <div class="list-group upload-group">
-                  <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
-                </div>
-              </div> -->
+              <button class="btn btn-success btn-lg float-right upload-btn">Save</button>
             </div>
+          </div>
           </div>
 
               <!-- Picture Grid Start -->

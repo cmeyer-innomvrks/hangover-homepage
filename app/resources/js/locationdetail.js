@@ -148,6 +148,7 @@ function onReviewRequested() {
   LocationDetailUploadPicBtn.hide();
   locationDetailHeader.setIndexTab("Reviews");
   document.querySelector(".no-pictures").textContent = "";
+  document.querySelector(".review-container").classList.remove("hidden");
 }
 
 async function onPicsRequested() {
@@ -172,6 +173,7 @@ async function onPicsRequested() {
   LocationDetailPics.reset();
   LocationDetailPics.addPictures(pictures);
   document.querySelector(".no-review").textContent = "";
+  document.querySelector(".review-container").classList.add("hidden");
 }
 
 async function checkIfLocationSaved(event) {

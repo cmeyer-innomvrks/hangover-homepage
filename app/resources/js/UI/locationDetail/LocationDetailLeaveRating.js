@@ -12,6 +12,7 @@ class LocationDetailLeaveRating extends View {
 
   setElement(element) {
     super.setElement(element);
+    this.agb = this.element.querySelector(".form-check-input");
     this.element
       .querySelector(".btn-success")
       .addEventListener("click", this.onSubmit.bind(this));
@@ -28,26 +29,33 @@ class LocationDetailLeaveRating extends View {
   }
 
   onSubmit() {
-    let starsCount = 0,
-      date,
-      text,
-      now = new Date(),
-      id;
-    for (let i = 0; i < this.stars.length; i++) {
-      if (this.stars[i]) {
-        starsCount++;
+    if (this.agb.checked) {
+      let starsCount = 0,
+        date,
+        text,
+        now = new Date(),
+        id;
+      for (let i = 0; i < this.stars.length; i++) {
+        if (this.stars[i]) {
+          starsCount++;
+        }
       }
+      date =
+        now.getDate() + "." + (now.getMonth() + 1) + "." + now.getFullYear();
+      text = this.element.querySelector(".form-control").value;
+      id = this.location.id;
+      let reviewSubmit = new Event("submitReview", {
+        id: id,
+        stars: starsCount,
+        text: text,
+        date: date,
+      });
+      this.notifyAll(reviewSubmit);
+    } else {
+      alert(
+        "Du musst unsere AGB und Datenschutzerklärung akzeptieren, um Bewertungen abzugeben."
+      );
     }
-    date = now.getDate() + "." + (now.getMonth() + 1) + "." + now.getFullYear();
-    text = this.element.querySelector(".form-control").value;
-    id = this.location.id;
-    let reviewSubmit = new Event("submitReview", {
-      id: id,
-      stars: starsCount,
-      text: text,
-      date: date,
-    });
-    this.notifyAll(reviewSubmit);
   }
 
   onStarsClicked(event) {
