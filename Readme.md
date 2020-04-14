@@ -10,7 +10,7 @@
 
 |                                                                                       | Infos                                                                                                                                      | Implementierte Komponenten |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| <img alt="Portrait von Christoph Meyer" src="docs/christoph_meyer.jpg" width="100" /> | **Christoph Meyer**<br />E-Mail: christoph.meyer@stud.uni-regensburg,de<br />Github-Nutzer: christophmeyer13<br /> Matrikelnummer: 2036571 | TODO                       |
+| <img alt="Portrait von Christoph Meyer" src="docs/christoph_meyer.jpg" width="100" /> | **Christoph Meyer**<br />E-Mail: christoph.meyer@stud.uni-regensburg.de<br />Github-Nutzer: christophmeyer13<br /> Matrikelnummer: 2036571 | TODO                       |
 
 ## Setup und Testing
 
