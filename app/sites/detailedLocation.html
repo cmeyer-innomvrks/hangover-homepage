@@ -1,499 +1,497 @@
 <!-- https://bootsnipp.com/snippets/WaXlr -->
 <!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/navbar.css">
+    <link rel="stylesheet" href="../resources/css/reset.css">
+    <link rel="stylesheet" href="../resources/css/userprofile.css">
+    <link rel="stylesheet" href="../resources/css/raiting.css">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/a67950b77b.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Google -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+      content="1025215188376-cjvem92vgkhqvg4euhh5vjmrh2eacbmo.apps.googleusercontent.com" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- JavaScript-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../resources/js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="../resources/js/jquery-2.1.1.js"></script>
+    <script src="../resources/js/navbar.js"></script>
+    <script src="../resources/js/locationdetail.js" type="module"></script>
+    <script src="../resources/js/login.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Tab -->
+    <title>Detailed Location</title>
+    <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png">
+  </head>
+  <body class="body">
+    <!-- NAVBAR -->
+    <header class="cd-header map-header">
+      <div class="cd-logo"><a href="../index.html"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+            alt="Logo"></a></div>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="google-signin-client_id"
-        content="1025215188376-cjvem92vgkhqvg4euhh5vjmrh2eacbmo.apps.googleusercontent.com" />
-  <link rel="stylesheet" href="../resources/css/style.css">
-  <link rel="stylesheet" href="../resources/css/navbar.css">
-  <link rel="stylesheet" href="../resources/css/reset.css">
-  <link rel="stylesheet" href="../resources/css/userprofile.css">
-  <link rel="stylesheet" href="../resources/css/raiting.css">
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
-  <!-- Google -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="https://kit.fontawesome.com/a67950b77b.js" crossorigin="anonymous"></script>
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-  <title>Detailed Location</title>
-  <link rel="icon" href="../resources/img/Hangover_Logo_ohne_Schrift.png">
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="../resources/js/modernizr.js"></script> <!-- Modernizr -->
-  <script src="../resources/js/jquery-2.1.1.js"></script>
-  <script src="../resources/js/navbar.js"></script>
-  <script src="../resources/js/locationdetail.js" type="module"></script>
-  <script src="../resources/js/login.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <!-- <script src="../resources/js/rating.js"></script> -->
-</head>
+      <nav>
+        <ul class="cd-secondary-nav login-out-btn">
+          <li id="user-log-in-out"><a href="userprofile.html">Log In</a></li>
+        </ul>
+      </nav> <!-- cd-nav -->
 
-<body class="body">
-
-  <!-- NAVBAR -->
-  <header class="cd-header map-header">
-    <div class="cd-logo"><a href="../index.html"><img src="../resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
-          alt="Logo"></a></div>
-
+      <a class="cd-primary-nav-trigger" href="#0">
+        <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+      </a> <!-- cd-primary-nav-trigger -->
+    </header>
     <nav>
-      <ul class="cd-secondary-nav login-out-btn">
-        <li id="user-log-in-out"><a href="userprofile.html">Log In</a></li>
+      <ul class="cd-primary-nav">
+        <li class="cd-label">Find</li>
+        <li><a class="menu-link" href="../index.html">Events</a></li>
+        <li><a class="menu-link" href="./locations.html">Locations</a></li>
+        <li><a class="menu-link" href="./map.html">Map</a></li>
+        <li><a class="menu-link" href="userprofile.html">Persönlicher Bereich</a></li>
       </ul>
-    </nav> <!-- cd-nav -->
+    </nav>
 
-    <a class="cd-primary-nav-trigger" href="#0">
-      <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
-    </a> <!-- cd-primary-nav-trigger -->
-  </header>
-  <nav>
-    <ul class="cd-primary-nav">
-      <li class="cd-label">Find</li>
-      <li><a class="menu-link" href="../index.html">Events</a></li>
-      <li><a class="menu-link" href="./locations.html">Locations</a></li>
-      <li><a class="menu-link" href="./map.html">Map</a></li>
-      <li><a class="menu-link" href="userprofile.html">Persönlicher Bereich</a></li>
-    </ul>
-  </nav>
+    <!-- CONTENT -->
+    <div class="container-footer-to-bot">
+      <div class="row">
 
-  <!-- CONTENT -->
-  <div class="container-footer-to-bot">
-    <div class="row">
+        <!-- COL 1 -->
+        <div class="col col1"></div>
 
-      <!-- COL 1 -->
-      <div class="col col1"></div>
-
-      <!-- COL 2-->
-      <div class="profile-col col-md-8 eventlist">
-        <!-- Profile Start-->
-        <div class="panel panel-default plain profile-panel">
-                            <nav aria-label="breadcrumb">
-                              <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                  <a href="./locations.html">Locations</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                  <a class="location-name" href="">Havana Bar</a>
-                                </li>
-                                <li class="breadcrumb-item active breadcrumb-active-item tab-index" aria-current="page">Info
-                                </li>
-                              </ol>
-                            </nav>
-          <div class="panel-body">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-              <center>
-                <img class="img-responsive" id="user-img" src="https://via.placeholder.com/600x600"
-                  alt="profile picture">
-              </center>
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-12">
-              <div class="location-name"><span class="location-full-name">
-                  Clubname Hardcode</span>
+        <!-- COL 2-->
+        <div class="profile-col col-md-8 eventlist">
+          <!-- Profile Start-->
+          <div class="panel panel-default plain profile-panel">
+                              <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item">
+                                    <a href="./locations.html">Locations</a>
+                                  </li>
+                                  <li class="breadcrumb-item">
+                                    <a class="location-name" href="">Havana Bar</a>
+                                  </li>
+                                  <li class="breadcrumb-item active breadcrumb-active-item tab-index" aria-current="page">Info
+                                  </li>
+                                </ol>
+                              </nav>
+            <div class="panel-body">
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                <center>
+                  <img class="img-responsive" id="user-img" src="https://via.placeholder.com/600x600"
+                    alt="profile picture">
+                </center>
               </div>
-              <div class="location-adress">
-                <p>93053 Regensburg, St.-Peters-Weg 5</p>
-              </div>
-              <div class="profile-stats-info">
-                <a href="#" title="Views"> <i class="glyphicon glyphicon-eye-open profile-info-stats"> </i> <strong
-                    class="profile-info-stats profile-views">2000</strong></a>
-                <a href="#" title="Comments"> <i class="glyphicon glyphicon-comment profile-info-stats"> </i> <strong
-                    class="profile-info-stats profile-comments">120</strong></a>
-                <a href="#" title="Likes"> <i class="glyphicon glyphicon-thumbs-up profile-info-stats"> </i> <strong
-                    class="profile-info-stats profile-likes">60</strong></a>
+              <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="location-name"><span class="location-full-name">
+                    Clubname Hardcode</span>
+                </div>
+                <div class="location-adress">
+                  <p>93053 Regensburg, St.-Peters-Weg 5</p>
+                </div>
+                <div class="profile-stats-info">
+                  <a href="#" title="Views"> <i class="glyphicon glyphicon-eye-open profile-info-stats"> </i> <strong
+                      class="profile-info-stats profile-views">2000</strong></a>
+                  <a href="#" title="Comments"> <i class="glyphicon glyphicon-comment profile-info-stats"> </i> <strong
+                      class="profile-info-stats profile-comments">120</strong></a>
+                  <a href="#" title="Likes"> <i class="glyphicon glyphicon-thumbs-up profile-info-stats"> </i> <strong
+                      class="profile-info-stats profile-likes">60</strong></a>
+                </div>
               </div>
             </div>
+            <div class="panel-footer white-content">
+              <ul class="profile-info">
+                <li><i class="fas fa-palette"></i><span id="user-email"> clubmail@hardcode.de</span></li>
+              </ul>
+            </div>
           </div>
-          <div class="panel-footer white-content">
-            <ul class="profile-info">
-              <li><i class="fas fa-palette"></i><span id="user-email"> clubmail@hardcode.de</span></li>
-            </ul>
-          </div>
-        </div>
-        <!-- Profile End -->
+          <!-- Profile End -->
 
-        <!-- SWITCH Start-->
-        <div class="selection-toggler text-center navigator">
-          <div> Hardcodename</div>
-          <div class="btn-group text-center" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary is-active btn-infos">Info</button>
-            <button type="button" class="btn btn-secondary btn-event">Events</button>
-            <button type="button" class="btn btn-secondary btn-review">Bewertungen</button>
-            <button type="button" class="btn btn-secondary btn-pictures">Bilder</button>
-          </div>
-          <div>anzeigen</div>
-        </div>
-        <br>
-        <!-- SWITCH End-->
-
-        <!-- Info Starts -->
-        <div class="card infos no-background">
-          <div class="card-body text-center">
-            <p><b>Art:</b><br> <span class="location-info art">Club</span></p><br>
-            <p><b>Info:</b><br> <span class="location-info info">Modernes Shisha Café im Herzen von Regensburg!ÜBER
-                UNSTop
-                Service, Top Location, rießen Auswahl an Getränken und Tabaksorten..Kommt vorbei und überzeugt euch
-                selbst von uns!STANDORT & KONTAKTAnschrift: Ziegetsdorfer Str. 115, 93051 Regensburg,
-                DeutschlandTelefon: 01515 8886027</span></p><br>
-            <p><b>Öffnungszeiten:</b><br> <span class="location-openings">
-                <b>Montag: </b> <span id="monday-from">geschlossen</span> - <span class="monday-till"></span> <br>
-                <b>Dienstag: </b> <span id="tuesday-from">geschlossen</span> - <span class="tuesday-till"></span> <br>
-                <b>Mittwoch: </b> <span id="wednesday-from">geschlossen</span> - <span class="wednesday-till"></span>
-                <br>
-                <b>Donnerstag:</b> <span id="thursday-from">20:00</span> - <span class="thursday-till">03:00
-                </span>
-                <br>
-                <b>Freitag:</b> <span id="friday-from">21:00</span> - <span class="friday-till"> 04:00</span>
-                <br>
-                <b>Samstag:</b> <span id="saturday-from">21:00</span> Uhr - <span class="saturday-till">04:00</span>
-                <br>
-                <b>Sonntag:</b> </b> <span id="sunday-from">geschlossen</span> - <span class="sunday-till"></span>
-                <br>
-              </span> </p>
-          </div>
-          <div class="card-footer">
-            <b><span class="save-event"> <input type="checkbox" name="saveevent" id="save-location"> <span class="location-save-text">Diese Location
-                speichern</span></span></b>
-          </div>
-        </div>
-        <!-- Info End -->
-
-        <!-- Event Start -->
-        <div class="card my-2 events no-background">
-        </div>
-        <!-- Event End-->
-
-        <!-- Rating Start -->
-        <!-- Leave Comment Start -->
-        <div class="well well-sm justify-content-center">
-          <div class="text-center">
-            <span class="no-review"></span>
-              <button class="btn btn-success btn-green leave-rating-btn" id="open-review-box">Bewertung abgeben</a>
+          <!-- SWITCH Start-->
+          <div class="selection-toggler text-center navigator">
+            <div> Hardcodename</div>
+            <div class="btn-group text-center" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-secondary is-active btn-infos">Info</button>
+              <button type="button" class="btn btn-secondary btn-event">Events</button>
+              <button type="button" class="btn btn-secondary btn-review">Bewertungen</button>
+              <button type="button" class="btn btn-secondary btn-pictures">Bilder</button>
+            </div>
+            <div>anzeigen</div>
           </div>
           <br>
-          <div class="leave-review">
-            <div class="rating-block">
-              <h4 class="rating-headline">Jetzt Bewertung verfassen</h4>
-              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
-              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
-                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-              </button>
+          <!-- SWITCH End-->
+
+          <!-- Info Starts -->
+          <div class="card infos no-background">
+            <div class="card-body text-center">
+              <p><b>Art:</b><br> <span class="location-info art">Club</span></p><br>
+              <p><b>Info:</b><br> <span class="location-info info">Modernes Shisha Café im Herzen von Regensburg!ÜBER
+                  UNSTop
+                  Service, Top Location, rießen Auswahl an Getränken und Tabaksorten..Kommt vorbei und überzeugt euch
+                  selbst von uns!STANDORT & KONTAKTAnschrift: Ziegetsdorfer Str. 115, 93051 Regensburg,
+                  DeutschlandTelefon: 01515 8886027</span></p><br>
+              <p><b>Öffnungszeiten:</b><br> <span class="location-openings">
+                  <b>Montag: </b> <span id="monday-from">geschlossen</span> - <span class="monday-till"></span> <br>
+                  <b>Dienstag: </b> <span id="tuesday-from">geschlossen</span> - <span class="tuesday-till"></span> <br>
+                  <b>Mittwoch: </b> <span id="wednesday-from">geschlossen</span> - <span class="wednesday-till"></span>
+                  <br>
+                  <b>Donnerstag:</b> <span id="thursday-from">20:00</span> - <span class="thursday-till">03:00
+                  </span>
+                  <br>
+                  <b>Freitag:</b> <span id="friday-from">21:00</span> - <span class="friday-till"> 04:00</span>
+                  <br>
+                  <b>Samstag:</b> <span id="saturday-from">21:00</span> Uhr - <span class="saturday-till">04:00</span>
+                  <br>
+                  <b>Sonntag:</b> </b> <span id="sunday-from">geschlossen</span> - <span class="sunday-till"></span>
+                  <br>
+                </span> </p>
             </div>
-            <div class="row" id="post-review-box">
-                <div class="col-md-12">
-                    <div accept-charset="UTF-8" action="">
-                        <input id="ratings-hidden" name="rating" type="hidden"> 
-                        <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5" value=""></textarea>
-                        <div class="text-right">
-                            <button class="btn btn-danger btn-sm" id="close-review-box" style="display:none; margin-right: 10px;">
-                            <span class="glyphicon glyphicon-remove"></span>Cancel</button> <br>
-                            <button class="btn btn-success btn-lg">Save</button>
-                        </div>
-                      </div>
-                </div>
+            <div class="card-footer">
+              <b><span class="save-event"> <input type="checkbox" name="saveevent" id="save-location"> <span class="location-save-text">Diese Location
+                  speichern</span></span></b>
             </div>
           </div>
-      </div>
-        <!-- Leave Comment End-->
+          <!-- Info End -->
 
-        <!-- Insert Review Start -->
-        <div class="container review-class">
-          <div class="row reviews">
-            <div class="col-sm-4">
-              <div class="rating-block rating-avg">
-                <h4 class="font-black">Average user rating</h4>
-                <h2 class="bold padding-bottom-7 font-black average">4.3 <small>/ 5</small></h2>
-                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+          <!-- Event Start -->
+          <div class="card my-2 events no-background">
+          </div>
+          <!-- Event End-->
+
+          <!-- Rating Start -->
+          <!-- Leave Comment Start -->
+          <div class="well well-sm justify-content-center">
+            <div class="text-center">
+              <span class="no-review"></span>
+                <button class="btn btn-success btn-green leave-rating-btn" id="open-review-box">Bewertung abgeben</a>
+            </div>
+            <br>
+            <div class="leave-review">
+              <div class="rating-block">
+                <h4 class="rating-headline">Jetzt Bewertung verfassen</h4>
+                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
                   <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
                 </button>
               </div>
+              <div class="row" id="post-review-box">
+                  <div class="col-md-12">
+                      <div accept-charset="UTF-8" action="">
+                          <input id="ratings-hidden" name="rating" type="hidden"> 
+                          <textarea class="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5" value=""></textarea>
+                          <div class="text-right">
+                              <button class="btn btn-danger btn-sm" id="close-review-box" style="display:none; margin-right: 10px;">
+                              <span class="glyphicon glyphicon-remove"></span>Cancel</button> <br>
+                              <button class="btn btn-success btn-lg">Save</button>
+                          </div>
+                        </div>
+                  </div>
+              </div>
             </div>
-            <div class="col-sm-6 col-md-3 rating-overview">
-              <h4 class="font-black">Rating breakdown</h4>
-              <div class="pull-left">
-                <div class="pull-left" style="width:35px; line-height:1;">
-                  <div style="height:9px; margin:5px 0;" class="font-black">5 <span class="glyphicon glyphicon-star"></span> </div>
+        </div>
+          <!-- Leave Comment End-->
+
+          <!-- Insert Review Start -->
+          <div class="container review-class">
+            <div class="row reviews">
+              <div class="col-sm-4">
+                <div class="rating-block rating-avg">
+                  <h4 class="font-black">Average user rating</h4>
+                  <h2 class="bold padding-bottom-7 font-black average">4.3 <small>/ 5</small></h2>
+                  <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-default btn-grey btn-sm given-review" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 rating-overview">
+                <h4 class="font-black">Rating breakdown</h4>
+                <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                    <div style="height:9px; margin:5px 0;" class="font-black">5 <span class="glyphicon glyphicon-star"></span> </div>
+                  </div>
+                
+                  <div class="pull-left" style="width:180px;">
+                    <div class="progress" style="height:9px; margin:8px 0;">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pull-right font-black" style="margin-left:10px;">1</div>
                 </div>
               
-                <div class="pull-left" style="width:180px;">
-                  <div class="progress" style="height:9px; margin:8px 0;">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
-                    <span class="sr-only">80% Complete (danger)</span>
+                <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                    <div style="height:9px; margin:5px 0;" class="font-black">4 <span class="glyphicon glyphicon-star"></span> </div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                    <div class="progress" style="height:9px; margin:8px 0;">
+                      <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                      </div>
                     </div>
                   </div>
+                  <div class="pull-right font-black" style="margin-left:10px;">1</div>
                 </div>
-                <div class="pull-right font-black" style="margin-left:10px;">1</div>
-              </div>
+                <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                    <div style="height:9px; margin:5px 0;" class="font-black">3 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                    <div class="progress" style="height:9px; margin:8px 0;">
+                      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pull-right font-black" style="margin-left:10px;">0</div>
+                </div>
+                <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                    <div style="height:9px; margin:5px 0;" class="font-black">2 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                    <div class="progress" style="height:9px; margin:8px 0;">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pull-right font-black" style="margin-left:10px;">0</div>
+                </div>
+                <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                    <div style="height:9px; margin:5px 0;" class="font-black">1 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                    <div class="progress" style="height:9px; margin:8px 0;">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
+                      <span class="sr-only">80% Complete (danger)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pull-right font-black" style="margin-left:10px;">0</div>
+                </div>
+              </div>		
+            </div>			
             
-              <div class="pull-left">
-                <div class="pull-left" style="width:35px; line-height:1;">
-                  <div style="height:9px; margin:5px 0;" class="font-black">4 <span class="glyphicon glyphicon-star"></span> </div>
-                </div>
-                <div class="pull-left" style="width:180px;">
-                  <div class="progress" style="height:9px; margin:8px 0;">
-                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
-                    <span class="sr-only">80% Complete (danger)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="pull-right font-black" style="margin-left:10px;">1</div>
-              </div>
-              <div class="pull-left">
-                <div class="pull-left" style="width:35px; line-height:1;">
-                  <div style="height:9px; margin:5px 0;" class="font-black">3 <span class="glyphicon glyphicon-star"></span></div>
-                </div>
-                <div class="pull-left" style="width:180px;">
-                  <div class="progress" style="height:9px; margin:8px 0;">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
-                    <span class="sr-only">80% Complete (danger)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="pull-right font-black" style="margin-left:10px;">0</div>
-              </div>
-              <div class="pull-left">
-                <div class="pull-left" style="width:35px; line-height:1;">
-                  <div style="height:9px; margin:5px 0;" class="font-black">2 <span class="glyphicon glyphicon-star"></span></div>
-                </div>
-                <div class="pull-left" style="width:180px;">
-                  <div class="progress" style="height:9px; margin:8px 0;">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
-                    <span class="sr-only">80% Complete (danger)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="pull-right font-black" style="margin-left:10px;">0</div>
-              </div>
-              <div class="pull-left">
-                <div class="pull-left" style="width:35px; line-height:1;">
-                  <div style="height:9px; margin:5px 0;" class="font-black">1 <span class="glyphicon glyphicon-star"></span></div>
-                </div>
-                <div class="pull-left" style="width:180px;">
-                  <div class="progress" style="height:9px; margin:8px 0;">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 0%">
-                    <span class="sr-only">80% Complete (danger)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="pull-right font-black" style="margin-left:10px;">0</div>
-              </div>
-            </div>		
-          </div>			
-          
-          <div class="row">
-            <div class="col-md-10">
-              <hr/>
-              <div class="review-block col-sm-10 user-reviews">    
+            <div class="row">
+              <div class="col-md-10">
+                <hr/>
+                <div class="review-block col-sm-10 user-reviews">    
 
+                </div>
               </div>
             </div>
-          </div>
-          
+            
 
-          </div>
-        <!-- Rating End-->
+            </div>
+          <!-- Rating End-->
 
-      <!-- Pictures Start -->
-          <div class="text-center upload-pic">
-            <span class="no-review"></span>
-            <button class="btn btn-success btn-green upload-pic-btn" id="open-review-box">Bild hochladen</a>
-          </div>
-          <br>
-
-      <div class="container col-sm-10">
-        <div class="panel panel-default upload-image">
-          <div class="panel-heading"><strong>Upload Image</strong> <small>Hangover file upload</small></div>
-          <div class="panel-body">
-  
-            <!-- Standar Form -->
-            <h4 class="font-black">Wähle ein Bild von deinem Gerät aus</h4>
-            <div action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-              <div class="form-inline">
-                <div class="form-group">
-                  <input type="file" name="files[]" id="js-upload-files" accept="image/jpeg"><span class="file-name"></span>
-                </div>
-              </div>
+        <!-- Pictures Start -->
+            <div class="text-center upload-pic">
+              <span class="no-review"></span>
+              <button class="btn btn-success btn-green upload-pic-btn" id="open-review-box">Bild hochladen</a>
             </div>
             <br>
 
-            <!-- Image Caption -->
-            <div class="row">
-              <div class="col-md-12">
-                <div accept-charset="UTF-8" action="">
-                  <textarea class="form-control animated" cols="50" id="new-image-caption" name="comment"
-                    placeholder="Bildbeschreibung..." rows="5" value=""></textarea>
-                  <div class="text-right">
-                    <button class="btn btn-danger btn-sm" id="close-review-box" style="display:none; margin-right: 10px;">
-                      <span class="glyphicon glyphicon-remove"></span>Cancel</button> <br>
+        <div class="container col-sm-10">
+          <div class="panel panel-default upload-image">
+            <div class="panel-heading"><strong>Upload Image</strong> <small>Hangover file upload</small></div>
+            <div class="panel-body">
+    
+              <!-- Standar Form -->
+              <h4 class="font-black">Wähle ein Bild von deinem Gerät aus</h4>
+              <div action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+                <div class="form-inline">
+                  <div class="form-group">
+                    <input type="file" name="files[]" id="js-upload-files" accept="image/jpeg"><span class="file-name"></span>
                   </div>
                 </div>
               </div>
-            </div>
-  
-            <!-- Drop Zone -->
-            <div class="drag-and-drop">
-              <h4 class="font-black">Oder nutze das Drag&Drop Feld</h4>
-              <div class="upload-drop-zone" id="drop-zone">
-                Just drag and drop files here
-              </div>
-            </div>
-  
-            <!-- Progress Bar -->
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-                <span class="sr-only">60% Complete</span>
-              </div>
-              
-              <br><br>
-            </div>
-            <div class="form-check text-center">
-              <input class="form-check-input float-center" type="checkbox" value="" id="defaultCheck1"><br>
-              <label class="form-check-label font-black" for="defaultCheck1">
-                Hiermit akzeptiere ich die <a href="./agb.html" class="font-black" style="text-decoration: underline !important;">AGB & Datenschutzbestimmungen</a> von Hangover Application
-              </label>
-            </div>
-            <br><br>
-            <button class="btn btn-success btn-lg float-right upload-btn">Save</button> <!-- CHRIS NEUER UPLOAD BUTTON!!!!!!!-->
-            <!-- Upload Finished -->
-            <!-- <div class="js-upload-finished">
-              <h3>Processed files</h3>
-              <div class="list-group upload-group">
-                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
-              </div>
-            </div> -->
-          </div>
-        </div>
+              <br>
 
-            <!-- Picture Grid Start -->
-            <div class="row row-cols-1 row-cols-md-3 d-flex justify-content-center picture-area">
-
-            </div>
-            <!-- Picture Grid End-->
-      </div> <!-- /container -->
-      <!-- Pictures End -->
-
-      </div>
-      <!-- COL 2 End-->
+              <!-- Image Caption -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div accept-charset="UTF-8" action="">
+                    <textarea class="form-control animated" cols="50" id="new-image-caption" name="comment"
+                      placeholder="Bildbeschreibung..." rows="5" value=""></textarea>
+                    <div class="text-right">
+                      <button class="btn btn-danger btn-sm" id="close-review-box" style="display:none; margin-right: 10px;">
+                        <span class="glyphicon glyphicon-remove"></span>Cancel</button> <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
     
-      <!-- COL 3 -->
-      <div class="col col3"></div>
+              <!-- Drop Zone -->
+              <div class="drag-and-drop">
+                <h4 class="font-black">Oder nutze das Drag&Drop Feld</h4>
+                <div class="upload-drop-zone" id="drop-zone">
+                  Just drag and drop files here
+                </div>
+              </div>
+    
+              <!-- Progress Bar -->
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                  <span class="sr-only">60% Complete</span>
+                </div>
+                
+                <br><br>
+              </div>
+              <div class="form-check text-center">
+                <input class="form-check-input float-center" type="checkbox" value="" id="defaultCheck1"><br>
+                <label class="form-check-label font-black" for="defaultCheck1">
+                  Hiermit akzeptiere ich die <a href="./agb.html" class="font-black" style="text-decoration: underline !important;">AGB & Datenschutzbestimmungen</a> von Hangover Application
+                </label>
+              </div>
+              <br><br>
+              <button class="btn btn-success btn-lg float-right upload-btn">Save</button> <!-- CHRIS NEUER UPLOAD BUTTON!!!!!!!-->
+              <!-- Upload Finished -->
+              <!-- <div class="js-upload-finished">
+                <h3>Processed files</h3>
+                <div class="list-group upload-group">
+                  <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
+                </div>
+              </div> -->
+            </div>
+          </div>
 
+              <!-- Picture Grid Start -->
+              <div class="row row-cols-1 row-cols-md-3 d-flex justify-content-center picture-area">
+
+              </div>
+              <!-- Picture Grid End-->
+        </div> <!-- /container -->
+        <!-- Pictures End -->
+
+        </div>
+        <!-- COL 2 End-->
+      
+        <!-- COL 3 -->
+        <div class="col col3"></div>
+
+      </div>
     </div>
-  </div>
 
-  <!-- FOOTER START -->
-  <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
-    <div class="container">
-      <div class="row row-30">
-        <div class="col-md-4 col-l-5">
-          <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
-                src="../resources/img/Hangover_Logo_mit_Schrift.png" alt="" class="w-100" height="37"></a>
-            <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
-            <!-- Rights-->
-            <p class="rights"><span>©  </span><span
-                class="copyright-year">2020</span><span> </span><span>HANGOVER</span><span>. </span><span>All Rights
-                Reserved.</span></p>
+    <!-- FOOTER -->
+    <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+      <div class="container">
+        <div class="row row-30">
+          <div class="col-md-4 col-l-5">
+            <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                  src="../resources/img/Hangover_Logo_mit_Schrift.png" alt="" class="w-100" height="37"></a>
+              <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
+              <!-- Rights-->
+              <p class="rights"><span>©  </span><span
+                  class="copyright-year">2020</span><span> </span><span>HANGOVER</span><span>. </span><span>All Rights
+                  Reserved.</span></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- TEMPLATE EVENT START -->
-  <template class="event-template">
-    <div class="col mb-4">
-      <div class="card h-100 my-2">
-        <center>
-        <img src="../resources/img/party1.jpg" class="card-img-top w-50" alt="...">
-        </center>
-        <div class="card-body">
-          <h5 class="card-title headline">HARDCODE EVENT Title</h5>
-          <p class="card-text shortDescription">This is a longer card with supporting text below as a natural
-            lead-in to
-            additional content. This content is a little bit longer.</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted"><span class="event-location">@BeatsClubHardcode</span> <span
-              class="event-time">23:00
-              Uhr</span></small>
-        </div>
-      </div>
-    </div>
-  </template>
-  <!-- TEMPLATE EVENT END -->
-
-  <!-- TEMPLATE REVIEW START -->
-  <template class="rating-template">
-      <div class="row">
-        <div class="col-sm-3">
-          <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded review-img">
-          <div class="review-block-name">nktailor</div>
-          <div class="review-block-date">January 29, 2016<br />1 day ago</div>
-        </div>
-        <div class="col-sm-9">
-          <div class="review-block-rate">
-            <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-            </button>
+    <!-- TEMPLATES -->
+    <!-- EVENT Template -->
+    <template class="event-template">
+      <div class="col mb-4">
+        <div class="card h-100 my-2">
+          <center>
+          <img src="../resources/img/party1.jpg" class="card-img-top w-50" alt="...">
+          </center>
+          <div class="card-body">
+            <h5 class="card-title headline">HARDCODE EVENT Title</h5>
+            <p class="card-text shortDescription">This is a longer card with supporting text below as a natural
+              lead-in to
+              additional content. This content is a little bit longer.</p>
           </div>
-          <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in
-            buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was
-            nice in buy</div>
-        </div>
-        <div class="card-footer w-100">
-          <i class="fas fa-thumbs-up font-grey"></i> &nbsp;&nbsp;
-          <i class="fas fa-thumbs-down font-grey"></i>
-          <i class="fas fa-bomb font-lightgrey float-right"> Review melden</i>
+          <div class="card-footer">
+            <small class="text-muted"><span class="event-location">@BeatsClubHardcode</span> <span
+                class="event-time">23:00
+                Uhr</span></small>
+          </div>
         </div>
       </div>
-  </template>
-  <!-- TEMPLATE REVIEW END -->
+    </template>
 
-    <!-- TEMPLATE IMG START -->
+    <!-- REVIEW Template -->
+    <template class="rating-template">
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded review-img">
+            <div class="review-block-name">nktailor</div>
+            <div class="review-block-date">January 29, 2016<br />1 day ago</div>
+          </div>
+          <div class="col-sm-9">
+            <div class="review-block-rate">
+              <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-default btn-grey btn-xs given-review" aria-label="Left Align">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="review-block-description">this was nice in buy. this was nice in buy. this was nice in
+              buy. this was nice in buy this was nice in buy this was nice in buy this was nice in buy this was
+              nice in buy</div>
+          </div>
+          <div class="card-footer w-100">
+            <i class="fas fa-thumbs-up font-grey"></i> &nbsp;&nbsp;
+            <i class="fas fa-thumbs-down font-grey"></i>
+            <i class="fas fa-bomb font-lightgrey float-right"> Review melden</i>
+          </div>
+        </div>
+    </template>
+
+    <!-- IMG Template -->
     <template class="img-template">
       <div class="card">
         <img src="../resources/img/shisha.jpg" class="card-img-top location-img" alt="...">
@@ -507,25 +505,24 @@
         </div>
       </div>
     </template>
-    <!-- TEMPLATE IMG END -->
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
 
-  <!-- Rating -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <script src="js/ie10-viewport-bug-workaround.js"></script>
-</body>
+    <!-- Rating -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
