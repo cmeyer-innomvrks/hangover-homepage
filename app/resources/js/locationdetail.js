@@ -325,8 +325,17 @@ function onProgressUpdate(event) {
 }
 
 function onPicUploadRequested() {
-  LocationDetailUploadImage.show();
-  LocationDetailUploadPicBtn.hide();
+  let flag = false;
+
+  if (JSON.parse(localStorage.getItem("isSignedIn"))) {
+    flag = true;
+  } else {
+    alert("Du musst eingeloggt sein, um eine Bilder hochladen zu können.");
+  }
+  if (flag) {
+    LocationDetailUploadImage.show();
+    LocationDetailUploadPicBtn.hide();
+  }
 }
 
 function onSinglePicRequested(event) {

@@ -17,12 +17,12 @@ class LocationDetailUploadImage extends View {
     this.dropZone = this.element.querySelector("#drop-zone");
     this.uploadForm = this.element.querySelector("#js-upload-form");
     this.uploadForm.addEventListener("change", this.onFileInput.bind(this));
-    this.element.addEventListener("click", function(e) {
+    this.element.addEventListener("click", function (e) {
       if (event.target.classList.contains("upload-btn")) {
         self.startUpload(self.file);
       }
     });
-    ["dragenter", "dragover", "dragleave", "drop"].forEach(eventName => {
+    ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
       this.element.addEventListener(eventName, this.preventDefaults);
     });
     this.element.addEventListener("drop", this.onDrop.bind(this));
@@ -59,6 +59,7 @@ class LocationDetailUploadImage extends View {
       this.notifyAll(newFileEvent);
       this.element.querySelector("#new-image-caption").value = "";
       this.agb.checked = false;
+      this.fileName.textContent = "";
     } else {
       alert(
         "Du musst unsere AGB und Datenschutzerklärung akzeptieren, um Bilder hochzuladen."
@@ -71,7 +72,6 @@ class LocationDetailUploadImage extends View {
   }
 
   onFileInput(e) {
-    console.log(e);
     let file = e.target.files[0];
     this.file = file;
     this.fileName.textContent = file.name;

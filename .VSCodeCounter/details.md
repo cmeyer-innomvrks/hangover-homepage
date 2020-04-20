@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-04-10 00:01:44
+Date : 2020-04-20 11:42:01
 
 Directory d:\GitHub\mme-ws19-projekte-veranstaltungskatalog_lippl_meyer\app
 
-Total : 74 files,  13285 codes, 2339 comments, 2576 blanks, all 18200 lines
+Total : 73 files,  13411 codes, 2353 comments, 2543 blanks, all 18307 lines
 
 [summary](results.md)
 
@@ -13,7 +13,7 @@ Total : 74 files,  13285 codes, 2339 comments, 2576 blanks, all 18200 lines
 | :--- | :--- | ---: | ---: | ---: | ---: |
 | [app/404.html](/app/404.html) | HTML | 33 | 0 | 1 | 34 |
 | [app/Readme.md](/app/Readme.md) | Markdown | 2 | 0 | 1 | 3 |
-| [app/index.html](/app/index.html) | HTML | 232 | 29 | 16 | 277 |
+| [app/index.html](/app/index.html) | HTML | 224 | 22 | 10 | 256 |
 | [app/resources/css/navbar.css](/app/resources/css/navbar.css) | CSS | 395 | 28 | 16 | 439 |
 | [app/resources/css/profile.css](/app/resources/css/profile.css) | CSS | 47 | 0 | 13 | 60 |
 | [app/resources/css/raiting.css](/app/resources/css/raiting.css) | CSS | 64 | 2 | 5 | 71 |
@@ -50,7 +50,7 @@ Total : 74 files,  13285 codes, 2339 comments, 2576 blanks, all 18200 lines
 | [app/resources/js/UI/locationDetail/LocationDetailCard.js](/app/resources/js/UI/locationDetail/LocationDetailCard.js) | JavaScript | 119 | 2 | 9 | 130 |
 | [app/resources/js/UI/locationDetail/LocationDetailEvents.js](/app/resources/js/UI/locationDetail/LocationDetailEvents.js) | JavaScript | 64 | 1 | 10 | 75 |
 | [app/resources/js/UI/locationDetail/LocationDetailHeader.js](/app/resources/js/UI/locationDetail/LocationDetailHeader.js) | JavaScript | 42 | 1 | 7 | 50 |
-| [app/resources/js/UI/locationDetail/LocationDetailLeaveRating.js](/app/resources/js/UI/locationDetail/LocationDetailLeaveRating.js) | JavaScript | 74 | 1 | 8 | 83 |
+| [app/resources/js/UI/locationDetail/LocationDetailLeaveRating.js](/app/resources/js/UI/locationDetail/LocationDetailLeaveRating.js) | JavaScript | 82 | 1 | 8 | 91 |
 | [app/resources/js/UI/locationDetail/LocationDetailLeaveRatingBtn.js](/app/resources/js/UI/locationDetail/LocationDetailLeaveRatingBtn.js) | JavaScript | 24 | 1 | 8 | 33 |
 | [app/resources/js/UI/locationDetail/LocationDetailNavigator.js](/app/resources/js/UI/locationDetail/LocationDetailNavigator.js) | JavaScript | 63 | 1 | 11 | 75 |
 | [app/resources/js/UI/locationDetail/LocationDetailPics.js](/app/resources/js/UI/locationDetail/LocationDetailPics.js) | JavaScript | 62 | 1 | 8 | 71 |
@@ -63,27 +63,26 @@ Total : 74 files,  13285 codes, 2339 comments, 2576 blanks, all 18200 lines
 | [app/resources/js/filter/LocationFilter.js](/app/resources/js/filter/LocationFilter.js) | JavaScript | 26 | 1 | 4 | 31 |
 | [app/resources/js/index.js](/app/resources/js/index.js) | JavaScript | 63 | 1 | 9 | 73 |
 | [app/resources/js/jquery-2.1.1.js](/app/resources/js/jquery-2.1.1.js) | JavaScript | 6,167 | 1,488 | 1,536 | 9,191 |
-| [app/resources/js/locationdetail.js](/app/resources/js/locationdetail.js) | JavaScript | 313 | 12 | 38 | 363 |
+| [app/resources/js/locationdetail.js](/app/resources/js/locationdetail.js) | JavaScript | 327 | 11 | 38 | 376 |
 | [app/resources/js/locations.js](/app/resources/js/locations.js) | JavaScript | 57 | 1 | 9 | 67 |
 | [app/resources/js/login.js](/app/resources/js/login.js) | JavaScript | 88 | 0 | 5 | 93 |
 | [app/resources/js/map.js](/app/resources/js/map.js) | JavaScript | 49 | 1 | 11 | 61 |
 | [app/resources/js/modernizr.js](/app/resources/js/modernizr.js) | JavaScript | 609 | 510 | 288 | 1,407 |
 | [app/resources/js/navbar.js](/app/resources/js/navbar.js) | JavaScript | 46 | 7 | 6 | 59 |
 | [app/resources/js/personalArea.js](/app/resources/js/personalArea.js) | JavaScript | 104 | 1 | 17 | 122 |
-| [app/resources/js/rating.js](/app/resources/js/rating.js) | JavaScript | 26 | 2 | 10 | 38 |
 | [app/resources/js/singleImage.js](/app/resources/js/singleImage.js) | JavaScript | 5 | 1 | 3 | 9 |
 | [app/resources/js/utils/Observable.js](/app/resources/js/utils/Observable.js) | JavaScript | 27 | 1 | 7 | 35 |
 | [app/resources/partials/_layout.scss](/app/resources/partials/_layout.scss) | SCSS | 14 | 2 | 4 | 20 |
 | [app/resources/partials/_mixins.scss](/app/resources/partials/_mixins.scss) | SCSS | 34 | 4 | 9 | 47 |
 | [app/resources/partials/_variables.scss](/app/resources/partials/_variables.scss) | SCSS | 9 | 4 | 8 | 21 |
 | [app/resources/scss/style.scss](/app/resources/scss/style.scss) | SCSS | 315 | 27 | 73 | 415 |
-| [app/sites/agb.html](/app/sites/agb.html) | HTML | 11 | 0 | 1 | 12 |
-| [app/sites/detailedEvent.html](/app/sites/detailedEvent.html) | HTML | 217 | 20 | 10 | 247 |
-| [app/sites/detailedLocation.html](/app/sites/detailedLocation.html) | HTML | 444 | 56 | 38 | 538 |
-| [app/sites/locations.html](/app/sites/locations.html) | HTML | 187 | 27 | 15 | 229 |
-| [app/sites/map.html](/app/sites/map.html) | HTML | 73 | 12 | 10 | 95 |
-| [app/sites/notice.md](/app/sites/notice.md) | Markdown | 29 | 0 | 7 | 36 |
-| [app/sites/singleImage.html](/app/sites/singleImage.html) | HTML | 14 | 0 | 1 | 15 |
-| [app/sites/userprofile.html](/app/sites/userprofile.html) | HTML | 345 | 41 | 17 | 403 |
+| [app/sites/agb.html](/app/sites/agb.html) | HTML | 94 | 16 | 5 | 115 |
+| [app/sites/detailedEvent.html](/app/sites/detailedEvent.html) | HTML | 208 | 20 | 8 | 236 |
+| [app/sites/detailedLocation.html](/app/sites/detailedLocation.html) | HTML | 450 | 45 | 28 | 523 |
+| [app/sites/impressum.html](/app/sites/impressum.html) | HTML | 106 | 15 | 11 | 132 |
+| [app/sites/locations.html](/app/sites/locations.html) | HTML | 181 | 25 | 9 | 215 |
+| [app/sites/map.html](/app/sites/map.html) | HTML | 70 | 13 | 6 | 89 |
+| [app/sites/singleImage.html](/app/sites/singleImage.html) | HTML | 14 | 4 | 1 | 19 |
+| [app/sites/userprofile.html](/app/sites/userprofile.html) | HTML | 335 | 42 | 14 | 391 |
 
 [summary](results.md)
