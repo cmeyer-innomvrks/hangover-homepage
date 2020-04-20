@@ -1,17 +1,256 @@
-<!DOCTYPE html>
-<html>
-
-<head>
+<!-- https://bootsnipp.com/snippets/kMRrW -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS Files -->
     <link rel="stylesheet" href="resources/css/style.css">
-</head>
+    <link rel="stylesheet" href="resources/css/navbar.css">
+    <link rel="stylesheet" href="resources/css/reset.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Google -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+    <meta name="google-signin-client_id" content="1025215188376-cjvem92vgkhqvg4euhh5vjmrh2eacbmo.apps.googleusercontent.com" />
+    <!-- Tab-->
+    <link rel="icon" href="./resources/img/Hangover_Logo_ohne_Schrift.png">
+    <title>HANGOVER - Events</title>
+  </head>
+  <body class="body">
+    <!-- NAVBAR -->
+    <header class="cd-header">
+      <div class="cd-logo"><a href="./index.html"><img src="./resources/img/Hangover_Logo_mit_Schrift.png" width="100rem"
+            alt="Logo"></a></div>
+      <nav>
+        <ul class="cd-secondary-nav login-out-btn">
+          <li><a href="./sites/userprofile.html">Log In</a></li>
+        </ul>
+      </nav>
+      <a class="cd-primary-nav-trigger" href="#0">
+        <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+      </a>
+    </header>
+    <nav>
+      <ul class="cd-primary-nav">
+        <li class="cd-label">Find</li>
+        <li><a class="menu-link" href="index.html">Events</a></li>
+        <li><a class="menu-link" href="./sites/locations.html">Locations</a></li>
+        <li><a class="menu-link" href="./sites/map.html">Map</a></li>
+        <li><a class="menu-link" href="./sites/userprofile.html">Persönlicher Bereich</a></li>
+      </ul>
+    </nav>
+    <section class="cd-intro event-img-adobe">
+      <h1>PARTY THE WHOLE NIGHT! <br><br><b>EVENTS</b></h1>
+    </section>
 
-<body>
-    <h1>Multimedia Engineering</h1>
-    <div></div>
-    <script type="module" src="resources/js/index.js"></script>
-</body>
+    <!-- CONTENT -->
+    <div class="container-footer-to-bot">
+      <div class="row">
+        <!-- COL 1 - Aside FilterBar -->
+        <div class="col col1"></div>
+        <!-- COL 2 - MainCol Events -->
+        <div class="col-md-6">
+          <div class="col-filter"></div>
+          <div class="eventlist"></div>
+        </div>
+        <!-- COL 3-->
+        <div class="col col3">
+          <!-- FILTER BUTTON -->
+          <button type="button" class="filter-btn btn btn-circle btn-lg">
+            <img src="./resources/img/filter.png" alt="" srcset="" width="25px"></button>
+        </div>
+      </div>
+    </div>
 
+    <!-- FOOTER -->
+    <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+      <div class="container">
+        <div class="row row-30">
+          <div class="col-md-4 col-xl-5">
+            <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light"
+                  src="./resources/img/Hangover_Logo_mit_Schrift.png" alt="" class="w-100" height="37"></a>
+              <p>Wir sind eine Informations Website die dir alle nötigen Infos aller Partys in deiner Stadt liefert.</p>
+              <!-- Rights-->
+              <p class="rights"><span>©  </span><span
+                  class="copyright-year">2020</span><span> </span><span>HANGOVER</span><span>. </span><span>All Rights
+                  Reserved.</span></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <h5><b>Contacts</b></h5>
+            <dl class="contact-list">
+              <dt>Address:</dt>
+              <dd>Bahnhofsstraße 5, 93053 Regensburg</dd>
+            </dl>
+            <dl class="contact-list">
+              <dt>email:</dt>
+              <dd><a href="mailto:#">hangover-regensburg@yahoo.com</a></dd>
+            </dl>
+            <dl class="contact-list">
+              <dt>phones:</dt>
+              <dd><a href="tel:#">s.lippl</a> <span>or</span> <a href="tel:#">c.meyer</a>
+              </dd>
+            </dl>
+          </div>
+          <div class="col-md-4 col-xl-3">
+            <h5><b>Links</b></h5>
+            <ul class="nav-list">
+              <li><a href="./sites/impressum.html">Impressum</a></li>
+              <li><a href="./sites/agb.html">AGB & Datenschutz</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row no-gutters social-container">
+        <div class="col"><a class="social-inner" href="https://www.facebook.com/"><span
+              class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+        <div class="col"><a class="social-inner" href="https://www.instagram.com/"><span
+              class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+        <div class="col"><a class="social-inner" href="https://twitter.com/home"><span
+              class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+    </footer>
+
+    <!-- TEMPLATES -->
+    <!-- EVENTCARD Template -->
+    <template class="event-template">
+      <div class="col mb-4">
+        <div class="card h-100 my-2">
+          <div class="card-footer">
+            <small class="text-muted"><span class="location-art pull-right">ART</span></small>
+          </div>
+          <img src="resources/img/party1.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title headline">Card title</h5>
+            <p class="card-text shortDescription">This is a longer card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><span class="event-location">@BeatsClub</span> <span class="event-time">23:00
+                Uhr</span></small>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- DATE CARD Template -->
+    <template class="date-card">
+      <ul class="list-group my-1">
+        <li class="list-group-item-datecard list-group-item my-2"><span class="week-day">Dienstag</span> | <span
+            class="event-date"><b>02.03.2020</b></span></li>
+      </ul>
+      <div class="event-list row row-cols-1 row-cols-md-3"></div>
+    </template>
+
+    <!-- FILTER Template -->
+    <template class="event-filter">
+      <div class="accordion" id="accordionExample">
+
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Art der Location
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="card">
+                <ul class="art-list list-group list-group-flush">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Musikrichtung
+              </button>
+            </h2>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="card">
+                <ul class="music-list list-group list-group-flush">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                Eintrittspreis
+              </button>
+            </h2>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="card">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="d-flex justify-content-center my-4">
+                      <span class="font-weight-bold blue-text mr-2 mt-1">0 €</span>
+                      <form class="range-field w-50">
+                        <input class="price border-0" step="5" type="range" min="0" max="25" />
+                      </form>
+                      <span class="price-max font-weight-bold blue-text ml-2 mt-1">25 €</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- FILTER-SLIDER Template -->
+    <template class="slider-template">
+      <li class="list-group-item">
+        <span>ALLE</span>
+        <label class="switch ">
+          <input type="checkbox" class="default" checked>
+          <span class="slider round"></span>
+        </label>
+      </li>
+    </template>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+    <!-- Firebase + JS -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="resources/js/modernizr.js"></script>
+    <script src="./resources/js/jquery-2.1.1.js"></script>
+    <script src="./resources/js/navbar.js"></script>
+    <script src="resources/js/index.js" type="module"></script>
+    <script src="./resources/js/login.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </body>
 </html>
