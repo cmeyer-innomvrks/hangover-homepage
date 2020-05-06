@@ -229,16 +229,16 @@ function onReviewInputRequested() {
   } else {
     alert("Du musst eingeloggt sein, um eine Bewertung abgeben zu können.");
   }
-  // if (
-  //   JSON.parse(localStorage.getItem("user")).reviews.indexOf(
-  //     JSON.parse(localStorage.getItem("locationDetail")).id
-  //   ) !== -1
-  // ) {
-  //   flag = false;
-  //   alert(
-  //     "Du hast schon eine Bewertung für diese Location geschrieben. Du kannst keine weitere Bewertung schreiben."
-  //   );
-  // }
+  if (
+    JSON.parse(localStorage.getItem("user")).reviews.indexOf(
+      JSON.parse(localStorage.getItem("locationDetail")).id
+    ) !== -1
+  ) {
+    flag = false;
+    alert(
+      "Du hast schon eine Bewertung für diese Location geschrieben. Du kannst keine weitere Bewertung schreiben."
+    );
+  }
   if (flag) {
     LocationDetailLeaveRating.show();
     LocationDetailLeaveRatingBtn.hide();
