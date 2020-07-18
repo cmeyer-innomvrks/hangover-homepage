@@ -9,8 +9,8 @@ Somit haben wir den Aufwand seitens der User, sowohl für das Suchen von Veranst
 **Link zur bereitgestellten Online-Version: https://hangover-party-ef024.firebaseapp.com/**
 
 |                                                                                       | Infos                                                                                                                                      | Implementierte Komponenten                                                |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
-| <img alt="Portrait von Christoph Meyer" src="docs/christoph_meyer.jpg" width="100" /> | **Christoph Meyer**<br />E-Mail: christoph.meyer@stud.uni-regensburg.de<br />Github-Nutzer: christophmeyer13<br /> Matrikelnummer: 2036571 | Location-Detail-Ansicht inkl. Header, Info, Events, Reviews & Bilder, Map |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| <img alt="Portrait von Christoph Meyer" src="docs/christoph_meyer.jpg" width="100" /> | **Christoph Meyer**<br />E-Mail: christoph.meyer@stud.uni-regensburg.de<br />Github-Nutzer: christophmeyer13<br /> Matrikelnummer: 2036571 |
 
 ## Setup und Testing
 
