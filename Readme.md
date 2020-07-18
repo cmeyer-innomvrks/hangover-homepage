@@ -8,12 +8,6 @@ Somit haben wir den Aufwand seitens der User, sowohl für das Suchen von Veranst
 <img alt="Screenshot der Startseite" src="docs/overall_screenshot.jpg"/>
 **Link zur bereitgestellten Online-Version: https://hangover-party-ef024.firebaseapp.com/**
 
-## Team
-
-|                                                                                 | Infos                                                                                                                            | Implementierte Komponenten                                    |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| <img alt="Portrait von Stefan Lippl" src="docs/stefan_lippl.JPG" width="100" /> | **Stefan Lippl**<br />E-Mail: stefan.lippl@stud.uni-regensburg.de<br />Github-Nutzer: swstudentrgb<br /> Matrikelnummer: 2046000 | Eventliste, Locationliste, Event-Detail, Persönlicher Bereich |
-
 |                                                                                       | Infos                                                                                                                                      | Implementierte Komponenten                                                |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
 | <img alt="Portrait von Christoph Meyer" src="docs/christoph_meyer.jpg" width="100" /> | **Christoph Meyer**<br />E-Mail: christoph.meyer@stud.uni-regensburg.de<br />Github-Nutzer: christophmeyer13<br /> Matrikelnummer: 2036571 | Location-Detail-Ansicht inkl. Header, Info, Events, Reviews & Bilder, Map |
