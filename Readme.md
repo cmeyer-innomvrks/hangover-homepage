@@ -8,10 +8,6 @@ Somit haben wir den Aufwand seitens der User, sowohl für das Suchen von Veranst
 <img alt="Screenshot der Startseite" src="docs/overall_screenshot.jpg"/>
 **Link zur bereitgestellten Online-Version: https://hangover-party-ef024.firebaseapp.com/**
 
-|                                                                                       | Infos                                                                                                                                      | Implementierte Komponenten                                                |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| <img alt="Portrait von Christoph Meyer" src="docs/christoph_meyer.jpg" width="100" /> | **Christoph Meyer**<br />E-Mail: christoph.meyer@stud.uni-regensburg.de<br />Github-Nutzer: christophmeyer13<br /> Matrikelnummer: 2036571 |
-
 ## Setup und Testing
 
 Im Starterpaket ist ein einfacher Webserver vorgegeben, mit dem Sie die Inhalte des Ordners `/app` statisch ausliefern können. Benutzen Sie diesen, um Ihre Anwendung zu entwickeln und zu testen. Sollten Sie zu Realisierung Ihrer Anwendung eine komplexere Serverkomponente benötigen, können Sie die vorhandenen Dateien (`index.js` und `lib/AppServer.js`) als Ausgangslage für eigene Erweiterungen nutzten. Speichern Sie alle weiteren, serverseitig verwendeten Dateien im Verzeichnis `/lib` ab.
